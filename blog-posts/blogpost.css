@@ -98,7 +98,7 @@ body {
 }
 
 .post h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Ubuntu Condensed', sans-serif;
     font-size: 1.5rem;
 }
 
@@ -113,6 +113,7 @@ body {
 .return a {
     text-decoration: none;
     color: #000000;
+    font-family: "Ubuntu Condensed", sans-serif;
 }
 
 .social .fa {
@@ -139,7 +140,7 @@ body {
     padding-right: .5rem;
     text-transform: uppercase;
     letter-spacing: 3px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Ubuntu Condensed', sans-serif;
     color: #000000;
     font-weight: 600;
 }
