@@ -1,0 +1,135 @@
+main {
+    justify-content: flex-start;
+}
+
+main .title-page {
+    padding-top: 6rem;
+    padding-left: 6rem;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    color: #F4AD02;
+    /* font-style: italic; */
+    font-size: 3rem;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    text-decoration: underline #0098E1;
+}
+
+main .sub-title-page {
+    padding-top: 1rem;
+    padding-left: 6rem;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    color: #ffffff;
+    /* font-style: italic; */
+    font-size: 1.8rem;
+    letter-spacing: .4rem;
+    text-transform: uppercase;
+    text-decoration: underline #0098E1;
+}
+
+.topic-page {
+    font-size: 1.5rem;
+    padding: 1rem 6rem;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    /* font-style: italic; */
+    color: #F4AD02;
+}
+
+.topics-name {
+    padding: 0 6rem;
+    font-size: 1.15rem;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    color: #ffffff;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.top-ics {
+    display: flex;
+    padding-left: 5rem;
+    flex-wrap: wrap;
+}
+
+.topic-post {
+    padding: 1rem;
+    width: 450px;
+    height: auto;
+    border: 1.5px solid #0098E1;
+    margin: 1rem;
+    transition: all ease-in .2s;
+    border-radius: 5px;
+}
+
+.title-topic {
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding-bottom: 1rem;
+    letter-spacing: .1rem;
+    font-weight: 500;
+    text-decoration: underline #0098E1;
+}
+
+.date {
+    color: #F4AD02;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    padding-top: .5rem;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+.space {
+    padding: 1.5rem;
+}
+
+.top-ics a {
+    text-decoration: none;
+}
+
+.topic-post:hover {
+    background: #F4AD02;
+    color: #000000;
+    transition: all ease-in .2s;
+}
+
+.topic-post:hover .date,
+.topic-post:hover .title-topic {
+    color: #000022;
+    /* text-decoration: underline #000022; */
+    transition: all ease-in .2s;
+}
+
+@media (max-width: 75rem) {
+    .heading {
+        font-size: 2.5rem;
+        text-align: center;
+        padding: 2rem;
+        padding-top: 5rem;
+        padding-bottom: 0;
+    }
+    main .title-page {
+        padding: 4rem 2rem;
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+    main .sub-title-page {
+        padding: 2rem;
+        text-align: center;
+        padding-bottom: 1rem;
+        font-size: 1.45rem;
+    }
+    .topic-page,
+    .top-ics,
+    .topics-name {
+        padding: 2rem;
+    }
+    .topic-page {
+        padding-bottom: 0;
+    }
+    .topic-post {
+        width: auto;
+        margin: 1rem 0;
+    }
+}
