@@ -136,6 +136,24 @@ main .sub-title-page {
     flex-wrap: wrap;
 }
 
+.icons {
+    display: flex;
+}
+
+.fa-researchgate {
+    color: #F4AD02;
+    font-size: 40px;
+    padding-left: 6rem;
+    padding-bottom: 1rem;
+}
+
+.fas {
+    color: #F4AD02;
+    font-size: 40px;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+}
+
 @media (max-width: 75rem) {
     .heading {
         font-size: 2.5rem;
@@ -169,5 +187,8 @@ main .sub-title-page {
     .skills {
         padding-top: 1rem;
         padding: 2rem;
+    }
+    .fa-researchgate {
+        padding-left: 2rem;
     }
 }
