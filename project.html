@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navid Naf | Official Website</title>
+<meta name="description" content="Academic portfolio showcasing research, publications, projects, and teaching.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@400;500;600;700&family=Asap:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-grid">
+    <a class="brand" href="/" aria-label="Navid Naf - Home">
+      <img src="images/navid black-02.png" alt="Navid Naf" class="brand-logo">
+    </a>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#research-interests">Research</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#awards">Work</a></li>
+        <li><a href="#news">Explore More</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+  </div>
+  <div class="accent-bar" aria-hidden="true"></div>
+</header>
+
+<main id="main" class="site-main">
+  <div class="container">
+    <!-- Project Introduction -->
+    <section class="project-intro">
+      <h2 class="intro-title">📜 Scriptorium</h2>
+      <p class="intro-text">
+        Here you'll find my <span class="highlight-tag">projects</span>, <span class="highlight-tag">experiments</span>, <span class="highlight-tag">favorite tools</span> and plenty of <span class="highlight-tag">hacking goodies</span>, all linked straight to my <span class="highlight-tag">GitHub</span>. I love building <span class="highlight-tag">clean</span>, <span class="highlight-tag">secure</span> and <span class="highlight-tag">high-performance code</span>, whether it's <span class="highlight-tag">Python</span> scripts, <span class="highlight-tag">C/C++</span> projects or <span class="highlight-tag">web security</span> tools.
+      </p>
+      <p class="intro-text">
+        Alongside coding, you'll also discover my <span class="highlight-tag">hacking checklists</span>, <span class="highlight-tag">CTF write-ups</span> and solves, and other fun <span class="highlight-tag">security experiments</span> I do for learning and sharing.
+      </p>
+      <p class="intro-text">
+        I'm especially passionate about <span class="highlight-tag">code sanitization</span> and <span class="highlight-tag">source code analysis</span>, using <span class="highlight-tag">static analysis</span>, <span class="highlight-tag">automated testing</span> and <span class="highlight-tag">security checks</span> to make code safer and smarter. Dive in, explore the repos and see how I mix creativity, hacking and security in every line of code.
+      </p>
+    </section>
+
+    <!-- Action Boxes -->
+    <section class="action-boxes">
+      <div class="action-box">
+        <a href="https://github.com/NavidNaf" target="_blank" rel="noopener noreferrer" class="action-link">
+          <div class="action-icon">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+          </div>
+          <div class="action-content">
+            <h3>View My GitHub Profile</h3>
+            <p>Explore all my projects, repositories, and contributions</p>
+          </div>
+        </a>
+      </div>
+      <div class="action-box">
+        <a href="https://security.navidnaf.com" target="_blank" rel="noopener noreferrer" class="action-link">
+          <div class="action-icon">
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+          </div>
+          <div class="action-content">
+            <h3>See My Pentesting Dark Arts</h3>
+            <p>Discover security tools, CTF write-ups, and hacking experiments</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- What I Use -->
+    <section class="what-i-use">
+      <h2>What I Use</h2>
+      <div class="skills-grid">
+        <div class="skill-tile">
+          <div class="skill-icon"><i class="fa-brands fa-python" aria-hidden="true"></i></div>
+          <div class="skill-title">Python</div>
+        </div>
+        <div class="skill-tile">
+          <div class="skill-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+          <div class="skill-title">C/C++</div>
+        </div>
+        <div class="skill-tile">
+          <div class="skill-icon"><i class="fa-brands fa-js" aria-hidden="true"></i></div>
+          <div class="skill-title">JavaScript</div>
+        </div>
+        <div class="skill-tile">
+          <div class="skill-icon"><i class="fa-solid fa-terminal" aria-hidden="true"></i></div>
+          <div class="skill-title">Bash</div>
+        </div>
+        <div class="skill-tile">
+          <div class="skill-icon"><i class="fa-solid fa-database" aria-hidden="true"></i></div>
+          <div class="skill-title">SQL</div>
+        </div>
+        <div class="skill-tile">
+          <div class="skill-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
+          <div class="skill-title">Assembly</div>
+        </div>
+        <div class="skill-tile">
+          <div class="skill-icon"><i class="fa-brands fa-php" aria-hidden="true"></i></div>
+          <div class="skill-title">PHP</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid" id="projects-container">
+        <!-- Projects will be loaded here dynamically -->
+      </div>
+    </section>
+
+    <!-- GitHub Contributions -->
+    <section class="github-contributions">
+      <h2>GitHub Contribution Graph</h2>
+      <img src="https://ghchart.rshah.org/navidnaf" alt="GitHub contribution graph" class="contribution-graph">
+      <p class="contribution-stats" id="contribution-text">Loading contribution data...</p>
+    </section>
+
+    <!-- Technology Proficiency -->
+    <section class="technology-proficiency">
+      <h2>Technology Proficiency</h2>
+      <div class="tech-content">
+        <div class="tech-logos-grid">
+          <img src="images/technology/ida.png" alt="IDA Pro" class="tech-logo">
+          <img src="images/technology/ghidra.png" alt="Ghidra" class="tech-logo">
+          <img src="images/technology/binary ninja.png" alt="Binary Ninja" class="tech-logo">
+          <img src="images/technology/r2.svg" alt="Radare2" class="tech-logo">
+          <img src="images/technology/objdump.webp" alt="objdump" class="tech-logo">
+          <img src="images/technology/burpsuite.svg" alt="BurpSuite" class="tech-logo">
+          <img src="images/technology/git.png" alt="Git" class="tech-logo">
+        </div>
+        <p class="tech-description">
+        Browser Consoles and other different penetration testing tools and software.
+        </p>
+      </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <p> <span id="year"></span> Navid Naf</p>
+    <nav aria-label="Footer">
+      <a href="#research-interests">Research</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Work</a>
+      <a href="#news">Explore More</a>
+    </nav>
+    <script>
+      // IMMEDIATE TEST - This should appear in console immediately
+      console.log('🎯 JavaScript file loaded at:', new Date().toISOString());
+      console.log('📂 Script location:', document.currentScript?.src || 'inline script');
+
+      // Fetch and display projects from Google Sheets CSV
+      async function loadProjects() {
+        const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSPmoxPCzmPIZGshC4b9wVQDjoadx4SeyVv24qhDf6CPzjwMDLawGRcKgR3gUYbp4gXEKIr6TRshRCN/pub?gid=0&single=true&output=csv';
+        const container = document.getElementById('projects-container');
+
+        console.log('🔍 Starting to load projects from:', csvUrl);
+        console.log('📋 Make sure your Google Sheet is published to web and accessible');
+
+        try {
+          console.log('🌐 Attempting to fetch CSV data...');
+          const response = await fetch(csvUrl, {
+            mode: 'cors',
+            headers: {
+              'Accept': 'text/csv,application/csv,text/plain,*/*'
+            }
+          });
+
+          console.log('📊 Response status:', response.status);
+          console.log('📋 Response type:', response.type);
+          console.log('✅ Response ok:', response.ok);
+
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+          }
+
+          const csvText = await response.text();
+          console.log('📄 CSV text length:', csvText.length);
+          console.log('📝 First 500 characters of CSV:');
+          console.log(csvText.substring(0, 500));
+
+          // Parse CSV with better handling
+          const projects = parseCSV(csvText);
+          console.log('🔍 Parsed projects array length:', projects.length);
+
+          if (projects.length === 0) {
+            throw new Error('CSV appears to be empty or unparseable');
+          }
+
+          const headers = projects[0];
+          console.log('🏷️ CSV Headers:', headers);
+
+          const dataRows = projects.slice(1).filter(row => row.length > 1 && row[0] && row[0].trim());
+          console.log('📋 Data rows after filtering:', dataRows.length);
+          console.log('📊 Sample data row:', dataRows[0]);
+
+          if (dataRows.length === 0) {
+            console.log('⚠️ No valid data rows found - checking CSV format...');
+            container.innerHTML = `
+              <div style="text-align: center; color: var(--gray-500); padding: 2rem;">
+                <p><strong>No valid project data found</strong></p>
+                <p style="font-size: 0.9rem; margin-top: 1rem;">
+                  Expected format: Title | Languages | Description | Repository URL<br>
+                  Example: "My Project" | "Python;JavaScript" | "Project description" | "https://github.com/user/repo"
+                </p>
+              </div>
+            `;
+            return;
+          }
+
+          console.log('🏗️ Creating project tiles for', dataRows.length, 'projects');
+
+          // Create project tiles
+          dataRows.forEach((project, index) => {
+            console.log(`🔨 Creating tile ${index + 1}:`, project);
+            try {
+              const projectTile = createProjectTile(project, headers);
+              container.appendChild(projectTile);
+              console.log(`✅ Tile ${index + 1} created successfully`);
+            } catch (tileError) {
+              console.error(`❌ Error creating tile ${index + 1}:`, tileError, 'Data:', project);
+            }
+          });
+
+          console.log('🎉 Project loading completed successfully!');
+
+        } catch (error) {
+          console.error('💥 Error loading projects:', error);
+          console.error('🔍 Error details:', {
+            message: error.message,
+            stack: error.stack,
+            name: error.name,
+            url: csvUrl
+          });
+
+          // Show detailed error message
+          container.innerHTML = `
+            <div style="text-align: center; color: var(--gray-500); padding: 2rem; background: rgba(255,255,255,0.8); border-radius: 1rem; margin: 1rem;">
+              <h3 style="color: var(--gray-700); margin-bottom: 1rem;">Unable to Load Projects</h3>
+              <p style="margin-bottom: 1rem;"><strong>Error:</strong> ${error.message}</p>
+              <p style="font-size: 0.9rem; margin-bottom: 1rem;">
+                <strong>Possible solutions:</strong><br>
+                • Check if Google Sheet is published to web<br>
+                • Verify the sheet contains data<br>
+                • Ensure correct CSV format
+              </p>
+              <p style="font-size: 0.8rem; color: var(--gray-500);">
+                Check browser console for detailed logs
+              </p>
+            </div>
+          `;
+
+          // Load sample projects as fallback
+          console.log('🔄 Loading sample projects as fallback...');
+          loadSampleProjects();
+        }
+      }
+
+      // Load sample projects as fallback
+      function loadSampleProjects() {
+        const container = document.getElementById('projects-container');
+        const sampleProjects = [
+          {
+            title: 'Python Security Toolkit',
+            languages: ['Python', 'Security'],
+            description: 'A comprehensive security analysis toolkit for vulnerability assessment and penetration testing.',
+            githubUrl: 'https://github.com/navidnaf/security-toolkit'
+          },
+          {
+            title: 'C++ System Monitor',
+            languages: ['C++', 'System'],
+            description: 'Real-time system monitoring application with performance metrics and resource tracking.',
+            githubUrl: 'https://github.com/navidnaf/system-monitor'
+          },
+          {
+            title: 'JavaScript Data Visualizer',
+            languages: ['JavaScript', 'React'],
+            description: 'Interactive data visualization dashboard for analytics and reporting.',
+            githubUrl: 'https://github.com/navidnaf/data-viz'
+          }
+        ];
+
+        sampleProjects.forEach(project => {
+          const tile = document.createElement('div');
+          tile.className = 'project-tile';
+          tile.innerHTML = `
+            <div class="project-header">
+              <h3 class="project-title">${project.title}</h3>
+              <a href="${project.githubUrl}" class="project-github-link" target="_blank" rel="noopener noreferrer" aria-label="View ${project.title} on GitHub">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+              </a>
+            </div>
+            <p class="project-description">${project.description}</p>
+            <div class="project-languages">
+              ${project.languages.map(lang => `<span class="language-tag-small">${lang}</span>`).join('')}
+            </div>
+          `;
+          container.appendChild(tile);
+        });
+      }
+
+      function parseCSV(csvText) {
+        const lines = csvText.split('\n');
+        const result = [];
+
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i].trim();
+          if (line === '') continue; // Skip empty lines
+
+          const row = [];
+          let current = '';
+          let inQuotes = false;
+          let j = 0;
+
+          while (j < line.length) {
+            const char = line[j];
+            const nextChar = line[j + 1];
+
+            if (char === '"') {
+              if (inQuotes && nextChar === '"') {
+                // Escaped quote
+                current += '"';
+                j += 2;
+              } else {
+                // Toggle quote state
+                inQuotes = !inQuotes;
+                j++;
+              }
+            } else if (char === ',' && !inQuotes) {
+              // Field separator
+              row.push(current.trim());
+              current = '';
+              j++;
+            } else {
+              current += char;
+              j++;
+            }
+          }
+
+          // Add the last field
+          row.push(current.trim());
+          result.push(row);
+        }
+
+        return result;
+      }
+
+      function createProjectTile(project, headers) {
+        const tile = document.createElement('div');
+        tile.className = 'project-tile';
+
+        // Extract data from CSV row with corrected column order
+        const title = (project[0] && project[0].trim()) ? project[0].trim() : 'Untitled Project';
+        const languagesText = (project[1] && project[1].trim()) ? project[1].trim() : '';
+        const description = (project[2] && project[2].trim()) ? project[2].trim() : 'No description available';
+        const githubUrl = (project[3] && project[3].trim()) ? project[3].trim() : '#';
+
+        // Split languages by semicolon and filter out empty values
+        const languages = languagesText ? languagesText.split(';').map(lang => lang.trim()).filter(lang => lang.length > 0) : [];
+
+        // Validate GitHub URL format and ensure it's a complete URL
+        const validGithubUrl = githubUrl.startsWith('http') ? githubUrl : (githubUrl.startsWith('github.com') ? `https://${githubUrl}` : '#');
+
+        // Debug logging
+        console.log('Project data:', { title, languages, description, githubUrl });
+
+        tile.innerHTML = `
+          <div class="project-header">
+            <h3 class="project-title">${title}</h3>
+            <a href="${validGithubUrl}" class="project-github-link" target="_blank" rel="noopener noreferrer" aria-label="View ${title} on GitHub">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+          </div>
+          <p class="project-description">${description}</p>
+          <div class="project-languages">
+            ${languages.map(lang => `<span class="language-tag-small">${lang}</span>`).join('')}
+          </div>
+        `;
+
+        return tile;
+      }
+
+      // Load GitHub stats
+      async function loadGitHubStats() {
+        const username = 'navidnaf'; // Replace with your GitHub username
+        const statsText = document.getElementById('contribution-text');
+
+        try {
+          // Fetch GitHub user data
+          const response = await fetch(`https://api.github.com/users/${username}`);
+          const userData = await response.json();
+
+          if (userData && userData.public_repos !== undefined) {
+            const repos = userData.public_repos;
+            const followers = userData.followers || 0;
+            const following = userData.following || 0;
+
+            statsText.innerHTML = `${repos} public repositories • ${followers} followers • ${following} following`;
+          } else {
+            statsText.innerHTML = 'GitHub profile data loaded successfully';
+          }
+        } catch (error) {
+          console.error('Error loading GitHub stats:', error);
+          statsText.innerHTML = 'Active contributor across multiple programming languages and projects';
+        }
+      }
+
+      // Load projects when page loads
+      document.addEventListener('DOMContentLoaded', loadProjects);
+
+      // Load GitHub contribution stats
+      document.addEventListener('DOMContentLoaded', loadGitHubStats);
+
+      // Simple test to verify JavaScript is running
+      console.log('🚀 Project page JavaScript loaded successfully!');
+      console.log('📄 Current URL:', window.location.href);
+      console.log('🕒 Page load time:', new Date().toLocaleTimeString());
+    </script>
+  </div>
+</footer>
+
+<!-- Simple Image Viewer Overlay -->
+<div id="img-viewer" class="img-viewer-overlay" hidden aria-modal="true" role="dialog" aria-label="Image viewer">
+  <button class="img-viewer-close" aria-label="Close">×</button>
+  <img class="img-viewer-img" alt="Full size preview">
+  <div class="img-viewer-backdrop" aria-hidden="true"></div>
+  
+  <!-- Optional: click hint on desktop -->
+  <span class="img-viewer-hint" aria-hidden="true">Click outside or press Esc to close</span>
+  
+  <!-- Blur-free, crisp scaling ensured via CSS; image will never upscale beyond viewport -->
+</div>
+
+<script src="/script.js" defer></script>
+</body>
+</html>
+
+

@@ -1,0 +1,51 @@
+/* Custom Cursor */
+.custom-cursor {
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(250,0,111,0.7);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999;
+    transition: width 0.2s, height 0.2s;
+    will-change: transform;
+}
+
+.custom-cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(250,0,111,1);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 99999;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s;
+}
+
+/* Hover effect */
+.custom-cursor.hover {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(250,0,111,0.1);
+    border-color: rgba(250,0,111,1);
+}
+
+.custom-cursor-dot.hover {
+    transform: translate(-50%, -50%) scale(0.5);
+}
+
+/* Hide default cursor */
+body, a, button, .glass-card, .key-responsibility-tag {
+    cursor: none !important;
+}
+
+/* Make sure cursor is visible */
+.custom-cursor, .custom-cursor-dot {
+    mix-blend-mode: difference;
+}
+
+/* Ensure cursor is always on top */
+.custom-cursor, .custom-cursor-dot {
+    z-index: 99999;
+} 

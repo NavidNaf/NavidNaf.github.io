@@ -1,0 +1,196 @@
+/* Custom Glassmorphism Styles */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200;300;400;500;600;700;800&family=Exo+2:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+.font-bricolage {
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.font-exo {
+    font-family: 'Exo 2', sans-serif;
+}
+
+.glass-container, .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    border: 1px solid rgba(250, 0, 111, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(250, 0, 111, 0.1);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    /* Hover effects removed */
+}
+
+/* Smooth Scroll Behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .text-xl {
+        font-size: 1rem;
+    }
+}
+
+/* Background Particle-like Effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 10% 20%, rgba(250, 0, 111, 0.1) 0%, transparent 70%),
+                radial-gradient(circle at 90% 80%, rgba(250, 0, 111, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Navigation Bar Home Icon Hover Effect */
+nav a {
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: rgb(250, 0, 111);
+    transform: scale(1.1);
+}
+
+/* Contact Me Button Hover Effect */
+.contact-btn {
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: rgba(250, 0, 111, 0.8);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(250, 0, 111, 0.3);
+}
+
+/* Scroll Button Hover Effect */
+#explore-btn {
+    transition: all 0.3s ease;
+}
+
+#explore-btn:hover {
+    background-color: rgba(250, 0, 111, 0.5);
+    /* transform: rotate(360deg); */
+    box-shadow: 0 4px 15px rgba(250, 0, 111, 0.4);
+}
+
+/* Key Responsibilities Tag Design */
+.key-responsibilities-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.key-responsibility-tag {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(250, 0, 111, 0.1);
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    color: white;
+    cursor: default;
+}
+
+.key-responsibility-tag::before {
+    content: '#';
+    color: rgb(250, 0, 111);
+    margin-right: 0.25rem;
+    opacity: 0.7;
+}
+
+.key-responsibility-tag:hover {
+    background-color: rgba(250, 0, 111, 0.1);
+    transform: scale(1.05);
+}
+
+/* Gradient Text Effect for Hero Section Title */
+.hero-section h1 {
+    background: linear-gradient(
+        to right, 
+        rgb(250, 0, 111) 0%, 
+        white 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 5s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Section Icon Colors */
+.icon-professional {
+    color: #3498db; /* Professional blue */
+}
+
+.icon-tech {
+    color: #9b59b6; /* Tech purple */
+}
+
+.icon-security {
+    color: rgb(250, 0, 111); /* Security pink */
+}
+
+.icon-development {
+    color: #1abc9c; /* Development teal */
+}
+
+.icon-infrastructure {
+    color: #e67e22; /* Infrastructure orange */
+}
+
+.icon-data {
+    color: #2980b9; /* Data management deep blue */
+}
+
+.icon-project {
+    color: #9b59b6; /* Project management magenta */
+}
+
+.icon-vulnerability {
+    color: #e74c3c; /* Vulnerability testing red */
+}
+
+.icon-cloud {
+    color: #3498db; /* Cloud security light blue */
+}
+
+.icon-certification {
+    color: #f1c40f; /* Certification gold */
+}
+
+.icon-achievement {
+    color: #2ecc71; /* Achievement emerald green */
+}
+
+.icon-education {
+    color: #8e44ad; /* Education purple */
+}

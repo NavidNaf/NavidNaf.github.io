@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navid Naf | Official Website</title>
+<meta name="description" content="Academic portfolio showcasing research, publications, projects, and teaching.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@400;500;600;700&family=Asap:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container header-grid">
+    <a class="brand" href="/" aria-label="Navid Naf - Home">
+      <img src="images/navid black-02.png" alt="Navid Naf" class="brand-logo">
+    </a>
+    <nav id="site-nav" class="site-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#research-interests">Research</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#awards">Work</a></li>
+        <li><a href="#news">Explore More</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="sr-only">Toggle navigation</span>
+    </button>
+  </div>
+  <div class="accent-bar" aria-hidden="true"></div>
+</header>
+
+<main id="main" class="site-main">
+  <div class="container">
+    <section class="project-intro">
+        <h2 class="intro-title">💬 Conversations</h2>
+        <p class="intro-text">
+          Welcome to Conversations, the space where I share my <span class="highlight-tag">seminars</span>, <span class="highlight-tag">talks</span>, <span class="highlight-tag">presentations</span>, and <span class="highlight-tag">public newsletters</span>. This page brings together my speaking engagements, workshop sessions, and thought pieces, offering a window into the ideas, discussions, and stories I've shared with diverse audiences.
+        </p>
+        <p class="intro-text">
+          Whether it's a deep dive into cybersecurity, a hands-on workshop, or a public newsletter unpacking emerging trends, Conversations captures the highlights of my journey of learning, teaching, and exchanging ideas.
+        </p>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+      <h2>Public Newsletter</h2>
+      <div class="newsletter-grid">
+        <div class="newsletter-item">
+          <a href="https://www.linkedin.com/newsletters/cyber-spectrum-7148921226483150849/" target="_blank" rel="noopener noreferrer" class="newsletter-link">
+            <img src="images/newsletter/cyberspectrum.png" alt="Cyber Spectrum Newsletter" class="newsletter-image">
+            <div class="newsletter-title">Cyber Spectrum</div>
+          </a>
+        </div>
+        <div class="newsletter-item">
+          <a href="https://www.linkedin.com/newsletters/oversight-%E0%A6%93%E0%A6%AD%E0%A6%BE%E0%A6%B0%E0%A6%B8%E0%A6%BE%E0%A6%87%E0%A6%9F-7314673618234363904/" target="_blank" rel="noopener noreferrer" class="newsletter-link">
+            <img src="images/newsletter/oversight.png" alt="Oversight Newsletter" class="newsletter-image">
+            <div class="newsletter-title">Oversight</div>
+          </a>
+        </div>
+        <div class="newsletter-item">
+          <a href="https://www.linkedin.com/newsletters/edgecase-7334958653042475009/" target="_blank" rel="noopener noreferrer" class="newsletter-link">
+            <img src="images/newsletter/edgecase.png" alt="Edgecase Newsletter" class="newsletter-image">
+            <div class="newsletter-title">Edgecase</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Avengers Assemble Section -->
+    <section class="avengers-section">
+      <h2>💥 Avengers Assemble</h2>
+      <div class="avengers-grid" id="avengers-container">
+        <!-- Tiles will be loaded dynamically -->
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <p> <span id="year"></span> Navid Naf</p>
+    <nav aria-label="Footer">
+      <a href="#research-interests">Research</a>
+      <a href="#education">Education</a>
+      <a href="#awards">Work</a>
+      <a href="#news">Explore More</a>
+    </nav>
+    
+  </div>
+</footer>
+
+<!-- Simple Image Viewer Overlay -->
+<div id="img-viewer" class="img-viewer-overlay" hidden aria-modal="true" role="dialog" aria-label="Image viewer">
+  <button class="img-viewer-close" aria-label="Close">×</button>
+  <img class="img-viewer-img" alt="Full size preview">
+  <div class="img-viewer-backdrop" aria-hidden="true"></div>
+
+  <!-- Optional: click hint on desktop -->
+  <span class="img-viewer-hint" aria-hidden="true">Click outside or press Esc to close</span>
+
+  <!-- Blur-free, crisp scaling ensured via CSS; image will never upscale beyond viewport -->
+</div>
+
+<script>
+// Load Avengers Assemble data from Google Sheets CSV
+async function loadAvengersData() {
+  const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSy7KOHp3XydAoFfgDgDgmJWe08EUVDH8e0WssmesMZ0vLDt43mEWcYwnRQuBJIs2HTXP6ZbXzRlVYg/pub?gid=0&single=true&output=csv';
+  const container = document.getElementById('avengers-container');
+
+  console.log('🔍 Starting to load Avengers data from:', csvUrl);
+
+  try {
+    console.log('🌐 Attempting to fetch CSV data...');
+    const response = await fetch(csvUrl, {
+      mode: 'cors',
+      headers: {
+        'Accept': 'text/csv,application/csv,text/plain,*/*'
+      }
+    });
+
+    console.log('📊 Response status:', response.status);
+    console.log('📋 Response type:', response.type);
+    console.log('✅ Response ok:', response.ok);
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+    }
+
+    const csvText = await response.text();
+    console.log('📄 CSV text length:', csvText.length);
+    console.log('📝 First 500 characters of CSV:');
+    console.log(csvText.substring(0, 500));
+
+    // Parse CSV
+    const events = parseAvengersCSV(csvText);
+    console.log('🔍 Parsed events array length:', events.length);
+
+    if (events.length === 0) {
+      throw new Error('CSV appears to be empty or unparseable');
+    }
+
+    const headers = events[0];
+    console.log('🏷️ CSV Headers:', headers);
+
+    const dataRows = events.slice(1).filter(row => row.length > 1 && row[0] && row[0].trim());
+    console.log('📋 Data rows after filtering:', dataRows.length);
+
+    if (dataRows.length === 0) {
+      console.log('⚠️ No valid data rows found');
+      container.innerHTML = `
+        <div style="grid-column: 1 / -1; text-align: center; color: var(--gray-500); padding: 3rem;">
+          <p><strong>No events data found</strong></p>
+          <p style="font-size: 0.9rem; margin-top: 1rem;">
+            Expected format: Type | Topic | Venue | Description | Keywords | Date | Write-up URL | Slides URL | Recording URL
+          </p>
+        </div>
+      `;
+      return;
+    }
+
+    console.log('🏗️ Creating tiles for', dataRows.length, 'events');
+
+    // Create tiles
+    dataRows.forEach((event, index) => {
+      console.log(`🔨 Creating tile ${index + 1}:`, event);
+      try {
+        const tile = createAvengerTile(event, headers);
+        container.appendChild(tile);
+        console.log(`✅ Tile ${index + 1} created successfully`);
+      } catch (tileError) {
+        console.error(`❌ Error creating tile ${index + 1}:`, tileError, 'Data:', event);
+      }
+    });
+
+    console.log('🎉 Avengers data loading completed successfully!');
+
+  } catch (error) {
+    console.error('💥 Error loading Avengers data:', error);
+    console.error('🔍 Error details:', {
+      message: error.message,
+      stack: error.stack,
+      name: error.name,
+      url: csvUrl
+    });
+
+    // Show error message
+    container.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; color: var(--gray-500); padding: 3rem; background: rgba(255,255,255,0.8); border-radius: 1rem; margin: 1rem;">
+        <h3 style="color: var(--gray-700); margin-bottom: 1rem;">Unable to Load Events</h3>
+        <p style="margin-bottom: 1rem;"><strong>Error:</strong> ${error.message}</p>
+        <p style="font-size: 0.9rem; margin-bottom: 1rem;">
+          <strong>Possible solutions:</strong><br>
+          • Check if Google Sheet is published to web<br>
+          • Verify the sheet contains data<br>
+          • Ensure correct CSV format
+        </p>
+        <p style="font-size: 0.8rem; color: var(--gray-500);">
+          Check browser console for detailed logs
+        </p>
+      </div>
+    `;
+  }
+}
+
+function parseAvengersCSV(csvText) {
+  const lines = csvText.split('\n');
+  const result = [];
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (line === '') continue; // Skip empty lines
+
+    const row = [];
+    let current = '';
+    let inQuotes = false;
+    let j = 0;
+
+    while (j < line.length) {
+      const char = line[j];
+      const nextChar = line[j + 1];
+
+      if (char === '"') {
+        if (inQuotes && nextChar === '"') {
+          // Escaped quote
+          current += '"';
+          j += 2;
+        } else {
+          // Toggle quote state
+          inQuotes = !inQuotes;
+          j++;
+        }
+      } else if (char === ',' && !inQuotes) {
+        // Field separator
+        row.push(current.trim());
+        current = '';
+        j++;
+      } else {
+        current += char;
+        j++;
+      }
+    }
+
+    // Add the last field
+    row.push(current.trim());
+    result.push(row);
+  }
+
+  return result;
+}
+
+function createAvengerTile(event, headers) {
+  const tile = document.createElement('div');
+  tile.className = 'avenger-tile';
+
+  // Extract data from CSV row
+  const type = (event[0] && event[0].trim()) ? event[0].trim() : '';
+  const topic = (event[1] && event[1].trim()) ? event[1].trim() : '';
+  const venue = (event[2] && event[2].trim()) ? event[2].trim() : '';
+  const description = (event[3] && event[3].trim()) ? event[3].trim() : '';
+  const keywordsText = (event[4] && event[4].trim()) ? event[4].trim() : '';
+  const date = (event[5] && event[5].trim()) ? event[5].trim() : '';
+  const writeupUrl = (event[6] && event[6].trim()) ? event[6].trim() : '';
+  const slidesUrl = (event[7] && event[7].trim()) ? event[7].trim() : '';
+  const recordingUrl = (event[8] && event[8].trim()) ? event[8].trim() : '';
+
+  // Split keywords by semicolon
+  const keywords = keywordsText ? keywordsText.split(';').map(kw => kw.trim()).filter(kw => kw.length > 0) : [];
+
+  tile.innerHTML = `
+    <div class="avenger-header">
+      <div class="avenger-type">${type}</div>
+      <h3 class="avenger-topic">${topic}</h3>
+      <div class="avenger-venue">${venue}</div>
+      <div class="avenger-date">${date}</div>
+    </div>
+    <div class="avenger-body">
+      <div class="avenger-description">${description}</div>
+      ${keywords.length > 0 ? `<div class="keywords-container">${keywords.map(kw => `<span class="keyword-tag">${kw}</span>`).join('')}</div>` : ''}
+      <div class="links-container">
+        ${writeupUrl ? `<a href="${writeupUrl}" target="_blank" rel="noopener noreferrer" class="link-item">
+          <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+          Write-up
+        </a>` : ''}
+        ${slidesUrl ? `<a href="${slidesUrl}" target="_blank" rel="noopener noreferrer" class="link-item">
+          <i class="fa-solid fa-file-powerpoint" aria-hidden="true"></i>
+          Slides
+        </a>` : ''}
+        ${recordingUrl ? `<a href="${recordingUrl}" target="_blank" rel="noopener noreferrer" class="link-item">
+          <i class="fa-solid fa-video" aria-hidden="true"></i>
+          Recording
+        </a>` : ''}
+      </div>
+    </div>
+  `;
+
+  return tile;
+}
+
+// Load Avengers data when page loads
+document.addEventListener('DOMContentLoaded', loadAvengersData);
+
+// Simple test to verify JavaScript is running
+console.log('🚀 Seminars page JavaScript loaded successfully!');
+console.log('📄 Current URL:', window.location.href);
+console.log('🕒 Page load time:', new Date().toLocaleTimeString());
+</script>
+
+<script src="/script.js" defer></script>
+</body>
+</html>
+
+

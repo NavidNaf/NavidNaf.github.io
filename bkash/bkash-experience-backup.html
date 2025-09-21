@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cybersecurity Journey @ bKash</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'bricolage': ['Bricolage Grotesque', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="bk-exp.css">
+</head>
+<body class="text-white min-h-screen flex flex-col font-bricolage bg-black">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-black bg-opacity-50 backdrop-blur-lg border-b border-[rgba(250,0,111,0.2)] shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex items-center relative">
+            <div class="flex items-center space-x-4">
+                <a href="https://navidnaf.com" class="text-white bg-opacity-20 p-2 rounded-full">
+                    <i class="fas fa-house-user text-xl bg-[rgba(250,0,111,0.2)] p-2 rounded-full"></i>
+                </a>
+                <div class="flex items-center space-x-2">
+                    <img src="image/navid-02.png" alt="Navid Fazle Rabbi" class="w-10 h-10 object-contain">
+                    <i class="fas fa-times text-xl text-white opacity-70"></i>
+                    <img src="image/bk-icon.png" alt="bKash Icon" class="w-10 h-10 object-contain">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section relative flex flex-col items-center justify-center min-h-screen text-center py-20 px-4">
+        <div class="absolute inset-0 bg-gradient-to-br from-[rgba(250,0,111,0.1)] to-[rgba(0,0,0,0.2)] opacity-50"></div>
+        <div class="relative z-10 flex flex-col items-center">
+            <div class="flex items-center justify-center space-x-8 mb-8">
+                <img src="image/navid-02.png" alt="Navid Fazle Rabbi" class="w-32 h-32 object-contain">
+                <i class="fas fa-times text-3xl text-white opacity-70"></i>
+                <img src="image/bk-icon.png" alt="bKash Icon" class="w-32 h-32 object-contain">
+            </div>
+            <h1 class="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[rgb(250,0,111)] to-white flex items-center justify-center gap-3">
+                My Cybersecurity Journey 
+                <i class="fas fa-at text-3xl" style="color: rgb(250,0,111);"></i> 
+                bKash
+            </h1>
+            <p class="text-xl text-white opacity-80 max-w-2xl mx-auto mb-8">
+                Navigating the complex landscape of cybersecurity with innovation, precision, and unwavering commitment.
+            </p>
+            <div class="flex space-x-4">
+                <a href="#main-section" class="px-6 py-3 bg-[rgb(250,0,111)] text-white rounded-lg hover:bg-opacity-90 transition duration-300">
+                    Explore Journey
+                </a>
+                <a href="https://navidnaf.com/contact.html" class="px-6 py-3 border border-white text-white rounded-lg hover:bg-white hover:text-black transition duration-300">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Section -->
+    <main id="main-section" class="container mx-auto px-4 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+            <!-- Security Responsibility -->
+            <div class="glass-card p-6 rounded-2xl bg-opacity-20 backdrop-blur-lg col-span-1 md:col-span-3 border border-[rgba(250,0,111,0.3)] bg-[rgba(255,255,255,0.05)]">
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-[rgba(250,0,111,0.1)] p-3 rounded-full mr-4">
+                            <i class="fas fa-shield-alt text-[rgba(250,0,111,0.7)] text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-[rgb(250,0,111)]">Security Responsibility</h2>
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- Rest of the content remains the same -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Identified Vulnerabilities -->
+            <div class="glass-card p-6 rounded-2xl bg-opacity-20 backdrop-blur-lg col-span-1 md:col-span-5 border border-[rgba(255,71,87,0.3)] bg-[rgba(255,255,255,0.05)] relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-[rgba(255,71,87,0.1)] p-3 rounded-full mr-4">
+                            <i class="fas fa-bug text-[rgba(255,71,87,0.7)] text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-[rgb(255,71,87)]">Identified Vulnerabilities</h2>
+                    </div>
+                    <div class="grid md:grid-cols-4 gap-4">
+                        <div class="bg-[rgba(255,255,255,0.05)] backdrop-blur-md rounded-xl p-4 border border-[rgba(255,71,87,0.2)] relative overflow-hidden group transition-all duration-300 hover:border-[rgba(255,71,87,0.5)] hover:shadow-lg">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-[rgba(255,71,87,0.2)] rounded-lg flex items-center justify-center mr-2 transform transition-transform duration-300 group-hover:rotate-6">
+                                    <i class="fas fa-upload text-[rgba(255,71,87,0.8)] text-lg"></i>
+                                </div>
+                                <h3 class="text-sm font-bold text-white transition-colors duration-300 group-hover:text-[rgba(255,71,87,1)]">
+                                    File Upload Vulnerability
+                                </h3>
+                            </div>
+                            <p class="text-xs text-white opacity-70 mb-2 max-w-[220px]">
+                                Risks associated with unrestricted file uploads that can lead to remote code execution.
+                            </p>
+                        </div>
+                        <!-- Add other vulnerability cards here -->
+                    </div>
+                </div>
+                
+                <!-- Animated Background -->
+                <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+                    <div class="absolute w-72 h-72 bg-[rgba(255,71,87,0.05)] rounded-full top-[-30%] left-[-20%] blur-xl transform rotate-45"></div>
+                    <div class="absolute w-56 h-56 bg-[rgba(255,71,87,0.05)] rounded-full bottom-[-30%] right-[-20%] blur-xl transform -rotate-45"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-opacity-10 backdrop-blur-lg text-white py-8">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <p class="text-sm text-gray-300"> 2024 Navid Fazle Rabbi</p>
+            <a href="https://navidnaf.com" class="text-white">
+                <i class="fas fa-home text-2xl"></i>
+            </a>
+        </div>
+    </footer>
+
+    <script src="bk-exp.js"></script>
+</body>
+</html>
