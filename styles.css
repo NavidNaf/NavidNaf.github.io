@@ -202,11 +202,6 @@
   text-decoration: none;
   transition: all 0.2s ease;
 }
-.highlight-tag:hover {
-  background: var(--carolina-blue-dark, #5a9bd4);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(75,156,211,.3);
-}
 
 /* Project Introduction */
 .project-intro {
@@ -713,10 +708,6 @@ a:hover { text-decoration: underline; }
   border-radius: 4px;
   transition: background 0.2s ease;
 }
-
-.highlight-tag:hover {
-  background: rgba(255, 215, 0, 0.2);
-}
 .portrait-left {
   flex-shrink: 0;
   text-align: center;
@@ -724,8 +715,7 @@ a:hover { text-decoration: underline; }
 .portrait-figure img { 
   width: 160px; 
   height: 160px; 
-  object-fit: cover; 
-  border-radius: 50%;
+  object-fit: contain; 
   margin-bottom: 1rem;
 }
 .name-title { 
