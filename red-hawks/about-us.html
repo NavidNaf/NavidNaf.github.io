@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | RedHawks Cyber Research</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+     <!-- Favicon -->
+     <link rel="icon" type="image/png" href="images/favicon.png">
+    
+     <!-- Meta Image for Social Sharing -->
+     <meta property="og:image" content="images/meta-bg.png">
+     <meta name="twitter:image" content="images/meta-bg.png">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-gray-200 font-quicksand">
+    <header class="fixed top-0 left-0 w-full z-50">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="glassmorphic-nav bg-black/30 backdrop-blur-lg rounded-2xl border border-red-900/20 shadow-lg">
+                <div class="flex items-center justify-between px-4 py-3 relative">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <a href="https://red-hawks.com" target="_blank">
+                            <img src="images/logo-rw.png" alt="RedHawks Logo" class="h-10 md:h-12 w-auto pointer-events-none">
+                        </a>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex space-x-6">
+                        <a href="open-source-project.html" class="text-gray-300 hover:text-red-500 transition-colors relative group">
+                            Open Research
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                transform origin-left scale-x-0 group-hover:scale-x-100 
+                                transition-transform duration-300"></span>
+                        </a>
+                        <a href="closed-project.html" class="text-gray-300 hover:text-red-500 transition-colors relative group">
+                            Closed Research
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                transform origin-left scale-x-0 group-hover:scale-x-100 
+                                transition-transform duration-300"></span>
+                        </a>
+                        <a href="about-us.html" class="text-gray-300 hover:text-red-500 transition-colors relative group">
+                            About Us
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                transform origin-left scale-x-0 group-hover:scale-x-100 
+                                transition-transform duration-300"></span>
+                        </a>
+                        <a href="mailto:hello@red-hawks.com" class="text-gray-300 hover:text-red-500 transition-colors relative group">
+                            Contact
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                transform origin-left scale-x-0 group-hover:scale-x-100 
+                                transition-transform duration-300"></span>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Hamburger Menu -->
+                    <button id="mobile-menu-toggle" class="md:hidden z-50 relative group">
+                        <div class="space-y-1.5 transform transition-all duration-500 ease-in-out">
+                            <div class="w-8 h-0.5 bg-red-500 transform transition-all duration-500 ease-in-out origin-center 
+                                group-[.active]:rotate-45 group-[.active]:translate-y-2.5"></div>
+                            <div class="w-8 h-0.5 bg-red-500 transform transition-all duration-500 ease-in-out 
+                                group-[.active]:opacity-0 group-[.active]:scale-x-0"></div>
+                            <div class="w-8 h-0.5 bg-red-500 transform transition-all duration-500 ease-in-out origin-center 
+                                group-[.active]:-rotate-45 group-[.active]:-translate-y-2.5"></div>
+                        </div>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Menu Overlay -->
+            <div id="mobile-menu" class="fixed inset-0 z-40 bg-black/95 
+                transition-all duration-500 ease-in-out opacity-0 invisible 
+                data-[visible=true]:opacity-100 data-[visible=true]:visible
+                flex items-center justify-center">
+                <div class="container mx-auto px-4 max-w-md w-full
+                    transform transition-all duration-500 ease-in-out scale-95 
+                    data-[visible=true]:scale-100">
+                    <ul class="flex flex-col items-center space-y-8 text-center">
+                        <li class="w-full transform transition-all duration-500 
+                            opacity-0 translate-y-4
+                            data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 
+                            delay-100">
+                            <a href="open-source-project.html" class="text-gray-200 hover:text-red-500 text-3xl font-bold block py-4 
+                                relative overflow-hidden">
+                                <span class="relative z-10">Open Research</span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                    transform origin-left scale-x-0 group-hover:scale-x-100 
+                                    transition-transform duration-300"></span>
+                            </a>
+                        </li>
+                        <li class="w-full transform transition-all duration-500 
+                            opacity-0 translate-y-4
+                            data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 
+                            delay-200">
+                            <a href="closed-project.html" class="text-gray-200 hover:text-red-500 text-3xl font-bold block py-4 
+                                relative overflow-hidden">
+                                <span class="relative z-10">Closed Research</span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                    transform origin-left scale-x-0 group-hover:scale-x-100 
+                                    transition-transform duration-300"></span>
+                            </a>
+                        </li>
+                        <li class="w-full transform transition-all duration-500 
+                            opacity-0 translate-y-4
+                            data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 
+                            delay-300">
+                            <a href="about-us.html" class="text-gray-200 hover:text-red-500 text-3xl font-bold block py-4 
+                                relative overflow-hidden">
+                                <span class="relative z-10">About Us</span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                    transform origin-left scale-x-0 group-hover:scale-x-100 
+                                    transition-transform duration-300"></span>
+                            </a>
+                        </li>
+                        <li class="w-full transform transition-all duration-500 
+                            opacity-0 translate-y-4
+                            data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 
+                            delay-400">
+                            <a href="mailto:hello@red-hawks.com" class="text-gray-200 hover:text-red-500 text-3xl font-bold block py-4 
+                                relative overflow-hidden">
+                                <span class="relative z-10">Contact</span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                    transform origin-left scale-x-0 group-hover:scale-x-100 
+                                    transition-transform duration-300"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 mt-36 mb-12">
+        <div class="relative">
+            <div class="absolute inset-0 bg-cover bg-center opacity-20 z-0" 
+                 style="background-image: url('images/bg-2.jpg');">
+            </div>
+            
+            <div class="relative z-10 bg-black/40 backdrop-blur-lg rounded-3xl p-12 md:p-16 border border-red-900/20 shadow-2xl">
+                <div class="max-w-4xl mx-auto space-y-10 text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold text-red-500 mb-10">
+                        About Us
+                    </h1>
+                    
+                    <div class="space-y-8 text-gray-300 leading-relaxed text-base md:text-lg">
+                        <p>
+                            At RedHawks Cyber Research, we are driven by a passion for innovation and a relentless pursuit of excellence in cybersecurity. Our research endeavors thrive on the relentless pursuit of knowledge, constantly pushing the boundaries of what is possible to safeguard our interconnected world. By fostering a culture of curiosity, collaboration, and continuous improvement, we strive to empower individuals and organizations with the tools and insights needed to navigate the complexities of the digital landscape securely.
+                        </p>
+                        
+                        <p>
+                            As pioneers in the field, we recognize the critical importance of staying ahead of emerging threats and trends. Through our dedication to pioneering research and open collaboration, we endeavor to shape the future of cybersecurity, creating a safer, more resilient digital world for generations to come.
+                        </p>
+                        
+                        <div class="mt-10">
+                            <p class="text-red-300 font-semibold bg-red-900/10 px-6 py-3 rounded-xl inline-block">
+                                Join us in our mission to pioneer cybersecurity solutions and make a lasting impact on the security of cyberspace.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Vision and Mission Grid -->
+    <section class="container mx-auto px-4 mb-12">
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-black/30 backdrop-blur-lg border border-red-900/20 
+                rounded-3xl p-8 space-y-6">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="w-16 h-16 bg-red-900/20 rounded-full 
+                        flex items-center justify-center">
+                        <i class="fas fa-eye text-red-500 text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-red-500">
+                        Our Vision
+                    </h2>
+                </div>
+                
+                <p class="text-gray-300 leading-relaxed">
+                    Our vision at RedHawks Cyber Research is to lead the charge in revolutionizing cybersecurity, envisioning a world where digital landscapes are fortified against evolving threats, and where individuals and organizations can navigate cyberspace with confidence and security.
+                </p>
+            </div>
+            
+            <div class="bg-black/30 backdrop-blur-lg border border-red-900/20 
+                rounded-3xl p-8 space-y-6">
+                <div class="flex items-center space-x-4 mb-6">
+                    <div class="w-16 h-16 bg-red-900/20 rounded-full 
+                        flex items-center justify-center">
+                        <i class="fas fa-bullseye text-red-500 text-2xl"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold text-red-500">
+                        Our Mission
+                    </h2>
+                </div>
+                
+                <p class="text-gray-300 leading-relaxed">
+                    Our mission is to cultivate a dynamic community committed to forging resilient solutions to the challenges of cyberspace. Through innovative research and open collaboration, we aim to pioneer new frontiers in cybersecurity, continuously pushing the boundaries of knowledge and technology to anticipate and mitigate emerging threats.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members Section -->
+    <section class="container mx-auto px-4 mb-12">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold text-red-500 mb-4">Équipe des RedHawks</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto text-base">
+                Our dedicated team of researchers driving innovation in cybersecurity
+            </p>
+        </div>
+
+        <div class="flex justify-center">
+            <div class="bg-black/20 backdrop-blur-lg border border-red-900/10 rounded-3xl p-8 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8 max-w-4xl w-full">
+                <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-red-500 flex-shrink-0">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQEvr7fsVGynlg/profile-displayphoto-shrink_800_800/B56ZQdqXOWHQAc-/0/1735664432673?e=1745452800&v=beta&t=aAvdaJ1McHsYdeQhsErTIKjYjL5_rn0cDQ0gFYEoFlk" alt="Navid Fazle Rabbi" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center md:text-left flex-grow">
+                    <h3 class="text-2xl font-bold text-red-400 mb-1">Navid Fazle Rabbi</h3>
+                    <p class="text-gray-300 mb-4 text-sm italic">Lead Researcher</p>
+                    
+                    <div class="mb-4">
+                        <h4 class="text-red-300 font-semibold text-base mb-2">Professional Experience</h4>
+                        <div class="text-gray-300 text-sm border border-red-900/30 px-4 py-2 inline-block">
+                            <p>Security @ Optimizely & bKash</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-red-300 font-semibold text-base mb-2">Education</h4>
+                        <div class="text-gray-300 text-sm space-y-2">
+                            <div class="border border-red-900/30 px-4 py-2 inline-block mr-2">PhD, University of North Carolina at Chapel Hill</div>
+                            <div class="border border-red-900/30 px-4 py-2 inline-block">B.Sc. Engg. (EEE), Islamic University of Technology</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Grid Section -->
+    <section class="container mx-auto px-4 mb-12">
+        <div id="team-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Team members will be dynamically populated here -->
+        </div>
+    </section>
+
+    <script>
+        // Fetch team members from JSON
+        async function loadTeamMembers() {
+            try {
+                const response = await fetch('team-members.json');
+                const data = await response.json();
+                const teamGrid = document.getElementById('team-grid');
+                
+                data.team_members.forEach(member => {
+                    const card = document.createElement('div');
+                    card.className = 'bg-black/20 backdrop-blur-lg border border-red-900/10 rounded-3xl p-6 flex flex-col items-center space-y-4';
+                    
+                    card.innerHTML = `
+                        <div class="w-40 h-40 rounded-full overflow-hidden border-2 border-red-500 flex-shrink-0">
+                            <img src="${member.profileImage}" alt="${member.name}" class="w-full h-full object-cover">
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-xl font-semibold text-red-400 mb-1">${member.name}</h3>
+                            <p class="text-gray-300 text-xs mb-3">${member.role}</p>
+                            
+                            <div class="w-full text-left space-y-3">
+                                <div>
+                                    <h4 class="text-red-300 font-medium text-sm mb-1">Education</h4>
+                                    <div class="text-gray-300 text-xs space-y-1">
+                                        ${member.education.map(edu => `<p>${edu}</p>`).join('') || '<p>No education details</p>'}
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="text-red-300 font-medium text-sm mb-1">Experience</h4>
+                                    <div class="text-gray-300 text-xs space-y-1">
+                                        ${member.experience.map(exp => `<p>${exp}</p>`).join('') || '<p>No experience details</p>'}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    teamGrid.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error loading team members:', error);
+            }
+        }
+
+        // Load team members when DOM is ready
+        document.addEventListener('DOMContentLoaded', loadTeamMembers);
+    </script>
+
+      <!-- Unique Section Divider -->
+      <div class="relative w-full py-8">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-red-900/30 to-transparent"></div>
+        </div>
+    </div>
+    <footer class="bg-black/30 backdrop-blur-lg border-t border-red-900/20 py-12">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 items-center">
+            <div class="space-y-6">
+                <div class="flex items-center space-x-3">
+                    <a href="https://red-hawks.com" target="_blank">
+                        <img src="images/logo-rw.png" alt="RedHawks Logo" class="h-12 w-auto">
+                    </a>
+                </div>
+                <p class="text-base text-gray-400 leading-relaxed">
+                    A cutting-edge Cyber Security Research Lab dedicated to uncovering and mitigating advanced digital threats through innovative research and responsible disclosure.
+                </p>
+            </div>
+            <div>
+            
+            </div>
+            <div class="space-y-6">
+                <h3 class="text-xl font-semibold text-red-500 mb-4">Connect With Us</h3>
+                <div class="inline-block space-y-4 text-left">
+                    <a href="https://github.com/RedHawksCyberResearch" class="flex items-center space-x-3 text-gray-400 hover:text-red-300 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                        <span>github/RedHawksCyberResearch</span>
+                    </a>
+                    <a href="https://www.linkedin.com/company/RedHawksCyberResearch" class="flex items-center space-x-3 text-gray-400 hover:text-red-300 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                        <span>LinkedIn/RedHawksCyberResearch</span>
+                    </a>
+                    <a href="https://www.facebook.com/RedHawksCyberResearch" class="flex items-center space-x-3 text-gray-400 hover:text-red-300 transition-colors">
+                        <i class="fab fa-facebook text-2xl"></i>
+                        <span>facebook/RedHawksCyberResearch</span>
+                    </a>
+                    <a href="mailto:hello@red-hawks.com" class="flex items-center space-x-3 text-gray-400 hover:text-red-300 transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                        <span>email/hello@red-hawks.com</span>
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <p class="text-xs text-gray-500 inline-block">
+                        &copy; 2025 RedHawks Cyber Security Research Lab. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuItems = mobileMenu.querySelectorAll('li');
+
+            // Toggle menu
+            mobileMenuToggle.addEventListener('click', function() {
+                const isMenuVisible = mobileMenu.getAttribute('data-visible') === 'true';
+                
+                // Toggle menu visibility
+                mobileMenu.setAttribute('data-visible', !isMenuVisible);
+                
+                // Toggle menu items visibility
+                mobileMenuItems.forEach((item, index) => {
+                    item.setAttribute('data-visible', !isMenuVisible);
+                });
+                
+                // Toggle hamburger animation
+                mobileMenuToggle.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            mobileMenu.addEventListener('click', function(event) {
+                if (event.target === mobileMenu) {
+                    mobileMenu.setAttribute('data-visible', 'false');
+                    
+                    // Hide menu items
+                    mobileMenuItems.forEach(item => {
+                        item.setAttribute('data-visible', 'false');
+                    });
+                    
+                    mobileMenuToggle.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

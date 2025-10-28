@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Redirect requests for *.html to the same URL without .html
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9} \S+\.html [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+# Internally rewrite URLs without .html to actual .html files
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+

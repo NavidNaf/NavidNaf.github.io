@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security Consultation | Navid Naf</title>
+  <meta name="description" content="Enterprise-grade cybersecurity consulting services: pentesting, audits, compliance, incident response, training, and architecture review.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@400;500;600;700&family=Asap:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* Page-scoped helpers to avoid touching global CSS */
+    .consult-hero {
+      padding: 4rem 1rem 3rem;
+      background: radial-gradient(1200px 500px at 75% 20%, rgba(75,156,211,.10), transparent 60%);
+      text-align: center;
+    }
+    .consult-badge { display:inline-block; padding:.35rem .7rem; border:1px solid rgba(75,156,211,.25); border-radius:999px; color:var(--carolina-blue); font-weight:600; background: rgba(75,156,211,.06); }
+    .consult-hero h1 { font-size: clamp(2rem, 5vw, 3.25rem); margin:.75rem 0 .5rem; letter-spacing:-.02em; }
+    .consult-hero .brand-accent { color: var(--carolina-blue); }
+    .consult-hero p { color: var(--gray-600); max-width: 780px; margin: 0.75rem auto 1.25rem; }
+    .btn { display:inline-flex; align-items:center; gap:.5rem; padding:.65rem 1rem; border-radius:.55rem; font-weight:700; border:1px solid transparent; background: var(--carolina-blue); color:#fff; text-decoration:none; box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+    .btn:hover { text-decoration:none; filter: brightness(.98); }
+    .btn-outline { background: #fff; color: var(--black); border-color: var(--gray-200); }
+    .trust-row { display:flex; gap:1.25rem; justify-content:center; flex-wrap:wrap; margin-top:1.25rem; color: var(--gray-600); font-size:.95rem; }
+    .trust-row span { display:inline-flex; align-items:center; gap:.5rem; }
+
+    .services { text-align:center; padding: 2rem 0; }
+    .services h2 { font-size: clamp(1.6rem, 3.2vw, 2.25rem); margin: 0 0 .25rem; }
+    .services .muted { color: var(--gray-600); margin-bottom: 1.5rem; }
+    .service-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .service-card { display:grid; grid-template-columns: 56px 1fr; gap:.9rem; padding:1rem; border:1px solid var(--gray-200); border-radius:.6rem; background:#fff; box-shadow: 0 2px 8px rgba(0,0,0,.04); text-align:left; }
+    .service-ico { width:56px; height:56px; border-radius:.75rem; background: rgba(75,156,211,.10); color: var(--carolina-blue); display:grid; place-items:center; font-size:1.25rem; }
+    .service-title { font-weight:700; margin:.15rem 0 .35rem; }
+    .service-desc { color: var(--gray-600); font-size:.95rem; }
+
+    .expert { display:grid; grid-template-columns: 1.25fr .75fr; gap:2rem; align-items:start; padding: 2rem 0; }
+    .expert h3 { font-size: clamp(1.4rem, 2.8vw, 2rem); margin: 0 0 .5rem; }
+    .expert .chips { display:flex; gap:.5rem; flex-wrap:wrap; margin-top:1rem; }
+    .stats-grid { display:grid; grid-template-columns: 1fr 1fr; gap:1rem; }
+    .stat-card { padding:1rem; border:1px solid var(--gray-200); border-radius:.6rem; background: linear-gradient(180deg, rgba(248,250,252,.9), #fff); display:grid; gap:.35rem; }
+    .stat-top { display:flex; align-items:center; gap:.6rem; color: var(--carolina-blue); font-weight:700; }
+    .stat-metric { font-size:1.4rem; font-weight:800; }
+    @media (max-width: 900px) { .service-grid { grid-template-columns: 1fr 1fr; } .expert { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .service-grid { grid-template-columns: 1fr; } }
+
+    .contact { padding:2rem 0 3rem; }
+    .contact h2 { text-align:center; font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin: 0 0 .25rem; }
+    .contact .muted { text-align:center; color: var(--gray-600); margin-bottom:1.5rem; }
+    .contact-grid { display:grid; grid-template-columns: 1fr; gap:1.5rem; }
+    .info-card { display:grid; grid-template-columns: 52px 1fr; gap:.75rem; padding:1rem; border:1px solid var(--gray-200); border-radius:.6rem; background:#fff; }
+    .info-ico { width:52px; height:52px; border-radius:.75rem; background: rgba(75,156,211,.10); color: var(--carolina-blue); display:grid; place-items:center; font-size:1.1rem; }
+    .form-card { border:1px solid var(--gray-200); border-radius:.6rem; background:#fff; box-shadow: 0 6px 16px rgba(0,0,0,.06); padding: 1rem; }
+    .form-row { display:grid; grid-template-columns: 1fr 1fr; gap:.75rem; }
+    .form-row-1 { display:grid; grid-template-columns: 1fr; gap:.75rem; }
+    .form-card label { font-weight:600; font-size:.9rem; }
+    .form-card input, .form-card select, .form-card textarea { width:100%; padding:.65rem .7rem; border:1px solid var(--gray-200); border-radius:.5rem; font: inherit; }
+    .form-card textarea { min-height: 140px; resize: vertical; }
+    .form-actions { margin-top:.75rem; }
+    .btn-block { width:100%; justify-content:center; }
+    /* Page padding increase on larger screens */
+    @media (min-width: 900px) { .container { padding-left: 2rem; padding-right: 2rem; } }
+    /* Contact info in a single row */
+    .info-col { display:grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    @media (max-width: 640px) { .info-col { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } .form-row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-grid">
+      <a class="brand" href="/" aria-label="Navid Naf - Home">
+        <img src="images/navid black-02.png" alt="Navid Naf" class="brand-logo">
+      </a>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+    </div>
+    <div class="accent-bar" aria-hidden="true"></div>
+  </header>
+
+  <main id="main" class="site-main">
+    <div class="container">
+
+      <!-- Hero -->
+      <section class="consult-hero section" aria-labelledby="hero-title">
+        <span class="consult-badge">🛡️ Elite Cybersecurity Services</span>
+        <h1 id="hero-title">Secure Your <span class="brand-accent">Digital Future</span></h1>
+        <p>Enterprise-grade cybersecurity consulting to protect your business from evolving threats. We identify vulnerabilities before attackers do.</p>
+        <div style="display:flex; gap:.6rem; justify-content:center; margin-top:1rem; flex-wrap:wrap">
+          <a class="btn" href="#contact">Get Free Consultation ➜</a>
+          <a class="btn btn-outline" href="#services">View Services</a>
+        </div>
+        <div class="trust-row" aria-label="Trust badges">
+          <span>🏅 Industry Certified</span>
+          <span>⏱️ 6+ Years Experience</span>
+          <span>✅ 500+ Projects Completed</span>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="services section" aria-labelledby="services-title">
+        <h2 id="services-title">Comprehensive Security <span class="brand-accent">Solutions</span></h2>
+        <p class="muted">Enterprise-grade cybersecurity services tailored to your business needs</p>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-ico">🔎</div>
+            <div>
+              <div class="service-title">Penetration Testing</div>
+              <div class="service-desc">Comprehensive security assessments that simulate real-world attacks to identify vulnerabilities before malicious actors do.</div>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-ico">✅</div>
+            <div>
+              <div class="service-title">Security Audits</div>
+              <div class="service-desc">In-depth analysis of your security posture, policies, and infrastructure to ensure compliance and identify defense gaps.</div>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-ico">🛡️</div>
+            <div>
+              <div class="service-title">Compliance Consulting</div>
+              <div class="service-desc">Guidance to achieve and maintain compliance with GDPR, HIPAA, PCI-DSS, ISO 27001, and other frameworks.</div>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-ico">⚠️</div>
+            <div>
+              <div class="service-title">Incident Response</div>
+              <div class="service-desc">24/7 rapid response to security breaches. We contain threats, recover systems, and implement measures to prevent recurrence.</div>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-ico">🎓</div>
+            <div>
+              <div class="service-title">Security Training</div>
+              <div class="service-desc">Customized training programs for teams covering security awareness, phishing prevention, and best practices.</div>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-ico">🧩</div>
+            <div>
+              <div class="service-title">Architecture Review</div>
+              <div class="service-desc">Strategic evaluation of IT and cloud architecture to design security from the ground up.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Expertise -->
+      <section id="expertise" class="expert section" aria-labelledby="expert-title">
+        <div>
+          <h3 id="expert-title">Trusted Security <span class="brand-accent">Expert</span></h3>
+          <p>With over a decade of experience in cybersecurity, I specialize in protecting businesses from sophisticated cyber threats. My approach combines technical expertise with strategic thinking to deliver comprehensive security solutions.</p>
+          <p>I hold multiple industry certifications including CISSP, CEH, and OSCP, and have successfully secured hundreds of organizations. Every engagement is customized to your needs, risks, and goals.</p>
+          <!-- <div class="chips">
+            <span class="highlight-tag">CISSP Certified</span>
+            <span class="highlight-tag">CEH Certified</span>
+            <span class="highlight-tag">OSCP Certified</span>
+          </div> -->
+        </div>
+        <div class="stats-grid" aria-label="Key stats">
+          <div class="stat-card">
+            <div class="stat-top">🛡️<span>Projects Protected</span></div>
+            <div class="stat-metric"><span class="counter" data-target="500" data-suffix="+">0</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-top">🏆<span>Certifications</span></div>
+            <div class="stat-metric"><span class="counter" data-target="6" data-suffix="+">0</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-top">🎯<span>Threat Analysis</span></div>
+            <div class="stat-metric"><span class="counter" data-target="100" data-suffix="%">0</span></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-top">⏱️<span>Years Experience</span></div>
+            <div class="stat-metric"><span class="counter" data-target="6" data-suffix="+">0</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="contact section" aria-labelledby="contact-title">
+        <h2 id="contact-title">Let's Secure Your <span class="brand-accent">Business Together</span></h2>
+        <p class="muted">Get a free consultation to assess your security needs</p>
+        <div class="contact-grid">
+          <div class="form-card" role="region" aria-label="Consultation form">
+            <iframe src="https://docs.google.com/forms/d/1ImSxPWcXI3WtiXld5jZvnGQMOTrerUmyeynRT9Kz9BU/viewform?embedded=true" width="100%" height="1100" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+          </div>
+          <div class="info-col">
+            <div class="info-card" aria-label="Email">
+              <div class="info-ico">📧</div>
+              <div>
+                <strong>Email</strong>
+                <div>sth (at) sth (dot) com</div>
+              </div>
+            </div>
+            <div class="info-card" aria-label="Phone">
+              <div class="info-ico">📞</div>
+              <div>
+                <strong>Phone</strong>
+                <div>+1 (XXX) XXX-XXXX</div>
+              </div>
+            </div>
+            <div class="info-card" aria-label="Location">
+              <div class="info-ico">📍</div>
+              <div>
+                <strong>Location</strong>
+                <div>Remote & On-site • Worldwide</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Navid Naf</p>
+      <nav aria-label="Footer">
+        <a href="#services">Services</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+  <script>
+    (function(){
+      const counters = document.querySelectorAll('.counter');
+      if (!counters.length) return;
+
+      const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+      const animateCounter = (el) => {
+        const target = parseFloat(el.dataset.target || '0');
+        const suffix = el.dataset.suffix || '';
+        const duration = 1200;
+        const startTime = performance.now();
+        const tick = (now) => {
+          const progress = Math.min(1, (now - startTime) / duration);
+          const eased = easeOutCubic(progress);
+          const value = Math.floor(eased * target);
+          el.textContent = value.toLocaleString() + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+      };
+
+      let started = false;
+      const section = document.querySelector('#expertise');
+      if (!section) { counters.forEach(animateCounter); return; }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !started) {
+            counters.forEach(animateCounter);
+            started = true;
+            io.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      io.observe(section);
+    })();
+  </script>
+  <script src="/script.js" defer></script>
+</body>
+</html>

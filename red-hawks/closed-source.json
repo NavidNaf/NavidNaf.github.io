@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Combating Phishing Emails with NLP and State-of-the-art Machine Learning",
+        "abstract": "Phishing attacks via emails trick users into revealing sensitive information, causing significant data breaches. This paper proposes a machine learning-based detection approach using NLP and BERT for accurate identification.",
+        "publication": "Submitted to USENIX Security '25",
+        "sponsor": "Independent Research",
+        "status": "Preprint",
+        "tags": ["Machine Learning", "NLP", "Phishing"]
+    },
+    {
+        "title": "Activity Analysis of Public Financial Mobile Applications",
+        "abstract": "Public financial apps handle sensitive user data, requiring strict monitoring for security. This work focuses on building a robust dataset and implementing anomaly detection pipelines for enhanced protection.",
+        "publication": "",
+        "sponsor": "Independent Research",
+        "status": "Ongoing",
+        "tags": ["Mobile Application", "Privacy", "Machine Learning", "Log Analysis"]
+    },
+    {
+        "title": "Machine Learning-Powered Threat Detection Framework for attacks in IoT Devices",
+        "abstract": "IoT device networks face evolving security threats, requiring advanced detection mechanisms. This work focuses on developing a machine learning-powered framework for effective threat detection.",
+        "publication": "",
+        "sponsor": "Bondstein",
+        "status": "Ongoing",
+        "tags": ["Threat Intelligence", "IoT Security", "Machine Learning"]
+    }
+]

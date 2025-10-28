@@ -1,0 +1,85 @@
+/* Custom CSS for Red Hawks Cyber Security Research Lab */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+    min-height: 100vh;
+    color: #e0e0e0;
+}
+
+/* Hero Banner Background */
+.hero-banner {
+    background: 
+        linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+        url('images/bg.png') no-repeat center center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.hero-banner-1 {
+    background: 
+        linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('images/bg-2.jpg') no-repeat center center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.hero-banner-content {
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+}
+
+/* Glassmorphic Card Styles */
+.glassmorphic-card {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(220, 38, 38, 0.2); /* Subtle red border */
+    transition: all 0.3s ease;
+}
+
+.glassmorphic-bg {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.bg-gradient-to-br {
+    background: linear-gradient(to bottom right, #000000, #1a1a1a, #000000);
+}
+
+/* Smooth transitions */
+a, .transition {
+    transition: all 0.3s ease;
+}
+
+/* Scrollbar styling for ultra-dark theme */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #dc2626;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ef4444;
+}
+
+/* Additional shadow and border effects for depth */
+.shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(220, 38, 38, 0.05);
+}
+
+.border-gray-800 {
+    border-color: rgba(220, 38, 38, 0.2);
+}

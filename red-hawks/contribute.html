@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribute | RedHawks Cyber Research</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+     <!-- Favicon -->
+     <link rel="icon" type="image/png" href="images/favicon.png">
+    
+     <!-- Meta Image for Social Sharing -->
+     <meta property="og:image" content="images/meta-bg.png">
+     <meta name="twitter:image" content="images/meta-bg.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .code-block {
+            background-color: rgba(0,0,0,0.1);
+            border-left: 4px solid theme('colors.red.500');
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-200 font-quicksand">
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="glassmorphic-nav bg-black/30 backdrop-blur-lg rounded-2xl border border-red-900/20 shadow-lg">
+                <div class="flex items-center justify-between px-4 py-3 relative">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <a href="https://red-hawks.com" target="_blank">
+                            <img src="images/logo-rw.png" alt="RedHawks Logo" class="h-10 md:h-12 w-auto pointer-events-none">
+                        </a>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex space-x-6">
+                        <a href="open-source-project.html" class="text-gray-300 hover:text-red-500 transition-colors relative group">
+                            Open Research
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                transform origin-left scale-x-0 group-hover:scale-x-100 
+                                transition-transform duration-300"></span>
+                        </a>
+                        <a href="closed-project.html" class="text-gray-300 hover:text-red-500 transition-colors relative group">
+                            Closed Research
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                transform origin-left scale-x-0 group-hover:scale-x-100 
+                                transition-transform duration-300"></span>
+                        </a>
+                        <a href="about-us.html" class="text-gray-300 hover:text-red-500 transition-colors relative group">
+                            About Us
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                transform origin-left scale-x-0 group-hover:scale-x-100 
+                                transition-transform duration-300"></span>
+                        </a>
+                        <a href="mailto:hello@red-hawks.com" class="text-gray-300 hover:text-red-500 transition-colors relative group">
+                            Contact
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                transform origin-left scale-x-0 group-hover:scale-x-100 
+                                transition-transform duration-300"></span>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Hamburger Menu -->
+                    <button id="mobile-menu-toggle" class="md:hidden z-50 relative group">
+                        <div class="space-y-1.5 transform transition-all duration-500 ease-in-out">
+                            <div class="w-8 h-0.5 bg-red-500 transform transition-all duration-500 ease-in-out origin-center 
+                                group-[.active]:rotate-45 group-[.active]:translate-y-2.5"></div>
+                            <div class="w-8 h-0.5 bg-red-500 transform transition-all duration-500 ease-in-out 
+                                group-[.active]:opacity-0 group-[.active]:scale-x-0"></div>
+                            <div class="w-8 h-0.5 bg-red-500 transform transition-all duration-500 ease-in-out origin-center 
+                                group-[.active]:-rotate-45 group-[.active]:-translate-y-2.5"></div>
+                        </div>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Menu Overlay -->
+            <div id="mobile-menu" class="fixed inset-0 z-40 bg-black/95 
+                transition-all duration-500 ease-in-out opacity-0 invisible 
+                data-[visible=true]:opacity-100 data-[visible=true]:visible
+                flex items-center justify-center">
+                <div class="container mx-auto px-4 max-w-md w-full
+                    transform transition-all duration-500 ease-in-out scale-95 
+                    data-[visible=true]:scale-100">
+                    <ul class="flex flex-col items-center space-y-8 text-center">
+                        <li class="w-full transform transition-all duration-500 
+                            opacity-0 translate-y-4
+                            data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 
+                            delay-100">
+                            <a href="open-source-project.html" class="text-gray-200 hover:text-red-500 text-3xl font-bold block py-4 
+                                relative overflow-hidden">
+                                <span class="relative z-10">Open Research</span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                    transform origin-left scale-x-0 group-hover:scale-x-100 
+                                    transition-transform duration-300"></span>
+                            </a>
+                        </li>
+                        <li class="w-full transform transition-all duration-500 
+                            opacity-0 translate-y-4
+                            data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 
+                            delay-200">
+                            <a href="closed-project.html" class="text-gray-200 hover:text-red-500 text-3xl font-bold block py-4 
+                                relative overflow-hidden">
+                                <span class="relative z-10">Closed Research</span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                    transform origin-left scale-x-0 group-hover:scale-x-100 
+                                    transition-transform duration-300"></span>
+                            </a>
+                        </li>
+                        <li class="w-full transform transition-all duration-500 
+                            opacity-0 translate-y-4
+                            data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 
+                            delay-300">
+                            <a href="about-us.html" class="text-gray-200 hover:text-red-500 text-3xl font-bold block py-4 
+                                relative overflow-hidden">
+                                <span class="relative z-10">About Us</span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                    transform origin-left scale-x-0 group-hover:scale-x-100 
+                                    transition-transform duration-300"></span>
+                            </a>
+                        </li>
+                        <li class="w-full transform transition-all duration-500 
+                            opacity-0 translate-y-4
+                            data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 
+                            delay-400">
+                            <a href="mailto:hello@red-hawks.com" class="text-gray-200 hover:text-red-500 text-3xl font-bold block py-4 
+                                relative overflow-hidden">
+                                <span class="relative z-10">Contact</span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                    transform origin-left scale-x-0 group-hover:scale-x-100 
+                                    transition-transform duration-300"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contribution Guide -->
+    <main class="container mx-auto px-4 py-24 max-w-5xl">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <!-- Sidebar Navigation -->
+            <div class="md:col-span-3 bg-black/10 border border-red-900/10 rounded-2xl p-6 h-fit md:sticky md:top-24">
+                <h3 class="text-xl font-bold text-red-500 mb-4">Contents</h3>
+                <nav>
+                    <ul class="space-y-2">
+                        <li><a href="#getting-started" class="text-gray-300 hover:text-red-400 transition">Getting Started</a></li>
+                        <li><a href="#workflow" class="text-gray-300 hover:text-red-400 transition">Contribution Workflow</a></li>
+                        <li><a href="#guidelines" class="text-gray-300 hover:text-red-400 transition">Guidelines</a></li>
+                        <li><a href="#code-of-conduct" class="text-gray-300 hover:text-red-400 transition">Code of Conduct</a></li>
+                        <li><a href="#support" class="text-gray-300 hover:text-red-400 transition">Feedback & Support</a></li>
+                        <li><a href="#license" class="text-gray-300 hover:text-red-400 transition">License</a></li>
+                        <li><a href="#benefits" class="text-gray-300 hover:text-red-400 transition">Benefits of Contribution</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Main Content -->
+            <div class="md:col-span-9 bg-black/10 border border-red-900/10 rounded-3xl p-6 md:p-12">
+                <h1 class="text-3xl md:text-5xl font-bold mb-6 text-red-500 text-center">
+                    Contribute to RedHawks
+                </h1>
+                
+                <section class="mb-12 text-center border-b border-red-900/10 pb-8">
+                    <p class="text-gray-300 mb-4 text-base md:text-lg max-w-2xl mx-auto">
+                        Your expertise can drive innovation. Join our mission to advance cybersecurity research through collaborative open-source development.
+                    </p>
+                </section>
+
+                <section id="getting-started" class="mb-12 border-b border-red-900/10 pb-8">
+                    <h2 class="text-xl md:text-2xl font-bold text-red-400 mb-4 flex items-center justify-center md:justify-start">
+                        <i class="fas fa-rocket mr-3 text-red-500"></i>Getting Started
+                    </h2>
+                    <ol class="list-decimal pl-6 text-gray-300 space-y-2">
+                        <li>Create a GitHub account</li>
+                        <li>Fork the repository</li>
+                        <li>Clone your forked repository</li>
+                    </ol>
+                    <pre class="bg-black/10 border border-red-900/20 p-4 rounded-lg text-gray-300 mt-4 overflow-x-auto text-xs md:text-sm"><code>git clone https://github.com/your-username/project-name.git
+git checkout -b feature/your-feature-name</code></pre>
+                </section>
+
+                <section id="workflow" class="mb-12 border-b border-red-900/10 pb-8">
+                    <h2 class="text-xl md:text-2xl font-bold text-red-400 mb-4 flex items-center justify-center md:justify-start">
+                        <i class="fas fa-code-branch mr-3 text-red-500"></i>Contribution Workflow
+                    </h2>
+                    <ol class="list-decimal pl-6 text-gray-300 space-y-2">
+                        <li>Make changes with clear, descriptive commits</li>
+                        <li>Push to your forked repository</li>
+                        <li>Submit a pull request</li>
+                    </ol>
+                    <pre class="bg-black/10 border border-red-900/20 p-4 rounded-lg text-gray-300 mt-4 overflow-x-auto text-xs md:text-sm"><code>git commit -m "Add your descriptive commit message here"
+git push origin feature/your-feature-name</code></pre>
+                </section>
+
+                <section id="guidelines" class="mb-12 border-b border-red-900/10 pb-8">
+                    <h2 class="text-xl md:text-2xl font-bold text-red-400 mb-4 flex items-center justify-center md:justify-start">
+                        <i class="fas fa-list-check mr-3 text-red-500"></i>Guidelines
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-black/10 border border-red-900/10 p-4 rounded-lg">
+                            <h3 class="text-red-300 font-semibold mb-2 flex items-center">
+                                <i class="fas fa-code mr-2 text-blue-500"></i>Code Style
+                            </h3>
+                            <p class="text-gray-300 text-sm">
+                                Follow the existing code style and conventions used in the project.
+                            </p>
+                        </div>
+                        <div class="bg-black/10 border border-red-900/10 p-4 rounded-lg">
+                            <h3 class="text-red-300 font-semibold mb-2 flex items-center">
+                                <i class="fas fa-flask mr-2 text-green-500"></i>Testing
+                            </h3>
+                            <p class="text-gray-300 text-sm">
+                                Write tests for your changes, if applicable, and ensure that existing tests pass.
+                            </p>
+                        </div>
+                        <div class="bg-black/10 border border-red-900/10 p-4 rounded-lg">
+                            <h3 class="text-red-300 font-semibold mb-2 flex items-center">
+                                <i class="fas fa-book mr-2 text-purple-500"></i>Documentation
+                            </h3>
+                            <p class="text-gray-300 text-sm">
+                                Update the documentation (in some cases the README.md) to reflect any changes or additions made.
+                            </p>
+                        </div>
+                        <div class="bg-black/10 border border-red-900/10 p-4 rounded-lg">
+                            <h3 class="text-red-300 font-semibold mb-2 flex items-center">
+                                <i class="fas fa-comment-dots mr-2 text-red-500"></i>Commit Messages
+                            </h3>
+                            <p class="text-gray-300 text-sm">
+                                Use clear and descriptive commit messages following the <a href="https://www.conventionalcommits.org/en/v1.0.0/" target="_blank" class="text-red-400 hover:underline">Conventional Commits</a> format.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="code-of-conduct" class="mb-12 border-b border-red-900/10 pb-8">
+                    <h2 class="text-xl md:text-2xl font-bold text-red-400 mb-4 flex items-center justify-center md:justify-start">
+                        <i class="fas fa-handshake mr-3 text-red-500"></i>Code of Conduct
+                    </h2>
+                    <div class="bg-black/10 border border-red-900/10 p-4 rounded-lg">
+                        <p class="text-gray-300 text-sm">
+                            Please note that the projects adhere to the <a href="https://www.contributor-covenant.org/" target="_blank" class="text-red-400 hover:underline">Contributor Covenant Code of Conduct</a>. By participating in the projects, you agree to abide by its terms.
+                        </p>
+                        <div class="mt-4 text-sm text-gray-400 italic">
+                            Our community is dedicated to providing a welcoming and inspiring environment for all contributors, regardless of background or experience level.
+                        </div>
+                    </div>
+                </section>
+
+                <section id="support" class="mb-12 border-b border-red-900/10 pb-8">
+                    <h2 class="text-xl md:text-2xl font-bold text-red-400 mb-4 flex items-center justify-start">
+                        <i class="fas fa-life-ring mr-3 text-red-500"></i>Feedback and Support
+                    </h2>
+                    <div class="bg-black/10 border border-red-900/10 p-4 rounded-lg text-left">
+                        <p class="text-gray-300 text-sm">
+                            If you encounter any issues or have suggestions for improvement, please <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue" target="_blank" class="text-red-400 hover:underline">open an issue on GitHub</a>.
+                        </p>
+                    </div>
+                </section>
+
+                <section id="license" class="mb-12 border-b border-red-900/10 pb-8">
+                    <h2 class="text-xl md:text-2xl font-bold text-red-400 mb-4 flex items-center justify-center md:justify-start">
+                        <i class="fas fa-balance-scale mr-3 text-red-500"></i>License
+                    </h2>
+                    <p class="text-gray-300 text-sm md:text-base text-center md:text-left">
+                        Contributions are made under the project's open-source license. By contributing, you agree to the terms of our licensing model.
+                    </p>
+                </section>
+
+                <section id="benefits" class="mt-12 pt-8 border-t border-red-900/10">
+                    <h2 class="text-xl md:text-2xl font-bold text-red-400 mb-4 flex items-center justify-start">
+                        <i class="fas fa-trophy mr-3 text-red-500"></i>Benefits of Contribution
+                    </h2>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="bg-black/10 border border-red-900/10 p-4 rounded-lg text-left">
+                            <h3 class="text-red-300 font-semibold mb-2 flex items-center">
+                                <i class="fas fa-code mr-2 text-blue-500"></i>Skill Development
+                            </h3>
+                            <p class="text-gray-300 text-xs md:text-sm">
+                                Enhance your coding skills, gain experience in collaborative software development in cybersecurity research, and learn from experienced developers.
+                            </p>
+                        </div>
+                        <div class="bg-black/10 border border-red-900/10 p-4 rounded-lg text-left">
+                            <h3 class="text-red-300 font-semibold mb-2 flex items-center">
+                                <i class="fas fa-users mr-2 text-green-500"></i>Community Engagement
+                            </h3>
+                            <p class="text-gray-300 text-xs md:text-sm">
+                                Connect with like-minded individuals, share knowledge, and collaborate on meaningful projects that push the boundaries of cybersecurity research.
+                            </p>
+                        </div>
+                        <div class="bg-black/10 border border-red-900/10 p-4 rounded-lg text-left">
+                            <h3 class="text-red-300 font-semibold mb-2 flex items-center">
+                                <i class="fas fa-award mr-2 text-purple-500"></i>Impact and Recognition
+                            </h3>
+                            <p class="text-gray-300 text-xs md:text-sm">
+                                Make a tangible impact on project success, build your professional portfolio, and gain recognition within the cybersecurity research community.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/30 backdrop-blur-lg border-t border-red-900/20 py-12">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 items-center">
+            <div class="space-y-6">
+                <div class="flex items-center space-x-3">
+                    <a href="https://red-hawks.com" target="_blank">
+                        <img src="images/logo-rw.png" alt="RedHawks Logo" class="h-12 w-auto">
+                    </a>
+                </div>
+                <p class="text-base text-gray-400 leading-relaxed">
+                    A cutting-edge Cyber Security Research Lab dedicated to uncovering and mitigating advanced digital threats through innovative research and responsible disclosure.
+                </p>
+            </div>
+            <div>
+            
+            </div>
+            <div class="space-y-6">
+                <h3 class="text-xl font-semibold text-red-500 mb-4">Connect With Us</h3>
+                <div class="inline-block space-y-4 text-left">
+                    <a href="https://github.com/RedHawksCyberResearch" class="flex items-center space-x-3 text-gray-400 hover:text-red-300 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                        <span>github/RedHawksCyberResearch</span>
+                    </a>
+                    <a href="https://www.linkedin.com/company/RedHawksCyberResearch" class="flex items-center space-x-3 text-gray-400 hover:text-red-300 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                        <span>LinkedIn/RedHawksCyberResearch</span>
+                    </a>
+                    <a href="https://www.facebook.com/RedHawksCyberResearch" class="flex items-center space-x-3 text-gray-400 hover:text-red-300 transition-colors">
+                        <i class="fab fa-facebook text-2xl"></i>
+                        <span>facebook/RedHawksCyberResearch</span>
+                    </a>
+                    <a href="mailto:hello@red-hawks.com" class="flex items-center space-x-3 text-gray-400 hover:text-red-300 transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                        <span>email/hello@red-hawks.com</span>
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <p class="text-xs text-gray-500 inline-block">
+                        &copy; 2025 RedHawks Cyber Security Research Lab. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuItems = mobileMenu.querySelectorAll('li');
+
+            // Toggle menu
+            mobileMenuToggle.addEventListener('click', function() {
+                const isMenuVisible = mobileMenu.getAttribute('data-visible') === 'true';
+                
+                // Toggle menu visibility
+                mobileMenu.setAttribute('data-visible', !isMenuVisible);
+                
+                // Toggle menu items visibility
+                mobileMenuItems.forEach((item, index) => {
+                    item.setAttribute('data-visible', !isMenuVisible);
+                });
+                
+                // Toggle hamburger animation
+                mobileMenuToggle.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            mobileMenu.addEventListener('click', function(event) {
+                if (event.target === mobileMenu) {
+                    mobileMenu.setAttribute('data-visible', 'false');
+                    
+                    // Hide menu items
+                    mobileMenuItems.forEach(item => {
+                        item.setAttribute('data-visible', 'false');
+                    });
+                    
+                    mobileMenuToggle.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>

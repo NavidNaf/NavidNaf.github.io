@@ -1,0 +1,20 @@
+[
+    {
+        "name": "C/C++ Analyser",
+        "link": "https://github.com/RedHawksCyberResearch/C-Cpp-Analyser",
+        "description": "Python script analysing C/C++ source code files using Clang, extracting information about functions including their names, parameter types, return types, functions called within them, and differences between function bodies.",
+        "technologies": ["Python", "Source Code Analysis"]
+    },
+    {
+        "name": "JWTHawk",
+        "link": "https://github.com/RedHawksCyberResearch/JWT-Hawk",
+        "description": "This script decodes JWT tokens using multiple secrets from a list. It prints header values, attempts decoding with each secret, and prints payload values with the decoded signature if a match is found.",
+        "technologies": ["Python", "JWT", "Brute-Force & Analysis"]
+    },
+    {
+        "name": "Cookie Monster",
+        "link": "https://github.com/RedHawksCyberResearch/Cookie-Monster",
+        "description": "This script uses Selenium to automate web interactions, including login and cookie manipulation. It prints a title, prompts for login credentials, logs in, alters cookies, and confirms success by reloading the page.",
+        "technologies": ["Python", "Selenium", "Web Technology"]
+    }
+]

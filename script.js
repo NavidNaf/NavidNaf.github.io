@@ -364,6 +364,64 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeViewer();
   });
 
+  // ---- Avengers grid pagination (4 per page) ----
+  (function initAvengersPagination(){
+    const grid = document.getElementById('avengers-container');
+    const pager = document.getElementById('avengers-pagination');
+    if (!grid || !pager) return;
+
+    const PAGE_SIZE = 4;
+    let current = 0; // page index
+
+    const getTiles = () => Array.from(grid.children).filter(n => n.nodeType === 1);
+    const pageCount = () => Math.max(1, Math.ceil(getTiles().length / PAGE_SIZE));
+
+    const renderPager = () => {
+      const total = pageCount();
+      pager.innerHTML = '';
+      const prev = document.createElement('button');
+      prev.textContent = 'Prev';
+      prev.disabled = current <= 0;
+      prev.addEventListener('click', () => { if (current>0){ current--; applyPage(); }});
+      const next = document.createElement('button');
+      next.textContent = 'Next';
+      next.disabled = current >= total - 1;
+      next.addEventListener('click', () => { if (current<total-1){ current++; applyPage(); }});
+      pager.appendChild(prev);
+      for (let i=0;i<total;i++){
+        const dot = document.createElement('span');
+        dot.className = 'page-dot' + (i===current ? ' active' : '');
+        dot.addEventListener('click', () => { current = i; applyPage(); });
+        pager.appendChild(dot);
+      }
+      pager.appendChild(next);
+    };
+
+    const applyPage = () => {
+      const tiles = getTiles();
+      const start = current * PAGE_SIZE;
+      const end = start + PAGE_SIZE;
+      tiles.forEach((el, idx) => {
+        el.style.display = (idx >= start && idx < end) ? '' : 'none';
+      });
+      // Clamp current if items changed
+      const total = pageCount();
+      if (current > total - 1) current = total - 1;
+      renderPager();
+    };
+
+    // Observe changes to rebuild pagination when tiles are injected dynamically
+    const mo = new MutationObserver(() => {
+      // Reset to first page when data refreshes
+      current = 0;
+      applyPage();
+    });
+    mo.observe(grid, { childList: true });
+
+    // Initial apply (if tiles already present)
+    applyPage();
+  })();
+
   // ---- Work Experience (Dynamic from Google Sheets CSV) ----
   // 1) In Google Sheets: File → Share → Publish to web → select the sheet → CSV
   // 2) Paste the published CSV link below

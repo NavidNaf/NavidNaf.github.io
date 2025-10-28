@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RedHawks Cyber Research</title>
+
+     <!-- Favicon -->
+     <link rel="icon" type="image/png" href="images/favicon.png">
+    
+     <!-- Meta Image for Social Sharing -->
+     <meta property="og:image" content="images/meta-bg.png">
+     <meta name="twitter:image" content="images/meta-bg.png">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-black text-gray-200 font-quicksand">
+    <header class="fixed top-0 left-0 w-full z-50">
+        <div class="container mx-auto px-4 py-4">
+            <nav class="glassmorphic-nav bg-black/30 backdrop-blur-lg rounded-2xl border border-red-900/20 shadow-lg">
+                <div class="flex items-center justify-between px-4 py-3 relative">
+                    <!-- Logo -->
+                    <div class="flex items-center">
+                        <a href="https://red-hawks.com" target="_blank">
+                            <img src="images/logo-rw.png" alt="RedHawks Logo" class="h-10 md:h-12 w-auto pointer-events-none">
+                        </a>
+                    </div>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex space-x-6">
+                        <a href="open-source-project.html" class="text-gray-300 hover:text-red-500 transition-colors relative group">
+                            Open Research
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                transform origin-left scale-x-0 group-hover:scale-x-100 
+                                transition-transform duration-300"></span>
+                        </a>
+                        <a href="closed-project.html" class="text-gray-300 hover:text-red-500 transition-colors relative group">
+                            Closed Research
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                transform origin-left scale-x-0 group-hover:scale-x-100 
+                                transition-transform duration-300"></span>
+                        </a>
+                        <a href="about-us.html" class="text-gray-300 hover:text-red-500 transition-colors relative group">
+                            About Us
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                transform origin-left scale-x-0 group-hover:scale-x-100 
+                                transition-transform duration-300"></span>
+                        </a>
+                        <a href="mailto:hello@red-hawks.com" class="text-gray-300 hover:text-red-500 transition-colors relative group">
+                            Contact
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                transform origin-left scale-x-0 group-hover:scale-x-100 
+                                transition-transform duration-300"></span>
+                        </a>
+                    </div>
+
+                    <!-- Mobile Hamburger Menu -->
+                    <button id="mobile-menu-toggle" class="md:hidden z-50 relative group">
+                        <div class="space-y-1.5 transform transition-all duration-500 ease-in-out">
+                            <div class="w-8 h-0.5 bg-red-500 transform transition-all duration-500 ease-in-out origin-center 
+                                group-[.active]:rotate-45 group-[.active]:translate-y-2.5"></div>
+                            <div class="w-8 h-0.5 bg-red-500 transform transition-all duration-500 ease-in-out 
+                                group-[.active]:opacity-0 group-[.active]:scale-x-0"></div>
+                            <div class="w-8 h-0.5 bg-red-500 transform transition-all duration-500 ease-in-out origin-center 
+                                group-[.active]:-rotate-45 group-[.active]:-translate-y-2.5"></div>
+                        </div>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Menu Overlay -->
+            <div id="mobile-menu" class="fixed inset-0 z-40 bg-black/95 
+                transition-all duration-500 ease-in-out opacity-0 invisible 
+                data-[visible=true]:opacity-100 data-[visible=true]:visible
+                flex items-center justify-center">
+                <div class="container mx-auto px-4 max-w-md w-full
+                    transform transition-all duration-500 ease-in-out scale-95 
+                    data-[visible=true]:scale-100">
+                    <ul class="flex flex-col items-center space-y-8 text-center">
+                        <li class="w-full transform transition-all duration-500 
+                            opacity-0 translate-y-4
+                            data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 
+                            delay-100">
+                            <a href="open-source-project.html" class="text-gray-200 hover:text-red-500 text-3xl font-bold block py-4 
+                                relative overflow-hidden">
+                                <span class="relative z-10">Open Research</span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                    transform origin-left scale-x-0 group-hover:scale-x-100 
+                                    transition-transform duration-300"></span>
+                            </a>
+                        </li>
+                        <li class="w-full transform transition-all duration-500 
+                            opacity-0 translate-y-4
+                            data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 
+                            delay-200">
+                            <a href="closed-project.html" class="text-gray-200 hover:text-red-500 text-3xl font-bold block py-4 
+                                relative overflow-hidden">
+                                <span class="relative z-10">Closed Research</span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                    transform origin-left scale-x-0 group-hover:scale-x-100 
+                                    transition-transform duration-300"></span>
+                            </a>
+                        </li>
+                        <li class="w-full transform transition-all duration-500 
+                            opacity-0 translate-y-4
+                            data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 
+                            delay-300">
+                            <a href="about-us.html" class="text-gray-200 hover:text-red-500 text-3xl font-bold block py-4 
+                                relative overflow-hidden">
+                                <span class="relative z-10">About Us</span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                    transform origin-left scale-x-0 group-hover:scale-x-100 
+                                    transition-transform duration-300"></span>
+                            </a>
+                        </li>
+                        <li class="w-full transform transition-all duration-500 
+                            opacity-0 translate-y-4
+                            data-[visible=true]:opacity-100 data-[visible=true]:translate-y-0 
+                            delay-400">
+                            <a href="mailto:hello@red-hawks.com" class="text-gray-200 hover:text-red-500 text-3xl font-bold block py-4 
+                                relative overflow-hidden">
+                                <span class="relative z-10">Contact</span>
+                                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 
+                                    transform origin-left scale-x-0 group-hover:scale-x-100 
+                                    transition-transform duration-300"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-8">
+       
+
+        <!-- Hero Banner -->
+        <section class="hero-banner mb-16 relative mt-24">
+            <div class="hero-banner-content relative z-10 py-16 text-center px-4">
+                <div class="max-w-4xl mx-auto">
+                    <img src="images/logo-rw.png" alt="RedHawks Cyber Research Logo" class="h-16 md:h-32 w-auto mx-auto mb-4 md:mb-6">
+                    <h2 class="text-2xl text-gray-300 mb-6 leading-relaxed">We're redefining cybersecurity research through innovation, collaboration, and open knowledge.</h2>
+                    <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-6 leading-relaxed">At RedHawks Cyber Research, we pioneer the future of cybersecurity with groundbreaking research and open collaboration. We are building a powerful community dedicated to creating resilient solutions for the ever-evolving threats in cyberspace.</p>
+                    <div class="mt-6">
+                        <a href="/about-us.html" class="inline-block px-8 py-3 text-white rounded-full relative overflow-hidden group">
+                            <span class="absolute inset-0 bg-red-700 opacity-70 group-hover:opacity-50 transition-opacity duration-300 rounded-full"></span>
+                            <span class="relative z-10 flex items-center">
+                                <span class="mr-2">About Us</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </span>
+                            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-500 origin-left transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Slider -->
+        <section class="py-4 pb-6">
+            <div class="container mx-auto px-4">
+                <div class="bg-red-900 rounded flex items-center overflow-hidden">
+                    <div class="text-black font-bold text-sm px-2 py-1 flex-shrink-0">
+                        LATEST
+                    </div>
+                    <div id="news-slider" class="flex-grow overflow-hidden">
+                        <div class="news-track flex items-center space-x-8 animate-news-scroll">
+                            <!-- News items will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+            async function loadNewsSlider() {
+                try {
+                    const response = await fetch('news.json');
+                    const newsItems = await response.json();
+                    const newsTrack = document.querySelector('.news-track');
+        
+                    // Create a continuous loop of news items
+                    const loopedNewsItems = [...newsItems, ...newsItems];
+        
+                    loopedNewsItems.forEach(item => {
+                        const newsElement = document.createElement('div');
+                        newsElement.className = 'flex-shrink-0 text-sm text-gray-300 whitespace-nowrap';
+                        newsElement.innerHTML = `
+                            <span class="text-red-400 mr-2">•</span>
+                            <span class="font-semibold text-red-300 mr-2">(${item.date})</span>
+                            ${item.news}
+                        `;
+                        newsTrack.appendChild(newsElement);
+                    });
+                } catch (error) {
+                    console.error('Error loading news:', error);
+                }
+            }
+        
+            document.addEventListener('DOMContentLoaded', loadNewsSlider);
+        </script>
+
+        <!-- Research Focus Section -->
+        <section class="mb-16">
+            <div class="container mx-auto px-4">
+                <div class="glassmorphic-card bg-black/30 backdrop-blur-lg rounded-2xl border border-red-900/20 p-6 md:p-8">
+                    <h2 class="text-xl md:text-3xl font-bold text-red-500 mb-4 md:mb-6 text-center">Our Research Domains</h2>
+                    <p class="text-xs md:text-base text-gray-400 text-center mb-6 md:mb-10 max-w-3xl mx-auto">
+                        At RedHawks Cyber Research, we extensively explore a broad spectrum of cybersecurity topics. Our team of researchers is passionately engaged in innovative research across multiple domains to tackle the intricate challenges presented by cyber threats.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-6 gap-3 md:gap-4">
+                        <div class="glassmorphic-card bg-black/30 backdrop-blur-lg rounded-xl p-2 md:p-4 text-center border border-red-900/20 hover:border-red-500 transition-all duration-300">
+                            <span class="text-xl md:text-3xl mb-1 md:mb-2 block">🔒</span>
+                            <h3 class="text-xs md:text-sm text-gray-300 font-semibold">Web & Mobile AppSec</h3>
+                        </div>
+                        <div class="glassmorphic-card bg-black/30 backdrop-blur-lg rounded-xl p-2 md:p-4 text-center border border-red-900/20 hover:border-red-500 transition-all duration-300">
+                            <span class="text-xl md:text-3xl mb-1 md:mb-2 block">💥</span>
+                            <h3 class="text-xs md:text-sm text-gray-300 font-semibold">Side-Channel Analysis</h3>
+                        </div>
+                        <div class="glassmorphic-card bg-black/30 backdrop-blur-lg rounded-xl p-2 md:p-4 text-center border border-red-900/20 hover:border-red-500 transition-all duration-300">
+                            <span class="text-xl md:text-3xl mb-1 md:mb-2 block">🤖</span>
+                            <h3 class="text-xs md:text-sm text-gray-300 font-semibold">AI Attacks & AI Security</h3>
+                        </div>
+                        <div class="glassmorphic-card bg-black/30 backdrop-blur-lg rounded-xl p-2 md:p-4 text-center border border-red-900/20 hover:border-red-500 transition-all duration-300">
+                            <span class="text-xl md:text-3xl mb-1 md:mb-2 block">🔗</span>
+                            <h3 class="text-xs md:text-sm text-gray-300 font-semibold">Blockchain & Web3 Security</h3>
+                        </div>
+                        <div class="glassmorphic-card bg-black/30 backdrop-blur-lg rounded-xl p-2 md:p-4 text-center border border-red-900/20 hover:border-red-500 transition-all duration-300">
+                            <span class="text-xl md:text-3xl mb-1 md:mb-2 block">🌐</span>
+                            <h3 class="text-xs md:text-sm text-gray-300 font-semibold">Browser Security</h3>
+                        </div>
+                        <div class="glassmorphic-card bg-black/30 backdrop-blur-lg rounded-xl p-2 md:p-4 text-center border border-red-900/20 hover:border-red-500 transition-all duration-300">
+                            <span class="text-xl md:text-3xl mb-1 md:mb-2 block">💻</span>
+                            <h3 class="text-xs md:text-sm text-gray-300 font-semibold">Source Code Analysis</h3>
+                        </div>
+                        <div class="glassmorphic-card bg-black/30 backdrop-blur-lg rounded-xl p-2 md:p-4 text-center border border-red-900/20 hover:border-red-500 transition-all duration-300">
+                            <span class="text-xl md:text-3xl mb-1 md:mb-2 block">🔐</span>
+                            <h3 class="text-xs md:text-sm text-gray-300 font-semibold">Real-world Cryptography</h3>
+                        </div>
+                        <div class="glassmorphic-card bg-black/30 backdrop-blur-lg rounded-xl p-2 md:p-4 text-center border border-red-900/20 hover:border-red-500 transition-all duration-300">
+                            <span class="text-xl md:text-3xl mb-1 md:mb-2 block">💣</span>
+                            <h3 class="text-xs md:text-sm text-gray-300 font-semibold">Exploit Development</h3>
+                        </div>
+                        <div class="glassmorphic-card bg-black/30 backdrop-blur-lg rounded-xl p-2 md:p-4 text-center border border-red-900/20 hover:border-red-500 transition-all duration-300">
+                            <span class="text-xl md:text-3xl mb-1 md:mb-2 block">🔄</span>
+                            <h3 class="text-xs md:text-sm text-gray-300 font-semibold">Reverse Engineering</h3>
+                        </div>
+                        <div class="glassmorphic-card bg-black/30 backdrop-blur-lg rounded-xl p-2 md:p-4 text-center border border-red-900/20 hover:border-red-500 transition-all duration-300">
+                            <span class="text-xl md:text-3xl mb-1 md:mb-2 block">🌐</span>
+                            <h3 class="text-xs md:text-sm text-gray-300 font-semibold">IoT Security</h3>
+                        </div>
+                        <div class="glassmorphic-card bg-black/30 backdrop-blur-lg rounded-xl p-2 md:p-4 text-center border border-red-900/20 hover:border-red-500 transition-all duration-300">
+                            <span class="text-xl md:text-3xl mb-1 md:mb-2 block">🔒</span>
+                            <h3 class="text-xs md:text-sm text-gray-300 font-semibold">Usable Security & Privacy</h3>
+                        </div>
+                        <div class="glassmorphic-card bg-black/30 backdrop-blur-lg rounded-xl p-2 md:p-4 text-center border border-red-900/20 hover:border-red-500 transition-all duration-300">
+                            <span class="text-xl md:text-3xl mb-1 md:mb-2 block">📜</span>
+                            <h3 class="text-xs md:text-sm text-gray-300 font-semibold">Security Process & Policies</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Unique Section Divider -->
+            <div class="relative w-full py-8">
+                <div class="absolute inset-0 overflow-hidden">
+                    <div class="absolute left-0 right-0 top-1/2 transform -translate-y-1/2 h-px bg-gradient-to-r from-transparent via-red-900/30 to-transparent"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Heading -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-red-500">Our Endeavors</h2>
+            <p class="text-base text-gray-400 mt-4 max-w-2xl mx-auto">
+                Exploring innovative solutions and pushing the boundaries of cybersecurity research and open-source collaboration.
+            </p>
+        </div>
+        <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Open Source Research Section -->
+            <div class=" hero-banner-1 bg-black bg-opacity-30 backdrop-blur-lg p-6 rounded-2xl shadow-2xl col-span-1 md:col-span-2 border border-red-900/20 relative overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-bl from-red-900/10 to-transparent rounded-full blur-2xl opacity-50"></div>
+                </div>
+                <div class="relative z-10 grid md:grid-cols-1 gap-6 items-center">
+                    <div class="space-y-6 max-w-2xl mx-auto text-center">
+                        <div class="flex items-center justify-center space-x-4">
+                            <div class="w-12 h-12 bg-red-900/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-code text-red-500 text-xl"></i>
+                            </div>
+                            <span class="text-sm text-red-300 font-medium tracking-wider uppercase">
+                                Open Source Innovation
+                            </span>
+                        </div>
+                        <h2 class="text-3xl font-bold text-red-500 leading-tight">
+                            Revolutionize Cybersecurity Together
+                        </h2>
+                        <p class="text-base text-gray-400 leading-relaxed">
+                            Dive into groundbreaking research. Collaborate with top minds, develop cutting-edge solutions, and push the boundaries of digital protection. Your code can make a global impact.
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="open-source-project.html" class="px-6 py-3 border border-red-900/30 text-gray-400 
+                                rounded-full hover:bg-red-900/10 transition-all duration-300 
+                                ease-in-out transform hover:-translate-y-1">
+                                <i class="fas fa-project-diagram mr-2"></i>Explore Projects
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Current Focus Section: Full width on mobile, 1 column on larger screens -->
+            <div class="glassmorphic-card bg-black bg-opacity-30 backdrop-blur-lg p-6 rounded-2xl shadow-2xl flex flex-col justify-between col-span-1 border border-red-900/20">
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold text-red-500 mb-6 text-center">Get Involved</h2>
+                    <div class="space-y-4">
+                        <a href="contribute.html" class="block bg-black/20 p-4 rounded-lg border border-red-900/20 
+                            hover:bg-red-900/10 transition-colors group">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-red-900/30 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-code text-red-500 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-base font-semibold text-gray-300 group-hover:text-red-300 transition-colors">
+                                        Contribute
+                                    </h3>
+                                    <p class="text-xs text-gray-400 mt-1">
+                                        Help build and improve our open-source projects
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="feature-request.html" class="block bg-black/20 p-4 rounded-lg border border-red-900/20 
+                            hover:bg-red-900/10 transition-colors group">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-red-900/30 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-lightbulb text-red-500 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-base font-semibold text-gray-300 group-hover:text-red-300 transition-colors">
+                                        Feature Request
+                                    </h3>
+                                    <p class="text-xs text-gray-400 mt-1">
+                                        Suggest new ideas to enhance our projects
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="bug-report.html" class="block bg-black/20 p-4 rounded-lg border border-red-900/20 
+                            hover:bg-red-900/10 transition-colors group">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-10 h-10 bg-red-900/30 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-bug text-red-500 text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-base font-semibold text-gray-300 group-hover:text-red-300 transition-colors">
+                                        Bug Report
+                                    </h3>
+                                    <p class="text-xs text-gray-400 mt-1">
+                                        Help us improve by reporting issues
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full List of Closed Research Projects Section -->
+            <div class="bg-black bg-opacity-30 backdrop-blur-lg p-6 rounded-2xl shadow-2xl col-span-1 border border-red-900/20 relative overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none">
+                    <div class="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-bl from-red-900/10 to-transparent rounded-full blur-2xl opacity-50"></div>
+                </div>
+                <div class="relative z-10 space-y-6">
+                    <div class="flex flex-col items-center">
+                        <div class="w-16 h-16 bg-red-900/20 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-archive text-red-500 text-2xl"></i>
+                        </div>
+                        <div class="text-center">
+                            <h2 class="text-2xl font-bold text-red-500 mb-2">
+                                Full List of Closed Research
+                            </h2>
+                            <div class="h-0.5 w-16 bg-red-500 mx-auto"></div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-base text-gray-400 text-center leading-relaxed pb-2">
+                        Explore our comprehensive archive of completed research initiatives, showcasing innovative cybersecurity approaches.
+                    </p>
+                    
+                    <div class="text-center">
+                        <a href="closed-project.html" class="inline-block px-6 py-3 border border-red-900/30 text-gray-400 
+                            rounded-full hover:bg-red-900/10 transition-all duration-300 
+                            ease-in-out transform hover:-translate-y-1 group">
+                            <span class="group-hover:text-red-300 transition-colors">
+                                View Research Catalog
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+                <!-- Closed Research Projects Section -->
+                <div class="hero-banner-1 bg-black bg-opacity-30 backdrop-blur-lg p-6 rounded-2xl shadow-2xl col-span-1 md:col-span-2 border border-red-900/20 pb-12">
+                    <div class="container mx-auto px-4 text-center">
+                        <div class="max-w-2xl mx-auto space-y-6">
+                            <div class="flex justify-center items-center space-x-4 mb-4">
+                                <div class="w-12 h-12 bg-red-900/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-lock text-red-500 text-xl"></i>
+                                </div>
+                                <span class="text-sm text-red-300 font-medium tracking-wider uppercase">
+                                    Exclusive Research
+                                </span>
+                            </div>
+                            <h2 class="text-3xl font-bold text-red-500 leading-tight">
+                                Closed Research Projects
+                            </h2>
+                            <div class="space-y-4">
+                                <p class="text-base text-gray-400 leading-relaxed relative pb-2">
+                                    Our Closed Research Projects initiative provides our internal team with exclusive opportunities to explore diverse cyber research endeavors. Encouraging innovation and collaboration, we empower our team to delve into emerging threats, develop novel methodologies, and investigate cutting-edge technologies. Participation in these projects nurtures expertise, drives impact, and contributes to our mission of advancing cybersecurity.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Responsible Disclosures Section -->
+                <div class="hero-banner-1 bg-black bg-opacity-30 backdrop-blur-lg p-6 rounded-2xl shadow-2xl col-span-1 md:col-span-2 border border-red-900/20 relative overflow-hidden">
+                    <div class="absolute inset-0 pointer-events-none">
+                        <div class="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-bl from-red-900/10 to-transparent rounded-full blur-2xl opacity-50"></div>
+                    </div>
+                    <div class="relative z-10 space-y-6">
+                        <div class="flex items-center justify-center space-x-4 mb-4">
+                            <div class="w-12 h-12 bg-red-900/20 rounded-full flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-red-500 text-xl"></i>
+                            </div>
+                            <span class="text-sm text-red-300 font-medium tracking-wider uppercase">
+                                Vulnerability Research
+                            </span>
+                        </div>
+                        <div class="text-center">
+                            <h2 class="text-3xl font-bold text-red-500 leading-tight mb-6">
+                                Responsible Disclosures
+                            </h2>
+                            <div class="max-w-4xl mx-auto space-y-4">
+                                <p class="text-base text-gray-400 leading-relaxed pb-2">
+                                    At RedHawks Cyber Research, we actively pursue zeroday vulnerabilities across various applications and protocols, as they can effectively circumvent multiple layers of defense and aid in simulating advanced cyber threats.
+                                </p>
+                                <p class="text-base text-gray-400 leading-relaxed pb-2">
+                                    Our research initiatives aim to uncover new attack vectors, benefiting both sophisticated clients and the broader community. We prioritize responsible disclosure, adhering to a stringent <a href="vulnerability-disclose-policy.html" class="relative group">
+                                        <span class="inline-block px-3 py-1 border border-red-900/30 text-xs uppercase tracking-wider text-red-400 
+                                            transition-all duration-300 ease-in-out 
+                                            group-hover:bg-red-900/20 group-hover:text-red-300 
+                                            group-hover:border-red-900/50">
+                                            Vulnerability Disclosure Policy
+                                        </span>
+                                    </a>, and collaborate closely with vendors to address and mitigate risks, thereby enhancing security for all stakeholders involved.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="glassmorphic-card bg-black bg-opacity-30 backdrop-blur-lg p-6 rounded-2xl shadow-2xl col-span-1 border border-red-900/20 relative overflow-hidden">
+                    <div class="absolute inset-0 pointer-events-none">
+                        <div class="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-bl from-red-900/10 to-transparent rounded-full blur-2xl opacity-50"></div>
+                    </div>
+                    <div class="relative z-10 space-y-6">
+                        <div class="flex flex-col items-center">
+                            <div class="w-16 h-16 bg-red-900/20 rounded-full flex items-center justify-center mb-4">
+                                <i class="fas fa-bugs text-red-500 text-2xl"></i>
+                            </div>
+                            <div class="text-center">
+                                <h2 class="text-2xl font-bold text-red-500 mb-2">
+                                    Full List of Disclosed vulnerabilities
+                                </h2>
+                                <div class="h-0.5 w-16 bg-red-500 mx-auto"></div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-base text-gray-400 text-center leading-relaxed pb-2">
+                            Explore our archive of disclosed vulnerabilities and zero-day research, highlighting critical security findings and mitigation strategies.
+                        </p>
+                        
+                        <div class="text-center">
+                            <a href="#" class="inline-block px-6 py-3 border border-red-900/30 text-gray-400 
+                                rounded-full hover:bg-red-900/10 transition-all duration-300 
+                                ease-in-out transform hover:-translate-y-1 group">
+                                <span class="group-hover:text-red-300 transition-colors">
+                                    View Disclosed Vulnerabilities
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        </main>
+    </div>
+
+<!-- Collaboration -->
+<section class="py-16">
+    <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto bg-black/20 border border-red-900/20 rounded-3xl 
+            shadow-xl shadow-red-900/10 p-12 text-center">
+            <div class="relative z-20">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 bg-red-900/30 rounded-full flex items-center 
+                        justify-center mr-4">
+                        <i class="fas fa-handshake text-3xl text-red-500"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-red-500">
+                        Collaborate & Innovate
+                    </h2>
+                </div>
+                
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
+                    Break boundaries in cybersecurity. Your unique insights can transform 
+                    digital defense, turning complex challenges into groundbreaking solutions 
+                    that protect global digital ecosystems.
+                </p>
+                
+                <div class="inline-block relative group">
+                    <a href="mailto:collaborate@red-hawks.com" class="inline-block px-10 py-4 
+                        text-white bg-red-700/30 rounded-full hover:bg-red-700/50 
+                        transition-all duration-300 border border-red-900/30 
+                        hover:border-red-900/50 text-lg font-semibold relative z-20">
+                        Ignite Collaboration
+                    </a>
+                    <div class="absolute inset-0 bg-red-900/10 rounded-full 
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-300 
+                        z-10"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+    </div>
+    <footer class="bg-black/30 backdrop-blur-lg border-t border-red-900/20 py-12">
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8 items-center">
+            <div class="space-y-6">
+                <div class="flex items-center space-x-3">
+                    <a href="https://red-hawks.com" target="_blank">
+                        <img src="images/logo-rw.png" alt="RedHawks Logo" class="h-12 w-auto">
+                    </a>
+                </div>
+                <p class="text-base text-gray-400 leading-relaxed">
+                    A cutting-edge Cyber Security Research Lab dedicated to uncovering and mitigating advanced digital threats through innovative research and responsible disclosure.
+                </p>
+            </div>
+            <div>
+            
+            </div>
+            <div class="space-y-6">
+                <h3 class="text-xl font-semibold text-red-500 mb-4">Connect With Us</h3>
+                <div class="inline-block space-y-4 text-left">
+                    <a href="https://github.com/RedHawksCyberResearch" class="flex items-center space-x-3 text-gray-400 hover:text-red-300 transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                        <span>github/RedHawksCyberResearch</span>
+                    </a>
+                    <a href="https://www.linkedin.com/company/RedHawksCyberResearch" class="flex items-center space-x-3 text-gray-400 hover:text-red-300 transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                        <span>LinkedIn/RedHawksCyberResearch</span>
+                    </a>
+                    <a href="https://www.facebook.com/RedHawksCyberResearch" class="flex items-center space-x-3 text-gray-400 hover:text-red-300 transition-colors">
+                        <i class="fab fa-facebook text-2xl"></i>
+                        <span>facebook/RedHawksCyberResearch</span>
+                    </a>
+                    <a href="mailto:hello@red-hawks.com" class="flex items-center space-x-3 text-gray-400 hover:text-red-300 transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                        <span>email/hello@red-hawks.com</span>
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <p class="text-xs text-gray-500 inline-block">
+                        &copy; 2025 RedHawks Cyber Security Research Lab. All Rights Reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuItems = mobileMenu.querySelectorAll('li');
+
+            // Toggle menu
+            mobileMenuToggle.addEventListener('click', function() {
+                const isMenuVisible = mobileMenu.getAttribute('data-visible') === 'true';
+                
+                // Toggle menu visibility
+                mobileMenu.setAttribute('data-visible', !isMenuVisible);
+                
+                // Toggle menu items visibility
+                mobileMenuItems.forEach((item, index) => {
+                    item.setAttribute('data-visible', !isMenuVisible);
+                });
+                
+                // Toggle hamburger animation
+                mobileMenuToggle.classList.toggle('active');
+            });
+
+            // Close menu when clicking outside
+            mobileMenu.addEventListener('click', function(event) {
+                if (event.target === mobileMenu) {
+                    mobileMenu.setAttribute('data-visible', 'false');
+                    
+                    // Hide menu items
+                    mobileMenuItems.forEach(item => {
+                        item.setAttribute('data-visible', 'false');
+                    });
+                    
+                    mobileMenuToggle.classList.remove('active');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        async function loadNewsSlider() {
+            try {
+                const response = await fetch('news.json');
+                const newsItems = await response.json();
+                const newsTrack = document.querySelector('.news-track');
+
+                // Create a continuous loop of news items
+                const loopedNewsItems = [...newsItems, ...newsItems];
+
+                loopedNewsItems.forEach(item => {
+                    const newsElement = document.createElement('div');
+                    newsElement.className = 'flex-shrink-0 text-sm text-gray-300 whitespace-nowrap';
+                    newsElement.innerHTML = `
+                        <span class="text-red-400 mr-2">•</span>
+                        ${item.news}
+                    `;
+                    newsTrack.appendChild(newsElement);
+                });
+            } catch (error) {
+                console.error('Error loading news:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadNewsSlider);
+    </script>
+
+    <style>
+        @keyframes newsScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        .animate-news-scroll {
+            animation: newsScroll 20s linear infinite;
+        }
+
+        #news-slider:hover .animate-news-scroll {
+            animation-play-state: paused;
+        }
+    </style>
+
+    <script src="script.js"></script>
+</body>
+</html>

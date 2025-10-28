@@ -1,0 +1,36 @@
+{
+    "team_members": [
+        {
+            "name": "Maroof Ahmed",
+            "role": "Researcher",
+            "profileImage": "images/maroof.jpg",
+            "education": [
+                "B.Sc. Engg. (CSE), Islamic University of Technology"
+            ],
+            "experience": [
+
+            ]
+        },
+        {
+            "name": "Mohammad Saidur Rahman Sagor",
+            "role": "Researcher",
+            "profileImage": "images/said.jpg",
+            "education": [
+                "B.Sc. Engg. (CSE), Islamic University of Technology"
+            ],
+            "experience": [
+
+            ]
+        },
+        {
+            "name": "Nafis Fuad Shahid", 
+            "role": "Researcher",
+            "profileImage": "images/nafis.jpeg",
+            "education": [
+                "B.Sc. Engg. (CSE), Islamic University of Technology"
+            ],
+            "experience": [
+            ]
+        }
+    ]
+}
