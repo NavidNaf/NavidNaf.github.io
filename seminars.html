@@ -15,7 +15,7 @@
 
 <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="seminars-page">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
@@ -46,11 +46,58 @@
     <section class="project-intro">
         <h2 class="intro-title">💬 Conversations</h2>
         <p class="intro-text">
-          Welcome to Conversations, the space where I share my <span class="highlight-tag">seminars</span>, <span class="highlight-tag">talks</span>, <span class="highlight-tag">presentations</span>, and <span class="highlight-tag">public newsletters</span>. This page brings together my speaking engagements, workshop sessions, and thought pieces, offering a window into the ideas, discussions, and stories I've shared with diverse audiences.
+          Welcome to Conversations, a collection of my <strong>talks</strong>, <strong>seminars</strong>, <strong>workshops</strong>, and <strong>public newsletters</strong>, capturing key ideas and discussions from my journey of <strong>learning</strong>, <strong>teaching</strong>, and <strong>sharing insights</strong> across audiences.
         </p>
-        <p class="intro-text">
-          Whether it's a deep dive into cybersecurity, a hands-on workshop, or a public newsletter unpacking emerging trends, Conversations captures the highlights of my journey of learning, teaching, and exchanging ideas.
-        </p>
+    </section>
+
+    <!-- Socials -->
+    <section class="socials-section" aria-label="Socials">
+      <div class="socials-grid">
+        <a class="social-card social-facebook" href="https://www.facebook.com/NavidSec/" target="_blank" rel="noopener noreferrer">
+          <div class="social-icon"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></div>
+          <div class="social-content">
+            <div class="social-label">Follow For</div>
+            <div class="social-text">Content in Bengali and English, with a light touch on important topics, designed for a broad audience.</div>
+            <div class="social-insights" aria-label="Facebook insights">
+              <span class="social-insight-stat">
+                <span class="social-insight-value">1.1k+</span>
+                <span class="social-insight-label">Followers</span>
+              </span>
+              <span class="social-insight-stat">
+                <span class="social-insight-value">157k+</span>
+                <span class="social-insight-label">Views</span>
+              </span>
+              <span class="social-insight-stat">
+                <span class="social-insight-value">5k+</span>
+                <span class="social-insight-label">Interactions</span>
+              </span>
+            </div>
+            <div class="social-insights-note">Stats for the Last 12 Months</div>
+          </div>
+        </a>
+        <a class="social-card social-linkedin" href="https://www.linkedin.com/in/navid-f-rabbi/" target="_blank" rel="noopener noreferrer">
+          <div class="social-icon"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></div>
+          <div class="social-content">
+            <div class="social-label">Follow For</div>
+            <div class="social-text">In-depth engagement with focused discussions, direct communication, and close collaboration with the community.</div>
+            <div class="social-insights" aria-label="LinkedIn insights">
+              <span class="social-insight-stat">
+                <span class="social-insight-value">3.7k+</span>
+                <span class="social-insight-label">Followers</span>
+              </span>
+              <span class="social-insight-stat">
+                <span class="social-insight-value">484k+</span>
+                <span class="social-insight-label">Impressions</span>
+              </span>
+              <span class="social-insight-stat">
+                <span class="social-insight-value">8.5k+</span>
+                <span class="social-insight-label">Engagements</span>
+              </span>
+            </div>
+            <div class="social-insights-note">Stats for the Last 12 Months</div>
+          </div>
+        </a>
+      </div>
     </section>
 
     <!-- Newsletter Section -->
@@ -60,19 +107,28 @@
         <div class="newsletter-item">
           <a href="https://www.linkedin.com/newsletters/cyber-spectrum-7148921226483150849/" target="_blank" rel="noopener noreferrer" class="newsletter-link">
             <img src="images/newsletter/cyberspectrum.png" alt="Cyber Spectrum Newsletter" class="newsletter-image">
-            <div class="newsletter-title">Cyber Spectrum</div>
+            <div class="newsletter-caption">
+              <div class="newsletter-title">Cyber Spectrum</div>
+              <div class="newsletter-subtitle">Beginner-friendly cybersecurity fundamentals for newcomers.</div>
+            </div>
           </a>
         </div>
         <div class="newsletter-item">
           <a href="https://www.linkedin.com/newsletters/oversight-%E0%A6%93%E0%A6%AD%E0%A6%BE%E0%A6%B0%E0%A6%B8%E0%A6%BE%E0%A6%87%E0%A6%9F-7314673618234363904/" target="_blank" rel="noopener noreferrer" class="newsletter-link">
             <img src="images/newsletter/oversight.png" alt="Oversight Newsletter" class="newsletter-image">
-            <div class="newsletter-title">Oversight</div>
+            <div class="newsletter-caption">
+              <div class="newsletter-title">Oversight</div>
+              <div class="newsletter-subtitle">Insights on economic, tech, and cybersecurity policy.</div>
+            </div>
           </a>
         </div>
         <div class="newsletter-item">
           <a href="https://www.linkedin.com/newsletters/edgecase-7334958653042475009/" target="_blank" rel="noopener noreferrer" class="newsletter-link">
             <img src="images/newsletter/edgecase.png" alt="Edgecase Newsletter" class="newsletter-image">
-            <div class="newsletter-title">Edgecase</div>
+            <div class="newsletter-caption">
+              <div class="newsletter-title">Edgecase</div>
+              <div class="newsletter-subtitle">Practical security deep dives and real-world solutions.</div>
+            </div>
           </a>
         </div>
       </div>
@@ -81,20 +137,23 @@
     <!-- Avengers Assemble Section -->
     <section class="avengers-section">
       <h2>💥 Avengers Assemble</h2>
+      <div id="avengers-dashboard" class="avengers-dashboard" aria-label="Events overview"></div>
       <div class="avengers-grid" id="avengers-container">
         <!-- Tiles will be loaded dynamically -->
       </div>
-      <div id="avengers-pagination" class="pager" aria-label="Pagination"></div>
+      <div id="avengers-pagination" class="projects-pagination" aria-label="Pagination"></div>
     </section>
 
   </div>
 
   <section class="section" id="secure-meet" aria-labelledby="secure-meet-title">
-    <h2 id="secure-meet-title" style="text-align:center">🔐 Secure Meet with Navid</h2>
-    <!-- Calendly inline widget begin -->
-    <div class="calendly-inline-widget" data-url="https://calendly.com/navid-cs/secure-meet" style="min-width:320px;height:700px;"></div>
-    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <!-- Calendly inline widget end -->
+    <div class="container">
+      <h2 id="secure-meet-title" style="text-align:center">🔐 Secure Meet with Navid</h2>
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/navid-cs/secure-meet" style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
+    </div>
   </section>
 
 </main>
@@ -129,6 +188,7 @@
 async function loadAvengersData() {
   const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSy7KOHp3XydAoFfgDgDgmJWe08EUVDH8e0WssmesMZ0vLDt43mEWcYwnRQuBJIs2HTXP6ZbXzRlVYg/pub?gid=0&single=true&output=csv';
   const container = document.getElementById('avengers-container');
+  const dashboard = document.getElementById('avengers-dashboard');
 
   console.log('🔍 Starting to load Avengers data from:', csvUrl);
 
@@ -178,10 +238,12 @@ async function loadAvengersData() {
           </p>
         </div>
       `;
+      if (dashboard) dashboard.innerHTML = '';
       return;
     }
 
     console.log('🏗️ Creating tiles for', dataRows.length, 'events');
+    renderAvengersDashboard(dataRows);
 
     // Create tiles
     dataRows.forEach((event, index) => {
@@ -222,6 +284,7 @@ async function loadAvengersData() {
         </p>
       </div>
     `;
+    if (dashboard) dashboard.innerHTML = '';
   }
 }
 
@@ -289,34 +352,176 @@ function createAvengerTile(event, headers) {
   // Split keywords by semicolon
   const keywords = keywordsText ? keywordsText.split(';').map(kw => kw.trim()).filter(kw => kw.length > 0) : [];
 
+  const typeIconClass = (() => {
+    const key = type.toLowerCase();
+    if (key.includes('workshop')) return 'fa-solid fa-gear';
+    if (key.includes('seminar')) return 'fa-solid fa-graduation-cap';
+    if (key.includes('talk')) return 'fa-solid fa-microphone-lines';
+    if (key.includes('panel')) return 'fa-solid fa-people-group';
+    if (key.includes('tutorial')) return 'fa-solid fa-chalkboard';
+    if (key.includes('webinar')) return 'fa-solid fa-video';
+    if (key.includes('podcast')) return 'fa-solid fa-podcast';
+    if (key.includes('presentation')) return 'fa-solid fa-file-lines';
+    if (key.includes('newsletter')) return 'fa-solid fa-newspaper';
+    return 'fa-solid fa-bolt';
+  })();
+  const typeColor = (() => {
+    const key = type.toLowerCase();
+    if (key.includes('workshop')) return '#f59e0b';
+    if (key.includes('seminar')) return '#3b82f6';
+    if (key.includes('talk')) return '#22c55e';
+    if (key.includes('panel')) return '#8b5cf6';
+    if (key.includes('tutorial')) return '#14b8a6';
+    if (key.includes('webinar')) return '#0ea5e9';
+    if (key.includes('podcast')) return '#ec4899';
+    if (key.includes('presentation')) return '#f97316';
+    if (key.includes('newsletter')) return '#ef4444';
+    return 'var(--carolina-blue)';
+  })();
+
+  const d = Date.parse(date);
+  const dt = Number.isNaN(d) ? null : new Date(d);
+  const month = dt ? dt.toLocaleString('en-US', { month: 'short' }).toUpperCase() : '';
+  const day = dt ? String(dt.getDate()).padStart(2, '0') : '';
+  const year = dt ? dt.getFullYear() : date;
+  const monthIdx = dt ? dt.getMonth() : null;
+
+  const monthClass = monthIdx !== null ? `month-${monthIdx + 1}` : '';
+
   tile.innerHTML = `
-    <div class="avenger-header">
-      <div class="avenger-type">${type}</div>
-      <h3 class="avenger-topic">${topic}</h3>
-      <div class="avenger-venue">${venue}</div>
-      <div class="avenger-date">${date}</div>
-    </div>
-    <div class="avenger-body">
-      <div class="avenger-description">${description}</div>
-      ${keywords.length > 0 ? `<div class="keywords-container">${keywords.map(kw => `<span class="keyword-tag">${kw}</span>`).join('')}</div>` : ''}
-      <div class="links-container">
-        ${writeupUrl ? `<a href="${writeupUrl}" target="_blank" rel="noopener noreferrer" class="link-item">
+    <div class="avenger-row">
+      <div class="avenger-datebox ${monthClass}">
+        <div class="avenger-month">${month || 'DATE'}</div>
+        <div class="avenger-day">${day || ''}</div>
+        <div class="avenger-year">${year || ''}</div>
+      </div>
+      <div class="avenger-main">
+        <div class="avenger-type" style="--type-color:${typeColor};"><span class="type-dot"></span><i class="${typeIconClass}" aria-hidden="true"></i> ${type}</div>
+        <h3 class="avenger-topic">${topic}</h3>
+        <div class="avenger-venue">${venue}</div>
+        <div class="avenger-description">${description}</div>
+        ${keywords.length > 0 ? `<div class="keywords-container">${keywords.map(kw => `<span class="keyword-tag">${kw}</span>`).join('')}</div>` : ''}
+      </div>
+      <div class="avenger-actions">
+        ${writeupUrl ? `<a href="${writeupUrl}" target="_blank" rel="noopener noreferrer" class="avenger-action" aria-label="Detailed writeup">
           <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
-          Write-up
         </a>` : ''}
-        ${slidesUrl ? `<a href="${slidesUrl}" target="_blank" rel="noopener noreferrer" class="link-item">
+        ${slidesUrl ? `<a href="${slidesUrl}" target="_blank" rel="noopener noreferrer" class="avenger-action" aria-label="Slide deck">
           <i class="fa-solid fa-file-powerpoint" aria-hidden="true"></i>
-          Slides
         </a>` : ''}
-        ${recordingUrl ? `<a href="${recordingUrl}" target="_blank" rel="noopener noreferrer" class="link-item">
+        ${recordingUrl ? `<a href="${recordingUrl}" target="_blank" rel="noopener noreferrer" class="avenger-action" aria-label="Recording">
           <i class="fa-solid fa-video" aria-hidden="true"></i>
-          Recording
         </a>` : ''}
       </div>
     </div>
   `;
 
   return tile;
+}
+
+function renderAvengersDashboard(rows) {
+  const dashboard = document.getElementById('avengers-dashboard');
+  if (!dashboard) return;
+
+  const total = rows.length;
+  const typeCounts = new Map();
+  const monthCounts = Array.from({ length: 12 }, () => 0);
+
+  rows.forEach(row => {
+    const type = (row[0] || '').trim() || 'Other';
+    typeCounts.set(type, (typeCounts.get(type) || 0) + 1);
+
+    const dateStr = (row[5] || '').trim();
+    const d = Date.parse(dateStr);
+    if (!Number.isNaN(d)) {
+      const m = new Date(d).getMonth();
+      monthCounts[m] += 1;
+    }
+  });
+
+  const totalTypes = Array.from(typeCounts.values()).reduce((sum, v) => sum + v, 0) || 1;
+  const topTypes = Array.from(typeCounts.entries())
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 5);
+
+  const maxMonth = Math.max(1, ...monthCounts);
+  const monthColors = [
+    '#ef4444', '#f97316', '#eab308', '#22c55e', '#14b8a6', '#38bdf8',
+    '#3b82f6', '#6366f1', '#8b5cf6', '#a855f7', '#ec4899', '#f43f5e'
+  ];
+
+  const typeIcon = (label) => {
+    const key = String(label || '').toLowerCase();
+    if (key.includes('workshop')) return 'fa-solid fa-gear';
+    if (key.includes('seminar')) return 'fa-solid fa-graduation-cap';
+    if (key.includes('talk')) return 'fa-solid fa-microphone-lines';
+    if (key.includes('panel')) return 'fa-solid fa-people-group';
+    if (key.includes('tutorial')) return 'fa-solid fa-chalkboard';
+    if (key.includes('webinar')) return 'fa-solid fa-video';
+    if (key.includes('podcast')) return 'fa-solid fa-podcast';
+    if (key.includes('presentation')) return 'fa-solid fa-file-lines';
+    if (key.includes('newsletter')) return 'fa-solid fa-newspaper';
+    return 'fa-solid fa-bolt';
+  };
+  const typeColor = (label) => {
+    const key = String(label || '').toLowerCase();
+    if (key.includes('workshop')) return '#f59e0b';
+    if (key.includes('seminar')) return '#3b82f6';
+    if (key.includes('talk')) return '#22c55e';
+    if (key.includes('panel')) return '#8b5cf6';
+    if (key.includes('tutorial')) return '#14b8a6';
+    if (key.includes('webinar')) return '#0ea5e9';
+    if (key.includes('podcast')) return '#ec4899';
+    if (key.includes('presentation')) return '#f97316';
+    if (key.includes('newsletter')) return '#ef4444';
+    return 'var(--carolina-blue)';
+  };
+
+  dashboard.innerHTML = `
+    <div class="dashboard-card avengers-card">
+      <div class="dashboard-label">Total Events</div>
+      <div class="dashboard-value">${total}</div>
+      <img src="images/icons/event.png" alt="" class="dashboard-icon" aria-hidden="true">
+      <img src="images/cutout.png" alt="" class="dashboard-cutout" aria-hidden="true">
+    </div>
+    <div class="dashboard-card avengers-card">
+      <div class="dashboard-label">Event Breakdown</div>
+      <div class="lang-bars">
+        ${topTypes.map(([label, count]) => {
+          const pct = Math.round((count / totalTypes) * 1000) / 10;
+          const color = typeColor(label);
+          const icon = typeIcon(label);
+          return `
+            <div class="lang-bar-row">
+              <div class="lang-bar-head">
+                <span class="lang-bar-name"><span class="lang-dot" style="background:${color};"></span><i class="${icon}" aria-hidden="true"></i> ${label}</span>
+                <span class="lang-bar-pct">${pct}%</span>
+              </div>
+              <div class="lang-bar-track">
+                <span class="lang-bar-fill" style="width:${pct}%; background: ${color};" data-value="${count} events"></span>
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+    <div class="dashboard-card avengers-card">
+      <div class="dashboard-label">Monthly Frequency</div>
+      <div class="month-bars">
+        ${monthCounts.map((count, idx) => {
+          const height = Math.round((count / maxMonth) * 100);
+          const label = new Date(2020, idx, 1).toLocaleString('en-US', { month: 'short' });
+          const color = monthColors[idx];
+          return `
+            <div class="month-bar">
+              <span class="month-bar-fill" style="height:${height}%; background:${color};" data-value="${count} events"></span>
+              <span class="month-bar-label">${label}</span>
+            </div>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
 }
 
 // Load Avengers data when page loads
@@ -331,5 +536,3 @@ console.log('🕒 Page load time:', new Date().toLocaleTimeString());
 <script src="/script.js" defer></script>
 </body>
 </html>
-
-

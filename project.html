@@ -15,7 +15,7 @@
 
 <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="project-page">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
@@ -47,34 +47,25 @@
     <section class="project-intro">
       <h2 class="intro-title">📜 Scriptorium</h2>
       <p class="intro-text">
-        Here you'll find my <span class="highlight-tag">projects</span>, <span class="highlight-tag">experiments</span>, <span class="highlight-tag">favorite tools</span> and plenty of <span class="highlight-tag">hacking goodies</span>, all linked straight to my <span class="highlight-tag">GitHub</span>. I love building <span class="highlight-tag">clean</span>, <span class="highlight-tag">secure</span> and <span class="highlight-tag">high-performance code</span>, whether it's <span class="highlight-tag">Python</span> scripts, <span class="highlight-tag">C/C++</span> projects or <span class="highlight-tag">web security</span> tools.
+        This space is not for <strong>formal research</strong>. It is a playground for <strong>fun projects</strong> and <strong>technologies</strong> I enjoy building. You will find my <strong>projects</strong>, <strong>experiments</strong>, <strong>favorite tools</strong>, and <strong>hacking goodies</strong>, all linked directly to my <strong>GitHub</strong> or <strong>GitBook</strong>.
       </p>
       <p class="intro-text">
-        Alongside coding, you'll also discover my <span class="highlight-tag">hacking checklists</span>, <span class="highlight-tag">CTF write-ups</span> and solves, and other fun <span class="highlight-tag">security experiments</span> I do for learning and sharing.
-      </p>
-      <p class="intro-text">
-        I'm especially passionate about <span class="highlight-tag">code sanitization</span> and <span class="highlight-tag">source code analysis</span>, using <span class="highlight-tag">static analysis</span>, <span class="highlight-tag">automated testing</span> and <span class="highlight-tag">security checks</span> to make code safer and smarter. Dive in, explore the repos and see how I mix creativity, hacking and security in every line of code.
+        I build or <strong>automate</strong> things whenever something sparks my <strong>curiosity</strong>. I play <strong>CTFs</strong> for fun. Earlier in my industry roles, I focused on <strong>pentesting tools</strong>, <strong>source code analysis</strong>, <strong>code sanitization</strong>, and <strong>automated testing</strong>. My recent projects lean more toward <strong>problem-solving</strong>, <strong>cryptography</strong>, and <strong>building new ideas</strong> from scratch.
       </p>
     </section>
 
     <!-- Action Boxes -->
     <section class="action-boxes">
-      <div class="action-box">
+      <div class="action-box action-box-github">
         <a href="https://github.com/NavidNaf" target="_blank" rel="noopener noreferrer" class="action-link">
-          <div class="action-icon">
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-          </div>
           <div class="action-content">
             <h3>View My GitHub Profile</h3>
             <p>Explore all my projects, repositories, and contributions</p>
           </div>
         </a>
       </div>
-      <div class="action-box">
+      <div class="action-box action-box-pentest">
         <a href="https://security.navidnaf.com" target="_blank" rel="noopener noreferrer" class="action-link">
-          <div class="action-icon">
-            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-          </div>
           <div class="action-content">
             <h3>See My Pentesting Dark Arts</h3>
             <p>Discover security tools, CTF write-ups, and hacking experiments</p>
@@ -83,46 +74,41 @@
       </div>
     </section>
 
+    <hr class="soft-divider" aria-hidden="true">
+
     <!-- What I Use -->
     <section class="what-i-use">
-      <h2>What I Use</h2>
-      <div class="skills-grid">
-        <div class="skill-tile">
-          <div class="skill-icon"><i class="fa-brands fa-python" aria-hidden="true"></i></div>
-          <div class="skill-title">Python</div>
+      <div class="what-i-use-panel">
+        <h2>What I Use</h2>
+        <p class="what-i-use-subtitle">A handpicked mix of tools, platforms, and frameworks I enjoy using to build real-world projects.</p>
+        <div class="tool-chips" role="list">
+          <span class="tool-chip" role="listitem"><i class="fa-brands fa-python" aria-hidden="true"></i> Python</span>
+          <span class="tool-chip" role="listitem"><i class="fa-solid fa-code" aria-hidden="true"></i> C</span>
+          <span class="tool-chip" role="listitem"><i class="fa-solid fa-code" aria-hidden="true"></i> C++</span>
+          <span class="tool-chip" role="listitem"><i class="fa-solid fa-database" aria-hidden="true"></i> SQL</span>
+          <span class="tool-chip" role="listitem"><i class="fa-brands fa-js" aria-hidden="true"></i> JavaScript</span>
+          <span class="tool-chip" role="listitem"><i class="fa-solid fa-terminal" aria-hidden="true"></i> Bash</span>
+          <span class="tool-chip" role="listitem"><i class="fa-solid fa-microchip" aria-hidden="true"></i> Assembly</span>
+          <span class="tool-chip" role="listitem"><i class="fa-brands fa-php" aria-hidden="true"></i> PHP</span>
+          <span class="tool-chip" role="listitem"><img src="images/technology/ida.png" alt="IDA Pro" class="tool-icon"> IDA Pro</span>
+          <span class="tool-chip" role="listitem"><img src="images/technology/ghidra.png" alt="Ghidra" class="tool-icon"> Ghidra</span>
+          <span class="tool-chip" role="listitem"><img src="images/technology/r2.svg" alt="Radare2" class="tool-icon"> Radare2</span>
+          <span class="tool-chip" role="listitem"><img src="images/technology/binary ninja.png" alt="Binary Ninja" class="tool-icon"> Binary Ninja</span>
+          <span class="tool-chip" role="listitem"><img src="images/technology/burpsuite.svg" alt="BurpSuite" class="tool-icon"> BurpSuite</span>
+          <span class="tool-chip" role="listitem"><img src="images/technology/git.png" alt="Git" class="tool-icon"> Git</span>
+          <span class="tool-chip" role="listitem"><i class="fa-regular fa-window-maximize" aria-hidden="true"></i> Browsers</span>
         </div>
-        <div class="skill-tile">
-          <div class="skill-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
-          <div class="skill-title">C/C++</div>
-        </div>
-        <div class="skill-tile">
-          <div class="skill-icon"><i class="fa-brands fa-js" aria-hidden="true"></i></div>
-          <div class="skill-title">JavaScript</div>
-        </div>
-        <div class="skill-tile">
-          <div class="skill-icon"><i class="fa-solid fa-terminal" aria-hidden="true"></i></div>
-          <div class="skill-title">Bash</div>
-        </div>
-        <div class="skill-tile">
-          <div class="skill-icon"><i class="fa-solid fa-database" aria-hidden="true"></i></div>
-          <div class="skill-title">SQL</div>
-        </div>
-        <div class="skill-tile">
-          <div class="skill-icon"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
-          <div class="skill-title">Assembly</div>
-        </div>
-        <div class="skill-tile">
-          <div class="skill-icon"><i class="fa-brands fa-php" aria-hidden="true"></i></div>
-          <div class="skill-title">PHP</div>
-        </div>
+        <p class="what-i-use-footer">I have worked as a pentester for over four years and actively participate in CTFs, so my toolkit includes many tools that I know well, even if I don’t use them on a daily basis.</p>
       </div>
     </section>
 
     <section id="projects" class="projects-section">
       <h2>Featured Projects</h2>
+      <div class="projects-dashboard" id="projects-dashboard" aria-label="Projects overview"></div>
       <div class="projects-grid" id="projects-container">
         <!-- Projects will be loaded here dynamically -->
       </div>
+      <div class="projects-pagination" id="projects-pagination" aria-label="Projects pagination"></div>
     </section>
 
     <!-- GitHub Contributions -->
@@ -132,24 +118,7 @@
       <p class="contribution-stats" id="contribution-text">Loading contribution data...</p>
     </section>
 
-    <!-- Technology Proficiency -->
-    <section class="technology-proficiency">
-      <h2>Technology Proficiency</h2>
-      <div class="tech-content">
-        <div class="tech-logos-grid">
-          <img src="images/technology/ida.png" alt="IDA Pro" class="tech-logo">
-          <img src="images/technology/ghidra.png" alt="Ghidra" class="tech-logo">
-          <img src="images/technology/binary ninja.png" alt="Binary Ninja" class="tech-logo">
-          <img src="images/technology/r2.svg" alt="Radare2" class="tech-logo">
-          <img src="images/technology/objdump.webp" alt="objdump" class="tech-logo">
-          <img src="images/technology/burpsuite.svg" alt="BurpSuite" class="tech-logo">
-          <img src="images/technology/git.png" alt="Git" class="tech-logo">
-        </div>
-        <p class="tech-description">
-        Browser Consoles and other different penetration testing tools and software.
-        </p>
-      </div>
-    </section>
+    <!-- Technology Proficiency removed -->
 
 </main>
 
@@ -167,10 +136,18 @@
       console.log('🎯 JavaScript file loaded at:', new Date().toISOString());
       console.log('📂 Script location:', document.currentScript?.src || 'inline script');
 
+      // Pagination + dashboard config
+      const PROJECTS_PER_PAGE = 5;
+      let currentPage = 1;
+      let allProjects = [];
+      let totalPublicRepos = null;
+
       // Fetch and display projects from Google Sheets CSV
       async function loadProjects() {
         const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSPmoxPCzmPIZGshC4b9wVQDjoadx4SeyVv24qhDf6CPzjwMDLawGRcKgR3gUYbp4gXEKIr6TRshRCN/pub?gid=0&single=true&output=csv';
         const container = document.getElementById('projects-container');
+        const pagination = document.getElementById('projects-pagination');
+        const dashboard = document.getElementById('projects-dashboard');
 
         console.log('🔍 Starting to load projects from:', csvUrl);
         console.log('📋 Make sure your Google Sheet is published to web and accessible');
@@ -223,22 +200,16 @@
                 </p>
               </div>
             `;
+            pagination.innerHTML = '';
+            dashboard.innerHTML = '';
             return;
           }
 
           console.log('🏗️ Creating project tiles for', dataRows.length, 'projects');
-
-          // Create project tiles
-          dataRows.forEach((project, index) => {
-            console.log(`🔨 Creating tile ${index + 1}:`, project);
-            try {
-              const projectTile = createProjectTile(project, headers);
-              container.appendChild(projectTile);
-              console.log(`✅ Tile ${index + 1} created successfully`);
-            } catch (tileError) {
-              console.error(`❌ Error creating tile ${index + 1}:`, tileError, 'Data:', project);
-            }
-          });
+          allProjects = dataRows;
+          currentPage = 1;
+          renderDashboard(dataRows);
+          renderProjectsPage();
 
           console.log('🎉 Project loading completed successfully!');
 
@@ -267,6 +238,8 @@
               </p>
             </div>
           `;
+          pagination.innerHTML = '';
+          dashboard.innerHTML = '';
 
           // Load sample projects as fallback
           console.log('🔄 Loading sample projects as fallback...');
@@ -277,6 +250,8 @@
       // Load sample projects as fallback
       function loadSampleProjects() {
         const container = document.getElementById('projects-container');
+        const pagination = document.getElementById('projects-pagination');
+        const dashboard = document.getElementById('projects-dashboard');
         const sampleProjects = [
           {
             title: 'Python Security Toolkit',
@@ -298,23 +273,31 @@
           }
         ];
 
-        sampleProjects.forEach(project => {
-          const tile = document.createElement('div');
-          tile.className = 'project-tile';
-          tile.innerHTML = `
-            <div class="project-header">
-              <h3 class="project-title">${project.title}</h3>
-              <a href="${project.githubUrl}" class="project-github-link" target="_blank" rel="noopener noreferrer" aria-label="View ${project.title} on GitHub">
-                <i class="fa-brands fa-github" aria-hidden="true"></i>
-              </a>
-            </div>
-            <p class="project-description">${project.description}</p>
-            <div class="project-languages">
-              ${project.languages.map(lang => `<span class="language-tag-small">${lang}</span>`).join('')}
-            </div>
-          `;
-          container.appendChild(tile);
-        });
+        const langIconClass = (lang) => {
+          const key = String(lang || '').toLowerCase();
+          const map = {
+            'python': 'fa-brands fa-python',
+            'javascript': 'fa-brands fa-js',
+            'js': 'fa-brands fa-js',
+            'c': 'fa-solid fa-code',
+            'c++': 'fa-solid fa-code',
+            'cpp': 'fa-solid fa-code',
+            'sql': 'fa-solid fa-database',
+            'bash': 'fa-solid fa-terminal',
+            'assembly': 'fa-solid fa-microchip',
+            'php': 'fa-brands fa-php',
+            'security': 'fa-solid fa-shield-halved',
+            'react': 'fa-brands fa-react',
+            'system': 'fa-solid fa-microchip'
+          };
+          return map[key] || 'fa-solid fa-tag';
+        };
+
+        const normalized = sampleProjects.map(p => [p.title, p.languages.join(';'), p.description, p.githubUrl]);
+        allProjects = normalized;
+        currentPage = 1;
+        renderDashboard(normalized);
+        renderProjectsPage();
       }
 
       function parseCSV(csvText) {
@@ -371,31 +354,201 @@
         const title = (project[0] && project[0].trim()) ? project[0].trim() : 'Untitled Project';
         const languagesText = (project[1] && project[1].trim()) ? project[1].trim() : '';
         const description = (project[2] && project[2].trim()) ? project[2].trim() : 'No description available';
-        const githubUrl = (project[3] && project[3].trim()) ? project[3].trim() : '#';
+        const githubUrl = (project[3] && project[3].trim()) ? project[3].trim() : '';
 
         // Split languages by semicolon and filter out empty values
         const languages = languagesText ? languagesText.split(';').map(lang => lang.trim()).filter(lang => lang.length > 0) : [];
 
         // Validate GitHub URL format and ensure it's a complete URL
-        const validGithubUrl = githubUrl.startsWith('http') ? githubUrl : (githubUrl.startsWith('github.com') ? `https://${githubUrl}` : '#');
+        const validGithubUrl = githubUrl
+          ? (githubUrl.startsWith('http') ? githubUrl : (githubUrl.startsWith('github.com') ? `https://${githubUrl}` : ''))
+          : '';
 
         // Debug logging
         console.log('Project data:', { title, languages, description, githubUrl });
 
+        const langIconClass = (lang) => {
+          const key = String(lang || '').toLowerCase();
+          const map = {
+            'python': 'fa-brands fa-python',
+            'javascript': 'fa-brands fa-js',
+            'js': 'fa-brands fa-js',
+            'c': 'fa-solid fa-code',
+            'c++': 'fa-solid fa-code',
+            'cpp': 'fa-solid fa-code',
+            'sql': 'fa-solid fa-database',
+            'bash': 'fa-solid fa-terminal',
+            'assembly': 'fa-solid fa-microchip',
+            'php': 'fa-brands fa-php',
+            'security': 'fa-solid fa-shield-halved',
+            'react': 'fa-brands fa-react',
+            'system': 'fa-solid fa-microchip'
+          };
+          return map[key] || 'fa-solid fa-tag';
+        };
+
         tile.innerHTML = `
-          <div class="project-header">
-            <h3 class="project-title">${title}</h3>
-            <a href="${validGithubUrl}" class="project-github-link" target="_blank" rel="noopener noreferrer" aria-label="View ${title} on GitHub">
-              <i class="fa-brands fa-github" aria-hidden="true"></i>
-            </a>
-          </div>
-          <p class="project-description">${description}</p>
-          <div class="project-languages">
-            ${languages.map(lang => `<span class="language-tag-small">${lang}</span>`).join('')}
+          <div class="project-row">
+            <div class="project-main">
+              <h3 class="project-title">${title}</h3>
+              <p class="project-description">${description}</p>
+              <div class="project-meta">
+                ${languages.map(lang => `<span class="project-lang"><i class="${langIconClass(lang)}" aria-hidden="true"></i> ${lang}</span>`).join('')}
+              </div>
+            </div>
+            <div class="project-actions">
+              ${validGithubUrl ? `
+                <a href="${validGithubUrl}" class="project-github-link" target="_blank" rel="noopener noreferrer" aria-label="View ${title} on GitHub">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+              ` : ''}
+            </div>
           </div>
         `;
 
         return tile;
+      }
+
+      function renderProjectsPage() {
+        const container = document.getElementById('projects-container');
+        const pagination = document.getElementById('projects-pagination');
+        container.innerHTML = '';
+
+        const total = allProjects.length;
+        const totalPages = Math.max(1, Math.ceil(total / PROJECTS_PER_PAGE));
+        if (currentPage > totalPages) currentPage = totalPages;
+        const start = (currentPage - 1) * PROJECTS_PER_PAGE;
+        const pageItems = allProjects.slice(start, start + PROJECTS_PER_PAGE);
+
+        pageItems.forEach((project, index) => {
+          try {
+            const projectTile = createProjectTile(project, []);
+            container.appendChild(projectTile);
+          } catch (tileError) {
+            console.error(`❌ Error creating tile ${index + 1}:`, tileError, 'Data:', project);
+          }
+        });
+
+        pagination.innerHTML = '';
+        if (totalPages > 1) {
+          const prev = document.createElement('button');
+          prev.className = 'page-btn';
+          prev.textContent = 'Prev';
+          prev.disabled = currentPage === 1;
+          prev.addEventListener('click', () => {
+            if (currentPage > 1) {
+              currentPage -= 1;
+              renderProjectsPage();
+            }
+          });
+
+          const next = document.createElement('button');
+          next.className = 'page-btn';
+          next.textContent = 'Next';
+          next.disabled = currentPage === totalPages;
+          next.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+              currentPage += 1;
+              renderProjectsPage();
+            }
+          });
+
+          const status = document.createElement('span');
+          status.className = 'page-status';
+          status.textContent = `Page ${currentPage} of ${totalPages}`;
+
+          pagination.appendChild(prev);
+          pagination.appendChild(status);
+          pagination.appendChild(next);
+        }
+      }
+
+      function renderDashboard(rows) {
+        const dashboard = document.getElementById('projects-dashboard');
+        if (!dashboard) return;
+
+        const total = rows.length;
+        const langCounts = new Map();
+        rows.forEach(row => {
+          const languagesText = (row[1] && row[1].trim()) ? row[1].trim() : '';
+          const languages = languagesText ? languagesText.split(';').map(l => l.trim()).filter(Boolean) : [];
+          languages.forEach(lang => {
+            langCounts.set(lang, (langCounts.get(lang) || 0) + 1);
+          });
+        });
+
+        const langIconClass = (lang) => {
+          const key = String(lang || '').toLowerCase();
+          const map = {
+            'python': 'fa-brands fa-python',
+            'javascript': 'fa-brands fa-js',
+            'js': 'fa-brands fa-js',
+            'c': 'fa-solid fa-code',
+            'c++': 'fa-solid fa-code',
+            'cpp': 'fa-solid fa-code',
+            'sql': 'fa-solid fa-database',
+            'bash': 'fa-solid fa-terminal',
+            'assembly': 'fa-solid fa-microchip',
+            'php': 'fa-brands fa-php',
+            'security': 'fa-solid fa-shield-halved',
+            'react': 'fa-brands fa-react',
+            'system': 'fa-solid fa-microchip'
+          };
+          return map[key] || 'fa-solid fa-tag';
+        };
+
+        const topLangs = Array.from(langCounts.entries())
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 4);
+        const totalLangCount = Array.from(langCounts.values()).reduce((sum, v) => sum + v, 0) || 1;
+        const topSum = topLangs.reduce((sum, [, count]) => sum + count, 0);
+        const otherCount = totalLangCount - topSum;
+        if (otherCount > 0) {
+          topLangs.push(['Other', otherCount]);
+        }
+        const palette = ['#7c5cff', '#f59e0b', '#ec4899', '#22c55e', '#60a5fa'];
+        const chartBars = topLangs.map(([lang, count], idx) => {
+          const pct = Math.round((count / totalLangCount) * 1000) / 10;
+          const color = palette[idx % palette.length];
+          return { lang, count, pct, color };
+        });
+
+        dashboard.innerHTML = `
+          <div class="dashboard-stack">
+            <div class="dashboard-card">
+              <div class="dashboard-label">Total Projects</div>
+              <div class="dashboard-value">${total}</div>
+              <img src="images/icons/project.png" alt="" class="dashboard-icon" aria-hidden="true">
+            </div>
+            <div class="dashboard-card dashboard-repos">
+              <div class="dashboard-label">Total Public Repos</div>
+              <div class="dashboard-value">${totalPublicRepos ?? '—'}</div>
+              <img src="images/icons/repository.png" alt="" class="dashboard-icon" aria-hidden="true">
+            </div>
+          </div>
+          <div class="dashboard-card">
+            <div class="dashboard-label">Top Languages</div>
+            <div class="lang-bars">
+              ${chartBars.map(s => `
+                <div class="lang-bar-row">
+                  <div class="lang-bar-head">
+                    <span class="lang-bar-name"><i class="${langIconClass(s.lang)}" aria-hidden="true"></i> ${s.lang}</span>
+                    <span class="lang-bar-pct">${s.pct}%</span>
+                  </div>
+                  <div class="lang-bar-track">
+                    <span class="lang-bar-fill" style="width:${s.pct}%; background:${s.color};"></span>
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+          <div class="dashboard-card dashboard-highlight">
+            <p>These are some featured projects. Get the full list in my GitHub and other sections of my website.</p>
+            <a class="dashboard-link" href="https://github.com/NavidNaf" target="_blank" rel="noopener noreferrer" aria-label="View all projects on GitHub">
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        `;
       }
 
       // Load GitHub stats
@@ -414,6 +567,8 @@
             const following = userData.following || 0;
 
             statsText.innerHTML = `${repos} public repositories • ${followers} followers • ${following} following`;
+            totalPublicRepos = repos;
+            renderDashboard(allProjects);
           } else {
             statsText.innerHTML = 'GitHub profile data loaded successfully';
           }
@@ -452,5 +607,3 @@
 <script src="/script.js" defer></script>
 </body>
 </html>
-
-

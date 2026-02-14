@@ -77,39 +77,59 @@ document.addEventListener('DOMContentLoaded', () => {
         const li = document.createElement('li');
         li.className = 'rh-item';
 
-        const left = document.createElement('div');
-        left.className = 'rh-left';
-        left.textContent = it.progress || it.Progress || '';
+        const card = document.createElement('div');
+        card.className = 'rh-card';
 
-        const right = document.createElement('div');
-        right.className = 'rh-right';
+        const progressText = it.progress || it.Progress || '';
+        if (progressText) {
+          const progress = document.createElement('div');
+          progress.className = 'rh-progress';
+          progress.textContent = progressText;
+          card.appendChild(progress);
+        }
+
         const title = document.createElement('div');
         title.className = 'rh-title';
         title.textContent = it.title || it.Title || '';
+
+        const year = document.createElement('div');
+        year.className = 'rh-year';
+        year.textContent = it.year || it.Year || it.date || it.Date || '';
+
+        const meta = document.createElement('div');
+        meta.className = 'rh-meta';
+
         const desc = document.createElement('div');
         desc.className = 'rh-desc';
         desc.textContent = it.description || it.Description || '';
+
+        const actions = document.createElement('div');
+        actions.className = 'rh-actions';
+
         const href = normalizeUrl(it.url || it.URL || it.link || it.Link || '');
-        const linkWrap = document.createElement('div');
-        linkWrap.className = 'rh-link';
         if (href) {
           const a = document.createElement('a');
+          a.className = 'rh-btn rh-btn-link';
           a.href = href;
           a.target = '_blank';
           a.rel = 'noopener';
+          a.setAttribute('aria-label', 'Open link');
           const icon = document.createElement('i');
           icon.className = 'fa-solid fa-arrow-up-right-from-square';
           icon.setAttribute('aria-hidden', 'true');
           a.appendChild(icon);
-          linkWrap.appendChild(a);
+          actions.appendChild(a);
         }
 
-        right.appendChild(title);
-        if (desc.textContent) right.appendChild(desc);
-        if (linkWrap.childNodes.length) right.appendChild(linkWrap);
+        card.appendChild(title);
+        if (year.textContent) card.appendChild(year);
+        if (desc.textContent || actions.childNodes.length) {
+          if (desc.textContent) meta.appendChild(desc);
+          if (actions.childNodes.length) meta.appendChild(actions);
+          card.appendChild(meta);
+        }
 
-        li.appendChild(left);
-        li.appendChild(right);
+        li.appendChild(card);
         frag.appendChild(li);
       });
       rhList.appendChild(frag);
@@ -207,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (emptyEl) emptyEl.hidden = true;
     const frag = document.createDocumentFragment();
 
-    // Heuristically pick the best keys for time/news
+    // Heuristically pick the best keys for time/news/category
     const pickKey = (keys, candidates) => {
       const set = new Set(keys.map(k => k.toLowerCase()));
       for (const c of candidates) if (set.has(c)) return c;
@@ -225,13 +245,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearKey = pickKey(keys, ['year']);
     // prefer explicit news-like keys
     let newsKey = pickKey(keys, ['news','title','event','headline','item','text']);
+    let categoryKey = pickKey(keys, ['category','type','role','label','area','domain']);
 
-    items.forEach(it => {
+    items.slice(0, 3).forEach(it => {
       const li = document.createElement('li');
-      li.className = 'rh-item';
+      li.className = 'ch-item';
 
-      const left = document.createElement('div');
-      left.className = 'rh-left';
+      const card = document.createElement('div');
+      card.className = 'ch-card';
+
+      const header = document.createElement('div');
+      header.className = 'ch-head';
+
+      const category = document.createElement('span');
+      category.className = 'ch-category';
+      let categoryText = '';
+      if (categoryKey && it[categoryKey] !== undefined) categoryText = it[categoryKey];
+      else categoryText = it.category || it.Category || it.type || it.Type || '';
+      category.textContent = categoryText || 'Highlight';
+
+      const date = document.createElement('span');
+      date.className = 'ch-date';
       let timeVal = '';
       if (timeKey && it[timeKey] !== undefined) timeVal = it[timeKey];
       else if (it.time || it.Time) timeVal = it.time || it.Time;
@@ -242,29 +276,30 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         timeVal = it.progress || it.date || it.when || it.Progress || '';
       }
-      left.textContent = timeVal;
+      date.textContent = timeVal;
 
-      const right = document.createElement('div');
-      right.className = 'rh-right';
-      const title = document.createElement('div');
-      title.className = 'rh-title';
+      header.appendChild(category);
+      if (date.textContent) header.appendChild(date);
+
+      const body = document.createElement('div');
+      body.className = 'ch-body';
       let newsText = '';
       if (newsKey && it[newsKey] !== undefined) newsText = it[newsKey];
       else newsText = it.news || it.News || it.title || it.event || it.Title || '';
-      title.textContent = newsText;
-      const desc = document.createElement('div');
-      desc.className = 'rh-desc';
-      desc.textContent = it.description || it.details || it.Description || '';
+      const descText = it.description || it.details || it.Description || '';
+      body.textContent = descText ? `${newsText} ${descText}`.trim() : newsText;
+
       const href = normalizeUrl(
         it.url || it.URL || it.link || it.Link || it.website || it.websiteurl || it.weblink || ''
       );
       const linkWrap = document.createElement('div');
-      linkWrap.className = 'rh-link';
+      linkWrap.className = 'ch-link';
       if (href) {
         const a = document.createElement('a');
         a.href = href;
         a.target = '_blank';
         a.rel = 'noopener';
+        a.setAttribute('aria-label', 'Open link');
         const icon = document.createElement('i');
         icon.className = 'fa-solid fa-arrow-up-right-from-square';
         icon.setAttribute('aria-hidden', 'true');
@@ -272,12 +307,11 @@ document.addEventListener('DOMContentLoaded', () => {
         linkWrap.appendChild(a);
       }
 
-      right.appendChild(title);
-      if (desc.textContent) right.appendChild(desc);
-      if (linkWrap.childNodes.length) right.appendChild(linkWrap);
+      card.appendChild(header);
+      if (body.textContent) card.appendChild(body);
+      if (linkWrap.childNodes.length) card.appendChild(linkWrap);
 
-      li.appendChild(left);
-      li.appendChild(right);
+      li.appendChild(card);
       frag.appendChild(li);
     });
     ulEl.appendChild(frag);
@@ -379,21 +413,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const renderPager = () => {
       const total = pageCount();
       pager.innerHTML = '';
+      if (total <= 1) return;
       const prev = document.createElement('button');
+      prev.className = 'page-btn';
       prev.textContent = 'Prev';
       prev.disabled = current <= 0;
       prev.addEventListener('click', () => { if (current>0){ current--; applyPage(); }});
       const next = document.createElement('button');
+      next.className = 'page-btn';
       next.textContent = 'Next';
       next.disabled = current >= total - 1;
       next.addEventListener('click', () => { if (current<total-1){ current++; applyPage(); }});
+      const status = document.createElement('span');
+      status.className = 'page-status';
+      status.textContent = `Page ${current + 1} of ${total}`;
       pager.appendChild(prev);
-      for (let i=0;i<total;i++){
-        const dot = document.createElement('span');
-        dot.className = 'page-dot' + (i===current ? ' active' : '');
-        dot.addEventListener('click', () => { current = i; applyPage(); });
-        pager.appendChild(dot);
-      }
+      pager.appendChild(status);
       pager.appendChild(next);
     };
 
@@ -518,8 +553,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('article');
         card.className = 'work-card';
 
-        const top = document.createElement('div');
-        top.className = 'work-top';
+        const header = document.createElement('div');
+        header.className = 'work-header';
+
+        const left = document.createElement('div');
+        left.className = 'work-left';
+
+        const logoWrap = document.createElement('div');
+        logoWrap.className = 'work-logo-wrap';
 
         const logo = document.createElement('img');
         logo.className = 'work-logo';
@@ -527,8 +568,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const employerUrlNorm = normalizeUrl(getFirst(item, [
           'employerurl','website','site','url','weblink','homepage','companyurl','organizationurl','EmployerURL'
         ]));
-        const logoSrc = pickLogo(item) || toFavicon(employerUrlNorm);
-        logo.src = logoSrc || 'images/SecondaryLogo_Color2.avif';
+        const employerName = item.employer || item.Employer || getFirst(item, ['company','organization','employername']) || 'Employer';
+        const normalizedEmployer = String(employerName).toLowerCase();
+        if (normalizedEmployer.includes('university of north carolina') || normalizedEmployer.includes('unc')) {
+          card.classList.add('work-card-unc');
+        } else if (normalizedEmployer.includes('optimizely')) {
+          card.classList.add('work-card-optimizely');
+        } else if (normalizedEmployer.includes('bkash') || normalizedEmployer.includes('b-kash')) {
+          card.classList.add('work-card-bkash');
+        }
+        const isUncEmployer = normalizedEmployer.includes('university of north carolina') || normalizedEmployer.includes('unc');
+        const logoSrc = isUncEmployer ? 'images/unc-logo.png' : (pickLogo(item) || toFavicon(employerUrlNorm));
+        logo.src = logoSrc || 'images/unc-logo.png';
         // Fallback to favicon if logo fails
         logo.addEventListener('error', () => {
           const fav = toFavicon(employerUrlNorm, 128);
@@ -540,18 +591,39 @@ document.addEventListener('DOMContentLoaded', () => {
         const a = document.createElement('a');
         a.target = '_blank';
         a.rel = 'noopener';
-        a.textContent = item.employer || item.Employer || getFirst(item, ['company','organization','employername']) || 'Employer';
+        a.textContent = employerName;
         const employerUrl = employerUrlNorm;
         a.href = employerUrl || '#';
         name.appendChild(a);
 
-        top.appendChild(logo);
-        top.appendChild(name);
+        const locationText = getFirst(item, [
+          'location','Location','city','place','region','country'
+        ]);
+
+        logoWrap.appendChild(logo);
+        left.appendChild(logoWrap);
+        left.appendChild(name);
+        if (locationText) {
+          const location = document.createElement('div');
+          location.className = 'work-location';
+          location.textContent = locationText;
+          left.appendChild(location);
+        }
+
+        header.appendChild(left);
 
         const role = document.createElement('div');
         role.className = 'work-role';
         role.textContent = item.designation || item.Designation || '';
 
+        const dates = document.createElement('div');
+        dates.className = 'work-dates';
+        if (item.duration || item.Duration) {
+          dates.textContent = item.duration || item.Duration;
+        }
+
+        const footer = document.createElement('div');
+        footer.className = 'work-footer';
         const links = document.createElement('div');
         links.className = 'work-links';
         // Prefer the 'Work Portfolio' column first (normalized: workportfolio)
@@ -570,19 +642,12 @@ document.addEventListener('DOMContentLoaded', () => {
           links.appendChild(pa);
         }
 
-        const meta = document.createElement('div');
-        meta.className = 'work-meta';
-        if (item.duration || item.Duration) {
-          const tag = document.createElement('span');
-          tag.className = 'duration-tag';
-          tag.textContent = item.duration || item.Duration;
-          meta.appendChild(tag);
-        }
+        footer.appendChild(links);
 
-        card.appendChild(top);
+        card.appendChild(header);
         card.appendChild(role);
-        card.appendChild(links);
-        card.appendChild(meta);
+        card.appendChild(dates);
+        card.appendChild(footer);
         frag.appendChild(card);
       });
       workGrid.appendChild(frag);
