@@ -435,8 +435,12 @@ a.explore-tile:hover .explore-tile-cta {
 }
 
 /* Research Downloads */
-.download-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.download-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .download-pill {
+  --pill-accent: rgba(75,156,211,.35);
+  --pill-bg: rgba(75,156,211,.10);
+  --pill-icon-bg: rgba(75,156,211,.14);
+  --pill-text: #0b4f7a;
   display: grid;
   grid-template-columns: 52px 1fr auto;
   align-items: center;
@@ -444,9 +448,9 @@ a.explore-tile:hover .explore-tile-cta {
   padding: 0.7rem 0.9rem;
   text-decoration: none;
   color: var(--black);
-  border: 1px solid var(--gray-200);
+  border: 1px solid var(--pill-accent);
   border-radius: 0.8rem;
-  background: rgba(255,255,255,.6);
+  background: var(--pill-bg);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   box-shadow: 0 2px 10px rgba(0,0,0,.04);
@@ -462,7 +466,7 @@ a.explore-tile:hover .explore-tile-cta {
   border-radius: 0.9rem;
   display: grid;
   place-items: center;
-  background: rgba(75,156,211,.10);
+  background: var(--pill-icon-bg);
 }
 .download-pill-icon img {
   width: 28px;
@@ -478,14 +482,32 @@ a.explore-tile:hover .explore-tile-cta {
 .download-pill-cta {
   padding: 0.2rem 0.75rem;
   border-radius: 0.5rem;
-  border: 1px solid rgba(75,156,211,.35);
-  color: var(--carolina-blue);
+  border: 1px solid var(--pill-accent);
+  color: var(--pill-text);
   font-weight: 600;
   font-size: 0.85rem;
+  background: rgba(255,255,255,.78);
+}
+.download-pill-resume {
+  --pill-accent: rgba(15,118,110,.4);
+  --pill-bg: rgba(20,184,166,.18);
+  --pill-icon-bg: rgba(15,118,110,.18);
+  --pill-text: #0f766e;
+}
+.download-pill-portfolio {
+  --pill-accent: rgba(37,99,235,.38);
+  --pill-bg: rgba(59,130,246,.16);
+  --pill-icon-bg: rgba(37,99,235,.16);
+  --pill-text: #1d4ed8;
+}
+.download-pill-statement {
+  --pill-accent: rgba(217,119,6,.4);
+  --pill-bg: rgba(245,158,11,.18);
+  --pill-icon-bg: rgba(217,119,6,.16);
+  --pill-text: #b45309;
 }
 
 @media (max-width: 640px) {
-  .download-grid { grid-template-columns: 1fr; }
   .download-pill { grid-template-columns: 46px 1fr auto; padding: 0.65rem 0.8rem; }
   .download-pill-icon { width: 46px; height: 46px; }
   .download-pill-icon img { width: 24px; height: 24px; }
@@ -981,6 +1003,21 @@ a:hover { text-decoration: underline; }
   color: #1877f2;
   border-color: rgba(24,119,242,.4);
   background: rgba(24,119,242,.12);
+}
+.contact-chip.contact-resume {
+  color: #ffffff;
+  border-color: rgba(15,118,110,.65);
+  background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);
+  padding: 0.42rem 0.95rem;
+  font-size: 1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(15,118,110,.25);
+  transition: filter 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.contact-chip.contact-resume:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(15,118,110,.32);
 }
 
 /* Subtle divider used to separate sections inline */
