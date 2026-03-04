@@ -3,8 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
+
 <title>Navid Naf | Official Website</title>
-<meta name="description" content="Academic portfolio showcasing research, publications, projects, and teaching.">
+    <meta name="description" content="Academic portfolio of Navid Naf featuring research highlights, projects, publications, education, and professional experience.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Navid Naf">
+    <link rel="canonical" href="https://navidnaf.com/">
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Navid Naf">
+    <meta property="og:title" content="Navid Naf | Official Website">
+    <meta property="og:description" content="Academic portfolio of Navid Naf featuring research highlights, projects, publications, education, and professional experience.">
+    <meta property="og:url" content="https://navidnaf.com/">
+    <meta property="og:image" content="https://navidnaf.com/images/navid-cartoon.png">
+    <meta property="og:image:alt" content="Navid Naf | Official Website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Navid Naf | Official Website">
+    <meta name="twitter:description" content="Academic portfolio of Navid Naf featuring research highlights, projects, publications, education, and professional experience.">
+    <meta name="twitter:image" content="https://navidnaf.com/images/navid-cartoon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +37,7 @@
 
 <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="home-page">
 <a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-header">
@@ -23,20 +45,25 @@
     <a class="brand" href="/" aria-label="Navid Naf - Home">
       <img src="images/navid black-02.png" alt="Navid Naf" class="brand-logo">
     </a>
-    <nav id="site-nav" class="site-nav" aria-label="Primary">
+    <button class="nav-toggle mobile-sections-toggle" aria-expanded="false" aria-controls="mobile-sections-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="sr-only">Toggle section navigation</span>
+    </button>
+    <nav id="mobile-sections-nav" class="mobile-sections-nav" aria-label="Mobile section navigation">
       <ul>
-        <li><a href="#research-interests">Research</a></li>
+        <li><a href="#advertisement">Advertisement</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#research-interests">Research Interests</a></li>
+        <li><a href="#research-highlights">Research Highlights</a></li>
+        <li><a href="#research-downloads">Research Downloads</a></li>
         <li><a href="#education">Education</a></li>
-        <li><a href="#awards">Work</a></li>
-        <li><a href="#news">Explore More</a></li>
+        <li><a href="#awards">Work Experience</a></li>
+        <li><a href="#news">Explore My Work</a></li>
+        <li><a href="#publications">More to Explore</a></li>
       </ul>
     </nav>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="nav-toggle-bar"></span>
-      <span class="sr-only">Toggle navigation</span>
-    </button>
   </div>
   <div class="accent-bar" aria-hidden="true"></div>
 </header>
@@ -101,11 +128,53 @@
         </div>
       </div>
     </section>
+    <aside class="profile-sidebar" aria-label="Section navigation">
+      <ul class="profile-sidebar-list">
+        <li><a href="#highlights"><i class="fa-solid fa-star" aria-hidden="true"></i><span>Highlights</span></a></li>
+        <li><a href="#research-interests"><i class="fa-solid fa-flask-vial" aria-hidden="true"></i><span>Research Interests</span></a></li>
+        <li><a href="#research-highlights"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>Research Highlights</span></a></li>
+        <li><a href="#education"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i><span>Education</span></a></li>
+        <li><a href="#awards"><i class="fa-solid fa-briefcase" aria-hidden="true"></i><span>Work Experience</span></a></li>
+        <li class="profile-sidebar-group">
+          <div class="profile-sidebar-split">
+            <a href="#news" class="profile-sidebar-parent-link">
+              <i class="fa-solid fa-compass-drafting" aria-hidden="true"></i>
+              <span>Explore My Work</span>
+            </a>
+            <button type="button" class="profile-sidebar-toggle" aria-expanded="false" aria-controls="explore-submenu" aria-label="Toggle Explore My Work subsections">
+              <i class="fa-solid fa-chevron-down profile-sidebar-chevron" aria-hidden="true"></i>
+            </button>
+          </div>
+          <ul id="explore-submenu" class="profile-submenu">
+            <li><a href="project.html"><i class="fa-solid fa-scroll" aria-hidden="true"></i><span>Scriptorium</span></a></li>
+            <li><a href="seminars.html"><i class="fa-solid fa-comments" aria-hidden="true"></i><span>Conversations</span></a></li>
+            <li><a href="/red-hawks/"><i class="fa-solid fa-feather-pointed" aria-hidden="true"></i><span>RedHawks</span></a></li>
+            <li><a href="security-consultation.html"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><span>Security Consultation</span></a></li>
+            <li><a href="#news"><i class="fa-solid fa-people-group" aria-hidden="true"></i><span>Leadership</span></a></li>
+            <li><a href="#news"><i class="fa-solid fa-building-columns" aria-hidden="true"></i><span>Affiliations</span></a></li>
+            <li><a href="#news"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span>Entrepreneurial Journey</span></a></li>
+          </ul>
+        </li>
+      </ul>
+    </aside>
 
     <section id="advertisement" class="section ad-section">
-      <a class="ad-link" href="https://www.facebook.com/NavidSec/posts/pfbid0SSWwU4uQQMRpL9wUtTJhyNnAnY9rz74SGXmoXRipUsnGkj24eanLGcmdxDRVV76Al" target="_blank" rel="noopener">
-        <img src="images/advertisement.png" alt="Advertisement" class="ad-image">
-      </a>
+      <div class="ad-slider" aria-label="Advertisement slider">
+        <a class="ad-link ad-slide is-active" href="https://www.facebook.com/NavidSec/posts/pfbid0SSWwU4uQQMRpL9wUtTJhyNnAnY9rz74SGXmoXRipUsnGkj24eanLGcmdxDRVV76Al" target="_blank" rel="noopener">
+          <img src="images/advertisement.png" alt="Advertisement 1" class="ad-image">
+        </a>
+        <a class="ad-link ad-slide" href="https://www.facebook.com/NavidSec/posts/pfbid0SSWwU4uQQMRpL9wUtTJhyNnAnY9rz74SGXmoXRipUsnGkj24eanLGcmdxDRVV76Al" target="_blank" rel="noopener">
+          <img src="images/advertisement2.png" alt="Advertisement 2" class="ad-image">
+        </a>
+        <a class="ad-link ad-slide" href="security-consultation.html">
+          <img src="images/advertisement3.png" alt="Advertisement 3" class="ad-image">
+        </a>
+        <div class="ad-dots" aria-label="Advertisement slide controls">
+          <button type="button" class="ad-dot is-active" aria-label="Show advertisement 1" aria-selected="true"></button>
+          <button type="button" class="ad-dot" aria-label="Show advertisement 2" aria-selected="false"></button>
+          <button type="button" class="ad-dot" aria-label="Show advertisement 3" aria-selected="false"></button>
+        </div>
+      </div>
     </section>
 
     <section id="highlights" class="section">
@@ -200,18 +269,21 @@
       <ul class="education-list">
         <li class="education-item edu-card edu-card-unc">
           <div class="edu-media">
-            <img src="images/uni/unc-campus.avif" alt="UNC campus" class="edu-thumb edu-thumb-unc">
-            <div class="edu-logo-badge edu-logo-unc">
+            <img src="images/bg/unc-bg.avif" alt="UNC campus" class="edu-thumb edu-thumb-unc">
+            <div class="edu-logo-circle edu-logo-unc">
               <img src="images/unc-logo.png" alt="UNC Logo">
             </div>
           </div>
-          <div class="edu-main">
+          <div class="edu-main edu-main-panel">
             <div class="education-header">
-              <strong>University of North Carolina at Chapel Hill</strong>
+              <strong><a href="https://www.unc.edu/" target="_blank" rel="noopener">University of North Carolina at Chapel Hill</a></strong>
             </div>
             <div class="education-details">
               <div class="edu-degree"><strong>Ph.D.</strong> in Computer Science</div>
               <div class="edu-advisor"><strong>Advisor:</strong> <a href="https://andrewkwong.org/" target="_blank" rel="noopener">Dr. Andrew Kwong</a></div>
+            </div>
+            <div class="edu-meta">
+              <span class="edu-tag">Aug. 2023 - Aug. 2030 (Expected)</span>
             </div>
             <div class="edu-footer">
               <div class="edu-research-tags">
@@ -220,29 +292,28 @@
                 <span class="highlight-tag">Web and Browser Security</span>
                 <span class="highlight-tag">Hardware–Software (Application) Security Intersection</span>
               </div>
-              <div class="edu-footer-right">
-                <div class="edu-tags">
-                  <span class="edu-tag">Aug. 2023 - present</span>
-                </div>
-              </div>
             </div>
           </div>
         </li>
         <li class="education-item edu-card edu-card-iut">
           <div class="edu-media">
-            <img src="images/uni/iut.jpg" alt="Islamic University of Technology campus" class="edu-thumb edu-thumb-iut">
-            <div class="edu-logo-badge edu-logo-iut">
+            <img src="images/bg/iut-bg.png" alt="Islamic University of Technology campus" class="edu-thumb edu-thumb-iut">
+            <div class="edu-logo-circle edu-logo-iut">
               <img src="images/Islamic_University_of_Technology_(coat_of_arms).png" alt="IUT Logo">
             </div>
           </div>
-          <div class="edu-main">
+          <div class="edu-main edu-main-panel">
             <div class="education-header">
-              <strong>Islamic University of Technology</strong>
+              <strong><a href="https://www.iutoic-dhaka.edu/" target="_blank" rel="noopener">Islamic University of Technology</a></strong>
             </div>
             <div class="education-details">
               <div class="edu-degree"><strong>B.Sc.</strong> in Engineering (EEE)</div>
               <div class="edu-advisor"><strong>Advisor:</strong> <a href="https://scholar.google.com/citations?user=3waAWaYAAAAJ&hl=en" target="_blank" rel="noopener">Dr. Golam Sarowar</a></div>
               <div class="edu-thesis"><strong>Thesis:</strong> Design and Implementation of Server Based Position and Angle Measurement and Control of DC Motor</div>
+            </div>
+            <div class="edu-meta">
+              <span class="edu-award">OIC Award Recipient</span>
+              <span class="edu-tag">Jan. 2016 - Dec. 2019</span>
             </div>
             <div class="edu-footer">
               <div class="edu-research-tags">
@@ -251,10 +322,6 @@
                 <span class="highlight-tag">Secure Communication Protocols</span>
                 <span class="highlight-tag">Microprocessor Security</span>
                 <span class="highlight-tag">Embedded Systems Security</span>
-              </div>
-              <div class="edu-footer-right">
-                <div class="edu-awards"><span class="edu-award">OIC Award Recipient</span></div>
-                <div class="edu-tags"><span class="edu-tag">Jan. 2016 - Dec. 2019</span></div>
               </div>
             </div>
           </div>

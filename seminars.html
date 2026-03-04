@@ -3,8 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
+
 <title>Navid Naf | Official Website</title>
-<meta name="description" content="Academic portfolio showcasing research, publications, projects, and teaching.">
+    <meta name="description" content="Conversations: seminars, talks, workshops, and public knowledge-sharing sessions by Navid Naf.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Navid Naf">
+    <link rel="canonical" href="https://navidnaf.com/seminars.html">
+
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Navid Naf">
+    <meta property="og:title" content="Navid Naf | Official Website">
+    <meta property="og:description" content="Conversations: seminars, talks, workshops, and public knowledge-sharing sessions by Navid Naf.">
+    <meta property="og:url" content="https://navidnaf.com/seminars.html">
+    <meta property="og:image" content="https://navidnaf.com/images/navid-cartoon.png">
+    <meta property="og:image:alt" content="Navid Naf | Official Website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Navid Naf | Official Website">
+    <meta name="twitter:description" content="Conversations: seminars, talks, workshops, and public knowledge-sharing sessions by Navid Naf.">
+    <meta name="twitter:image" content="https://navidnaf.com/images/navid-cartoon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -138,6 +160,10 @@
     <section class="avengers-section">
       <h2>💥 Avengers Assemble</h2>
       <div id="avengers-dashboard" class="avengers-dashboard" aria-label="Events overview"></div>
+      <div class="avengers-filter-shell">
+        <div id="avengers-type-filters" class="avengers-type-filters" aria-label="Filter events by type"></div>
+        <div id="avengers-tag-search" class="avengers-tag-search" aria-label="Search events by tags"></div>
+      </div>
       <div class="avengers-grid" id="avengers-container">
         <!-- Tiles will be loaded dynamically -->
       </div>
@@ -184,11 +210,20 @@
 </div>
 
 <script>
+const avengersState = {
+  headers: [],
+  rows: [],
+  selectedTypes: new Set(['All']),
+  tagQuery: ''
+};
+
 // Load Avengers Assemble data from Google Sheets CSV
 async function loadAvengersData() {
   const csvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSy7KOHp3XydAoFfgDgDgmJWe08EUVDH8e0WssmesMZ0vLDt43mEWcYwnRQuBJIs2HTXP6ZbXzRlVYg/pub?gid=0&single=true&output=csv';
   const container = document.getElementById('avengers-container');
   const dashboard = document.getElementById('avengers-dashboard');
+  const filters = document.getElementById('avengers-type-filters');
+  const tagSearch = document.getElementById('avengers-tag-search');
 
   console.log('🔍 Starting to load Avengers data from:', csvUrl);
 
@@ -239,23 +274,21 @@ async function loadAvengersData() {
         </div>
       `;
       if (dashboard) dashboard.innerHTML = '';
+      if (filters) filters.innerHTML = '';
+      if (tagSearch) tagSearch.innerHTML = '';
       return;
     }
 
-    console.log('🏗️ Creating tiles for', dataRows.length, 'events');
-    renderAvengersDashboard(dataRows);
+    console.log('🏗️ Preparing tiles for', dataRows.length, 'events');
+    avengersState.headers = headers;
+    avengersState.rows = dataRows;
+    avengersState.selectedTypes = new Set(['All']);
+    avengersState.tagQuery = '';
 
-    // Create tiles
-    dataRows.forEach((event, index) => {
-      console.log(`🔨 Creating tile ${index + 1}:`, event);
-      try {
-        const tile = createAvengerTile(event, headers);
-        container.appendChild(tile);
-        console.log(`✅ Tile ${index + 1} created successfully`);
-      } catch (tileError) {
-        console.error(`❌ Error creating tile ${index + 1}:`, tileError, 'Data:', event);
-      }
-    });
+    renderAvengersDashboard(dataRows);
+    renderAvengersTypeFilters(dataRows);
+    renderAvengersTagSearch(dataRows);
+    renderFilteredAvengersTiles();
 
     console.log('🎉 Avengers data loading completed successfully!');
 
@@ -285,7 +318,254 @@ async function loadAvengersData() {
       </div>
     `;
     if (dashboard) dashboard.innerHTML = '';
+    if (filters) filters.innerHTML = '';
+    if (tagSearch) tagSearch.innerHTML = '';
   }
+}
+
+function renderAvengersTypeFilters(rows) {
+  const filters = document.getElementById('avengers-type-filters');
+  if (!filters) return;
+
+  const typeCounts = new Map();
+  rows.forEach(row => {
+    const type = (row[0] || '').trim() || 'Other';
+    typeCounts.set(type, (typeCounts.get(type) || 0) + 1);
+  });
+
+  const types = Array.from(typeCounts.entries())
+    .sort((a, b) => b[1] - a[1])
+    .map(([type]) => type);
+
+  const labels = ['All', ...types];
+  if (avengersState.selectedTypes.size === 0) {
+    avengersState.selectedTypes = new Set(['All']);
+  }
+  if (!avengersState.selectedTypes.has('All')) {
+    const validSelected = new Set(
+      Array.from(avengersState.selectedTypes).filter((t) => types.includes(t))
+    );
+    avengersState.selectedTypes = validSelected.size ? validSelected : new Set(['All']);
+  }
+
+  filters.innerHTML = labels.map((label) => {
+    const count = label === 'All' ? rows.length : (typeCounts.get(label) || 0);
+    const isActive = avengersState.selectedTypes.has(label);
+    const icon = getEventTypeIconClass(label);
+    return `
+      <button
+        type="button"
+        class="event-type-toggle${isActive ? ' is-active' : ''}"
+        data-event-type="${escapeHtml(label)}"
+        aria-pressed="${isActive ? 'true' : 'false'}"
+      >
+        <i class="${icon}" aria-hidden="true"></i>
+        <span>${label}</span>
+        <span class="event-type-count">${count}</span>
+      </button>
+    `;
+  }).join('');
+
+  filters.querySelectorAll('.event-type-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const label = btn.dataset.eventType || '';
+      if (!label) return;
+      if (label === 'All') {
+        avengersState.selectedTypes = new Set(['All']);
+      } else {
+        if (avengersState.selectedTypes.has('All')) {
+          avengersState.selectedTypes.delete('All');
+        }
+        if (avengersState.selectedTypes.has(label)) {
+          if (avengersState.selectedTypes.size > 1) {
+            avengersState.selectedTypes.delete(label);
+          }
+        } else {
+          avengersState.selectedTypes.add(label);
+        }
+        if (avengersState.selectedTypes.size === 0) {
+          avengersState.selectedTypes.add('All');
+        }
+      }
+      renderAvengersTypeFilterState();
+      renderFilteredAvengersTiles();
+    });
+  });
+}
+
+function renderAvengersTypeFilterState() {
+  const filters = document.getElementById('avengers-type-filters');
+  if (!filters) return;
+  filters.querySelectorAll('.event-type-toggle').forEach((btn) => {
+    const label = btn.dataset.eventType || 'All';
+    const isActive = avengersState.selectedTypes.has(label);
+    btn.classList.toggle('is-active', isActive);
+    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  });
+}
+
+function renderFilteredAvengersTiles() {
+  const container = document.getElementById('avengers-container');
+  if (!container) return;
+
+  const selected = avengersState.selectedTypes;
+  const showAll = selected.has('All');
+  const query = normalizeTagText(avengersState.tagQuery);
+  const filteredRows = avengersState.rows.filter((row) => {
+    const type = (row[0] || '').trim() || 'Other';
+    const typeMatch = showAll || selected.has(type);
+    if (!typeMatch) return false;
+
+    if (!query) return true;
+    const tags = extractEventTags(row).map((tag) => normalizeTagText(tag));
+    return tags.some((tag) => tag.includes(query) || query.includes(tag));
+  });
+
+  container.innerHTML = '';
+  filteredRows.forEach((event, index) => {
+    console.log(`🔨 Creating tile ${index + 1}:`, event);
+    try {
+      const tile = createAvengerTile(event, avengersState.headers);
+      container.appendChild(tile);
+    } catch (tileError) {
+      console.error(`❌ Error creating tile ${index + 1}:`, tileError, 'Data:', event);
+    }
+  });
+
+  if (filteredRows.length === 0) {
+    container.innerHTML = `
+      <div style="grid-column: 1 / -1; text-align: center; color: var(--gray-500); padding: 1.5rem;">
+        <p><strong>No events match the selected filters.</strong></p>
+      </div>
+    `;
+  }
+}
+
+function renderAvengersTagSearch(rows) {
+  const searchWrap = document.getElementById('avengers-tag-search');
+  if (!searchWrap) return;
+
+  const uniqueTags = Array.from(
+    new Set(
+      rows.flatMap((row) => extractEventTags(row))
+    )
+  ).sort((a, b) => a.localeCompare(b));
+
+  searchWrap.innerHTML = `
+    <div class="avengers-search-shell">
+      <div class="avengers-search-input-wrap">
+        <i class="fa-solid fa-magnifying-glass avengers-search-icon" aria-hidden="true"></i>
+        <input
+          id="avengers-tag-input"
+          type="search"
+          class="avengers-tag-input"
+          placeholder="Search tags for events"
+          value="${escapeHtml(avengersState.tagQuery)}"
+          aria-label="Search events by tags"
+          autocomplete="off"
+        >
+        <span class="avengers-search-hint" aria-hidden="true">⌘K</span>
+      </div>
+      <div id="avengers-tag-suggestions" class="avengers-tag-suggestions" hidden></div>
+    </div>
+  `;
+
+  const input = document.getElementById('avengers-tag-input');
+  const suggestions = document.getElementById('avengers-tag-suggestions');
+  if (!input || !suggestions) return;
+
+  const renderTagOptions = (rawQuery, showPanel = false) => {
+    const q = normalizeTagText(rawQuery);
+    const tags = q
+      ? uniqueTags.filter((tag) => normalizeTagText(tag).includes(q))
+      : uniqueTags;
+
+    if (!showPanel) return;
+
+    if (tags.length === 0) {
+      suggestions.innerHTML = `<div class="avengers-tag-empty">No matching tags</div>`;
+      suggestions.hidden = false;
+      return;
+    }
+
+    suggestions.innerHTML = `
+      <div class="avengers-tag-chip-row">
+        ${tags.slice(0, 30).map((tag) => `<button type="button" class="avengers-tag-chip" data-tag="${escapeHtml(tag)}">${tag}</button>`).join('')}
+      </div>
+    `;
+    suggestions.hidden = false;
+
+    suggestions.querySelectorAll('.avengers-tag-chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const tag = chip.dataset.tag || '';
+        input.value = tag;
+        applySearch();
+        suggestions.hidden = true;
+      });
+    });
+  };
+
+  let debounceId;
+  const applySearch = () => {
+    avengersState.tagQuery = input.value.trim();
+    renderFilteredAvengersTiles();
+  };
+
+  renderTagOptions(avengersState.tagQuery, false);
+
+  input.addEventListener('input', () => {
+    renderTagOptions(input.value, true);
+    clearTimeout(debounceId);
+    debounceId = setTimeout(applySearch, 140);
+  });
+  input.addEventListener('focus', () => {
+    renderTagOptions(input.value, true);
+  });
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      applySearch();
+      renderTagOptions(input.value, true);
+    }
+    if (e.key === 'Escape') {
+      suggestions.hidden = true;
+    }
+  });
+
+  if (!searchWrap.dataset.listenerBound) {
+    document.addEventListener('click', (e) => {
+      if (!searchWrap.contains(e.target)) {
+        suggestions.hidden = true;
+      }
+    });
+    searchWrap.dataset.listenerBound = 'true';
+  }
+}
+
+function extractEventTags(row) {
+  const text = (row[4] || '').trim();
+  return text
+    ? text.split(';').map((tag) => tag.trim()).filter(Boolean)
+    : [];
+}
+
+function normalizeTagText(text) {
+  return String(text || '').toLowerCase().trim();
+}
+
+function getEventTypeIconClass(label) {
+  const key = String(label || '').toLowerCase();
+  if (key === 'all') return 'fa-solid fa-layer-group';
+  if (key.includes('workshop')) return 'fa-solid fa-gear';
+  if (key.includes('seminar')) return 'fa-solid fa-graduation-cap';
+  if (key.includes('talk')) return 'fa-solid fa-microphone-lines';
+  if (key.includes('panel')) return 'fa-solid fa-people-group';
+  if (key.includes('tutorial')) return 'fa-solid fa-chalkboard';
+  if (key.includes('webinar')) return 'fa-solid fa-video';
+  if (key.includes('podcast')) return 'fa-solid fa-podcast';
+  if (key.includes('presentation')) return 'fa-solid fa-file-lines';
+  if (key.includes('newsletter')) return 'fa-solid fa-newspaper';
+  return 'fa-solid fa-bolt';
 }
 
 function parseAvengersCSV(csvText) {
@@ -334,9 +614,17 @@ function parseAvengersCSV(csvText) {
   return result;
 }
 
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 function createAvengerTile(event, headers) {
   const tile = document.createElement('div');
-  tile.className = 'avenger-tile';
 
   // Extract data from CSV row
   const type = (event[0] && event[0].trim()) ? event[0].trim() : '';
@@ -381,38 +669,46 @@ function createAvengerTile(event, headers) {
 
   const d = Date.parse(date);
   const dt = Number.isNaN(d) ? null : new Date(d);
-  const month = dt ? dt.toLocaleString('en-US', { month: 'short' }).toUpperCase() : '';
+  const monthNum = dt ? String(dt.getMonth() + 1).padStart(2, '0') : '';
   const day = dt ? String(dt.getDate()).padStart(2, '0') : '';
   const year = dt ? dt.getFullYear() : date;
   const monthIdx = dt ? dt.getMonth() : null;
 
   const monthClass = monthIdx !== null ? `month-${monthIdx + 1}` : '';
+  tile.className = `avenger-tile ${monthClass}`;
+
+  const primaryAction = (() => {
+    if (recordingUrl) {
+      return { url: recordingUrl, label: 'Recording', icon: 'fa-solid fa-video' };
+    }
+    if (slidesUrl) {
+      return { url: slidesUrl, label: 'Slides', icon: 'fa-solid fa-file-powerpoint' };
+    }
+    if (writeupUrl) {
+      return { url: writeupUrl, label: 'Write-up', icon: 'fa-solid fa-file-lines' };
+    }
+    return null;
+  })();
 
   tile.innerHTML = `
-    <div class="avenger-row">
-      <div class="avenger-datebox ${monthClass}">
-        <div class="avenger-month">${month || 'DATE'}</div>
-        <div class="avenger-day">${day || ''}</div>
+    <div class="avenger-head">
+      <div class="avenger-datebox">
+        <div class="avenger-date-main">${monthNum && day ? `${monthNum}/${day}` : 'DATE'}</div>
         <div class="avenger-year">${year || ''}</div>
       </div>
-      <div class="avenger-main">
-        <div class="avenger-type" style="--type-color:${typeColor};"><span class="type-dot"></span><i class="${typeIconClass}" aria-hidden="true"></i> ${type}</div>
-        <h3 class="avenger-topic">${topic}</h3>
-        <div class="avenger-venue">${venue}</div>
-        <div class="avenger-description">${description}</div>
-        ${keywords.length > 0 ? `<div class="keywords-container">${keywords.map(kw => `<span class="keyword-tag">${kw}</span>`).join('')}</div>` : ''}
+      <div class="avenger-actions" aria-label="Event resources">
+        ${primaryAction
+          ? `<a href="${primaryAction.url}" target="_blank" rel="noopener noreferrer" class="avenger-action" aria-label="${primaryAction.label}"><i class="${primaryAction.icon}" aria-hidden="true"></i></a>`
+          : `<span class="avenger-action is-disabled" aria-hidden="true"></span>`
+        }
       </div>
-      <div class="avenger-actions">
-        ${writeupUrl ? `<a href="${writeupUrl}" target="_blank" rel="noopener noreferrer" class="avenger-action" aria-label="Detailed writeup">
-          <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
-        </a>` : ''}
-        ${slidesUrl ? `<a href="${slidesUrl}" target="_blank" rel="noopener noreferrer" class="avenger-action" aria-label="Slide deck">
-          <i class="fa-solid fa-file-powerpoint" aria-hidden="true"></i>
-        </a>` : ''}
-        ${recordingUrl ? `<a href="${recordingUrl}" target="_blank" rel="noopener noreferrer" class="avenger-action" aria-label="Recording">
-          <i class="fa-solid fa-video" aria-hidden="true"></i>
-        </a>` : ''}
-      </div>
+    </div>
+    <div class="avenger-main">
+      <div class="avenger-type" style="--type-color:${typeColor};"><i class="${typeIconClass}" aria-hidden="true"></i><span>${type}</span></div>
+      <h3 class="avenger-topic">${topic}</h3>
+      <div class="avenger-venue">${venue}</div>
+      <div class="avenger-description">${description}</div>
+      ${keywords.length > 0 ? `<div class="keywords-container">${keywords.map((kw) => `<span class="keyword-tag-solid" style="--tag-color:${typeColor};">${kw}</span>`).join('')}</div>` : ''}
     </div>
   `;
 

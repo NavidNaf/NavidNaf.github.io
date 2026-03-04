@@ -1,14 +1,100 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile nav toggle
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.getElementById('site-nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      const expanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('open');
+  // Mobile section nav toggle
+  const sectionToggle = document.querySelector('.mobile-sections-toggle');
+  const sectionNav = document.getElementById('mobile-sections-nav');
+  if (sectionToggle && sectionNav) {
+    sectionToggle.addEventListener('click', () => {
+      const expanded = sectionToggle.getAttribute('aria-expanded') === 'true';
+      sectionToggle.setAttribute('aria-expanded', String(!expanded));
+      sectionNav.classList.toggle('open');
+    });
+    sectionNav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        sectionToggle.setAttribute('aria-expanded', 'false');
+        sectionNav.classList.remove('open');
+      });
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        sectionToggle.setAttribute('aria-expanded', 'false');
+        sectionNav.classList.remove('open');
+      }
     });
   }
+
+  // Sidebar accordion
+  (function initSidebarAccordion() {
+    const sidebarToggle = document.querySelector('.profile-sidebar-toggle');
+    if (!sidebarToggle) return;
+    const submenuId = sidebarToggle.getAttribute('aria-controls');
+    const submenu = submenuId ? document.getElementById(submenuId) : null;
+    if (!submenu) return;
+
+    const syncState = () => {
+      const isExpanded = sidebarToggle.getAttribute('aria-expanded') === 'true';
+      submenu.hidden = !isExpanded;
+    };
+
+    sidebarToggle.addEventListener('click', () => {
+      const isExpanded = sidebarToggle.getAttribute('aria-expanded') === 'true';
+      sidebarToggle.setAttribute('aria-expanded', String(!isExpanded));
+      syncState();
+    });
+
+    syncState();
+  })();
+
+  // Advertisement slider
+  (function initAdSlider() {
+    const slider = document.querySelector('.ad-slider');
+    if (!slider) return;
+
+    const slides = Array.from(slider.querySelectorAll('.ad-slide'));
+    const dots = Array.from(slider.querySelectorAll('.ad-dot'));
+    if (slides.length < 2) return;
+
+    let activeIndex = 0;
+    let timer = null;
+    const INTERVAL_MS = 5000;
+
+    const setSlide = (index) => {
+      activeIndex = index;
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('is-active', i === activeIndex);
+      });
+      dots.forEach((dot, i) => {
+        const isActive = i === activeIndex;
+        dot.classList.toggle('is-active', isActive);
+        dot.setAttribute('aria-selected', String(isActive));
+      });
+    };
+
+    const nextSlide = () => setSlide((activeIndex + 1) % slides.length);
+    const stop = () => {
+      if (!timer) return;
+      clearInterval(timer);
+      timer = null;
+    };
+    const start = () => {
+      stop();
+      timer = setInterval(nextSlide, INTERVAL_MS);
+    };
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        setSlide(i);
+        start();
+      });
+    });
+
+    slider.addEventListener('mouseenter', stop);
+    slider.addEventListener('mouseleave', start);
+    slider.addEventListener('focusin', stop);
+    slider.addEventListener('focusout', start);
+
+    setSlide(0);
+    start();
+  })();
 
   // Shared URL normalizer for all dynamic sections
   function normalizeUrl(val) {
@@ -398,13 +484,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Escape') closeViewer();
   });
 
-  // ---- Avengers grid pagination (4 per page) ----
+  // ---- Avengers grid pagination (6 per page) ----
   (function initAvengersPagination(){
     const grid = document.getElementById('avengers-container');
     const pager = document.getElementById('avengers-pagination');
     if (!grid || !pager) return;
 
-    const PAGE_SIZE = 4;
+    const PAGE_SIZE = 6;
     let current = 0; // page index
 
     const getTiles = () => Array.from(grid.children).filter(n => n.nodeType === 1);
