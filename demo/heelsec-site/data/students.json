@@ -1,0 +1,35 @@
+[
+  {
+    "Name": "Navid Fazle Rabbi",
+    "Role": "Ph.D. Student",
+    "Image": "../images/people/navid-rabbi.jpeg",
+    "Website": "navidnaf.com",
+    "Email": "navid@cs.unc.edu",
+    "Github": "https://github.com/NavidNaf",
+    "LinkedIn": "https://www.linkedin.com/in/navid-f-rabbi/",
+    "ORCID": null,
+    "Initials": "NR"
+  },
+  {
+    "Name": "Yichang Hu",
+    "Role": "Ph.D. Student",
+    "Image": "../images/people/yichang-hu.jpeg",
+    "Website": "https://hyichang0510.github.io/",
+    "Email": "huyich@cs.unc.edu",
+    "Github": "https://github.com/hyichang0510/",
+    "LinkedIn": "https://www.linkedin.com/in/yichang-hu-483949304/",
+    "ORCID": null,
+    "Initials": "YH"
+  },
+  {
+    "Name": "Noah Brown",
+    "Role": "Ph.D. Student",
+    "Image": "../images/people/noah-brown.jpeg",
+    "Website": "https://www.noahabrown.org/",
+    "Email": "noahbrow@cs.unc.edu",
+    "Github": "https://github.com/noahbrown/",
+    "LinkedIn": "https://www.linkedin.com/in/noah-brown-712146189/",
+    "ORCID": "https://orcid.org/0009-0001-2048-0748",
+    "Initials": "NB"
+  }
+]

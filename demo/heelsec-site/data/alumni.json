@@ -1,0 +1,38 @@
+[
+  {
+    "Name": "Max Christman",
+    "Role": "MS '24",
+    "Current Role": "PhD, University of Michigan",
+    "Image": "../images/people/max-christman.jpeg",
+    "Website": "https://maxchristman.com/",
+    "Email": null,
+    "Github": null,
+    "LinkedIn": null,
+    "ORCID": null,
+    "Initials": "A1"
+  },
+  {
+    "Name": "Lihsuan (James) Chuang",
+    "Role": "MS '26",
+    "Current Role": "PhD, University of British Columbia",
+    "Image": "../images/people/james-chuang.jpeg",
+    "Website": "https://jameschuang2002.github.io/",
+    "Email": null,
+    "Github": null,
+    "LinkedIn": null,
+    "ORCID": null,
+    "Initials": "LC"
+  },
+  {
+    "Name": "Dohhyun Kim",
+    "Role": "MS '26",
+    "Current Role": null,
+    "Image": "../images/people/dohhyun-kim.png",
+    "Website": null,
+    "Email": null,
+    "Github": null,
+    "LinkedIn": null,
+    "ORCID": null,
+    "Initials": "A1"
+  }
+]

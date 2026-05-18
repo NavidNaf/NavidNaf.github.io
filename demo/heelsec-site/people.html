@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HeelSec | People</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="HeelSec home"><img src="images/heelsec-logo.svg" alt="" aria-hidden="true"><span>HeelSec</span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html#highlights">Highlights</a>
+      <a href="research.html">Research</a>
+      <a href="publication.html">Publication</a>
+      <a class="active" href="people.html" aria-current="page">People</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <p class="eyebrow">People</p>
+      <h1>Our team.</h1>
+      <p>Faculty, students, and alumni working on systems security at Carolina.</p>
+    </section>
+
+    <section class="people-sections" aria-label="People directory">
+      <section class="people-group" aria-labelledby="faculty-heading">
+        <h2 id="faculty-heading">Faculty</h2>
+        <div class="people-grid" id="faculty-list"></div>
+      </section>
+
+      <section class="people-group" aria-labelledby="students-heading">
+        <h2 id="students-heading">Students</h2>
+        <div class="people-grid" id="students-list"></div>
+      </section>
+
+      <section class="people-group" aria-labelledby="alumni-heading">
+        <h2 id="alumni-heading">Alumni</h2>
+        <div class="people-grid" id="alumni-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <a class="footer-brand" href="index.html">HeelSec</a>
+      <p>Research, publications, and collaborative work.</p>
+    </div>
+    <div class="footer-links" aria-label="Footer navigation">
+      <a href="index.html#highlights">Highlights</a>
+      <a href="research.html">Research</a>
+      <a href="publication.html">Publication</a>
+      <a href="people.html">People</a>
+    </div>
+    <p class="copyright">&copy; 2026 HeelSec. All rights reserved.</p>
+  </footer>
+  <script src="scripts/people.js"></script>
+</body>
+</html>

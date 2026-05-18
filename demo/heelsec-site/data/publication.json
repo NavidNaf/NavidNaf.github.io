@@ -1,0 +1,44 @@
+[
+  {
+    "Title": "GDDRHammer: Greatly Disturbing DRAM Rows -- Cross-Component Rowhammer Attacks from Modern GPUs",
+    "Authors": "Yichang Hu, Noah Brown, Yuhang Chen, Joshua Bakita, Tianlong Chen, Daniel Genkin, Andrew Kwong",
+    "Conference": "IEEE Symposium on Security and Privacy (IEEE S&P), 2026",
+    "Acceptance Rate": "12.7%",
+    "Read the paper": {
+      "label": "Read the Paper",
+      "url": "https://gddr.fail/files/gddrhammer.pdf"
+    },
+    "Website": {
+      "label": "GDDRHammer",
+      "url": "https://gddr.fail"
+    },
+    "News": {
+      "label": "New Rowhammer attacks give complete control of machines running Nvidia GPUs",
+      "url": "https://arstechnica.com/security/2026/04/new-rowhammer-attacks-give-complete-control-of-machines-running-nvidia-gpus/"
+    }
+  },
+  {
+    "Title": "KeyTAR: Practical Keystroke Timing Attacks and Input Reconstruction",
+    "Authors": "Mufan Qiu, Lihsuan Chuang, Dohhyun Kim, Huaizhi Qu, Tianlong Chen, Andrew Kwong",
+    "Conference": "IEEE Symposium on Security and Privacy (IEEE S&P), 2026",
+    "Acceptance Rate": "12.7%",
+    "Read the paper": {
+      "label": "Read the Paper",
+      "url": "https://andrewkwong.org/docs/keytar-camera.pdf"
+    },
+    "Website": null,
+    "News": null
+  },
+  {
+    "Title": "Pathfinder: High-Resolution Control-Flow Attacks Exploiting the Conditional Branch Predictor",
+    "Authors": "Hosein Yavarzadeh, Archit Agarwal, Max Christman, Christina Garman, Daniel Genkin, Andrew Kwong, Daniel Moghimi, Deian Stefan, Kazem Taram, Dean Tullsen",
+    "Conference": "ACM ASPLOS, 2024",
+    "Acceptance Rate": "18.4%",
+    "Read the paper": {
+      "label": "Read the Paper",
+      "url": "https://andrewkwong.org/docs/Pathfinder_HoseinYavarzadeh_ASPLOS24.pdf"
+    },
+    "Website": null,
+    "News": null
+  }
+]

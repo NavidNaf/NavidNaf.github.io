@@ -1,0 +1,22 @@
+[
+  {
+    "Title": "Microarchitecture Security",
+    "About": "The microarchitecture of computers has become more complex due to the performance optimizations. We explore the security side-effects that comes along with the performance benefits.",
+    "Image": "images/resarch-background/cpu.jpg"
+  },
+  {
+    "Title": "DRAM Security",
+    "About": "DRAM is prevalent in nearly all computing devices as a cost-effective way of storing data. We want to ensure that the underlying implementation is secured.",
+    "Image": "images/resarch-background/dram.jpg"
+  },
+  {
+    "Title": "Browser Security",
+    "About": "Browsers are integral to the modern society. We evaluate the security of modern browsers and look for potential vulnerabiltiies introduced by the interaction of software and hardware.",
+    "Image": "images/resarch-background/BrowserSecurity.jpg"
+  },
+  {
+    "Title": "Keystroke Timing Attacks",
+    "About": "The spatial layout of a keyboard enables adversaries to predict the input based on keystroke intervals. We aim to explore ways to extract and accurately reconstruct inputs.",
+    "Image": "images/resarch-background/keystroke-timing.jpg"
+  }
+]

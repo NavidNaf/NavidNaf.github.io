@@ -1,0 +1,22 @@
+[
+  {
+    "venue": "IEEE S&P 2026",
+    "year": "2026",
+    "icon": "images/project-logo/gddrlogo.png",
+    "title": "GDDRHammer: Greatly Disturbing DRAM Rows -- Cross-Component Rowhammer Attacks from Modern GPUs",
+    "links": [
+      { "label": "Link", "url": "https://gddr.fail/" },
+      { "label": "Read Paper", "url": "https://gddr.fail/files/gddrhammer.pdf" }
+    ]
+  },
+  {
+    "venue": "IEEE S&P 2026",
+    "year": "2026",
+    "icon": "images/project-logo/keytar.jpg",
+    "title": "KeyTAR: Practical Keystroke Timing Attacks and Input Reconstruction",
+    "links": [
+      { "label": "Link", "url": "https://www.computer.org/csdl/proceedings-article/sp/2026/606500b968/2bojwxx0k5a" },
+      { "label": "Read Paper", "url": "https://andrewkwong.org/docs/keytar-camera.pdf" }
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "category": "Publication",
+    "date": "May 2026",
+    "text": "HeelSec presents two papers, GDDRHammer and KeyTAR, at the IEEE Symposium on Security and Privacy, a top-tier venue with a 12.7% acceptance rate.",
+    "links": []
+  },
+  {
+    "category": "News",
+    "date": "August 2025",
+    "text": "Featured in arsTechnica for our work on GDDRHammer, a novel attack that exploits vulnerabilities in modern GPUs to induce bit flips in DRAM, demonstrating the potential for cross-component Rowhammer attacks.",
+    "links": [
+      { "label": "arsTechnica", "url": "https://arstechnica.com/security/2026/04/new-rowhammer-attacks-give-complete-control-of-machines-running-nvidia-gpus/" }
+    ]
+  }
+]
