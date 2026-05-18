@@ -2,7 +2,7 @@
   {
     "Name": "Navid Fazle Rabbi",
     "Role": "Ph.D. Student",
-    "Image": "../images/people/navid-rabbi.jpeg",
+    "Image": "/images/people/navid-rabbi.jpeg",
     "Website": "navidnaf.com",
     "Email": "navid@cs.unc.edu",
     "Github": "https://github.com/NavidNaf",
@@ -13,7 +13,7 @@
   {
     "Name": "Yichang Hu",
     "Role": "Ph.D. Student",
-    "Image": "../images/people/yichang-hu.jpeg",
+    "Image": "/images/people/yichang-hu.jpeg",
     "Website": "https://hyichang0510.github.io/",
     "Email": "huyich@cs.unc.edu",
     "Github": "https://github.com/hyichang0510/",
@@ -24,12 +24,36 @@
   {
     "Name": "Noah Brown",
     "Role": "Ph.D. Student",
-    "Image": "../images/people/noah-brown.jpeg",
+    "Image": "/images/people/noah-brown.jpeg",
     "Website": "https://www.noahabrown.org/",
     "Email": "noahbrow@cs.unc.edu",
     "Github": "https://github.com/noahbrown/",
     "LinkedIn": "https://www.linkedin.com/in/noah-brown-712146189/",
     "ORCID": "https://orcid.org/0009-0001-2048-0748",
     "Initials": "NB"
+  },
+    {
+    "Name": "Lihsuan (James) Chuang",
+    "Role": "MS '26",
+    "Current Role": "PhD, University of British Columbia",
+    "Image": "/images/people/james-chuang.jpeg",
+    "Website": "https://jameschuang2002.github.io/",
+    "Email": null,
+    "Github": null,
+    "LinkedIn": null,
+    "ORCID": null,
+    "Initials": "LC"
+  },
+  {
+    "Name": "Dohhyun Kim",
+    "Role": "MS '26",
+    "Current Role": null,
+    "Image": "/images/people/dohhyun-kim.png",
+    "Website": null,
+    "Email": null,
+    "Github": null,
+    "LinkedIn": null,
+    "ORCID": null,
+    "Initials": "A1"
   }
 ]
