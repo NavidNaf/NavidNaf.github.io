@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-PORT="${PORT:-8000}"
+PORT="${1:-${PORT:-8000}}"
 
 cd "$(dirname "$0")" || exit 1
 

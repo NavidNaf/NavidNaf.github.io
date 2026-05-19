@@ -1,0 +1,30 @@
+[
+  {
+    "date": "May 2026",
+    "title": "Team Lunch",
+    "caption": "It was just one of those fun team lunch days.",
+    "image": "images/gallery/team-lunch.jpg",
+    "imageAlt": "Team Lunch"
+  },
+  {
+    "date": "May 2026",
+    "title": "IEEE S&P 2026 Visit",
+    "caption": "Yichang Hu Presenting GDDRHammer at IEEE S&P 2026.",
+    "image": "images/gallery/yichang-present-1.jpg",
+    "imageAlt": "IEEE S&P 2026 Visit"
+  },
+  {
+    "date": "May 2026",
+    "title": "IEEE S&P 2026 Visit",
+    "caption": "Yichang Hu Presenting GDDRHammer at IEEE S&P 2026.",
+    "image": "images/gallery/yichang-present-2.jpg",
+    "imageAlt": "IEEE S&P 2026 Visit"
+  },
+  {
+    "date": "May 2026",
+    "title": "IEEE S&P 2026 Visit",
+    "caption": "Noah Brown and Yichang Hu presenting GDDRHammer at IEEE S&P 2026.",
+    "image": "images/gallery/noah-yichang.jpg",
+    "imageAlt": "IEEE S&P 2026 Visit"
+  }
+]

@@ -14,11 +14,17 @@
 <body>
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="HeelSec home"><img src="images/heelsec-logo.svg" alt="" aria-hidden="true"><span>HeelSec</span></a>
-    <nav class="site-nav" aria-label="Main navigation">
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
       <a href="index.html#highlights">Highlights</a>
       <a href="research.html">Research</a>
       <a href="publication.html">Publication</a>
       <a class="active" href="people.html" aria-current="page">People</a>
+      <a href="gallary.html">Gallary</a>
     </nav>
   </header>
 
@@ -57,9 +63,11 @@
       <a href="research.html">Research</a>
       <a href="publication.html">Publication</a>
       <a href="people.html">People</a>
+      <a href="gallary.html">Gallary</a>
     </div>
     <p class="copyright">&copy; 2026 HeelSec. All rights reserved.</p>
   </footer>
+  <script src="scripts/navigation.js"></script>
   <script src="scripts/people.js"></script>
 </body>
 </html>
